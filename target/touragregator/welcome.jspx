@@ -1,0 +1,14 @@
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:c="http://java.sun.com/jsp/jstl/core" version="2.0">
+<jsp:directive.page contentType="text/html; UTF-8" isELIgnored="false"/>
+<html>
+    <head>
+        <title>Welcome</title>
+    </head>
+<body>
+    <c:out value="Hello ${login}!"/>
+    <br/>
+</body>
+
+</html>
+
+</jsp:root>
