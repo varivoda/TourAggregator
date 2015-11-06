@@ -1,6 +1,6 @@
 package com.var.agregator.dto.tour;
 
-import com.var.agregator.dto.enums.RestouranType;
+import com.var.agregator.dto.enums.RestaurantType;
 
 /**
  * Created by ivan on 29.10.15.
@@ -8,8 +8,8 @@ import com.var.agregator.dto.enums.RestouranType;
 public class EatingPlace {
 
     private long idTour;
-    private RestouranType restouranType;
-    private String resouranAdress;
+    private RestaurantType restaurantType;
+    private String resaurantAdress;
     private String cuisineType;
 
     public long getIdTour() {
@@ -20,20 +20,20 @@ public class EatingPlace {
         this.idTour = idTour;
     }
 
-    public RestouranType getRestouranType() {
-        return restouranType;
+    public RestaurantType getRestaurantType() {
+        return restaurantType;
     }
 
-    public void setRestouranType(RestouranType restouranType) {
-        this.restouranType = restouranType;
+    public void setRestaurantType(RestaurantType restaurantType) {
+        this.restaurantType = restaurantType;
     }
 
-    public String getResouranAdress() {
-        return resouranAdress;
+    public String getResaurantAdress() {
+        return resaurantAdress;
     }
 
-    public void setResouranAdress(String resouranAdress) {
-        this.resouranAdress = resouranAdress;
+    public void setResaurantAdress(String resaurantAdress) {
+        this.resaurantAdress = resaurantAdress;
     }
 
     public String getCuisineType() {
