@@ -5,7 +5,7 @@
         <title>Welcome</title>
     </head>
 <body>
-    <c:out value="Hello ${login}!"/>
+    <c:out value="Hello ${fullName}!"/>
     <br/>
 </body>
 

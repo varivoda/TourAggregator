@@ -10,7 +10,7 @@ public class TripPreferences {
 
 	private long id;
 	private long idClient;
-	private int touristsQuantity;
+	private int travelersQuantity;
 	private long budget;
 	private Date departureDate;
 	private Date arrivalDate;
@@ -46,11 +46,11 @@ public class TripPreferences {
 		this.residentHotelKind = residentHotelKind;
 	}
 
-	public int getTouristsQuantity() {
-		return touristsQuantity;
+	public int getTravelersQuantity() {
+		return travelersQuantity;
 	}
-	public void setTouristsQuantity(int touristsQuantity) {
-		this.touristsQuantity = touristsQuantity;
+	public void setTravelersQuantity(int travelersQuantity) {
+		this.travelersQuantity = travelersQuantity;
 	}
 	public long getBudget() {
 		return budget;

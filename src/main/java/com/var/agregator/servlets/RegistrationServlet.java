@@ -23,7 +23,7 @@ public class RegistrationServlet extends HttpServlet {
         try {
             con = SimpleDAO.getConnection();
 //            st = con.createStatement();
-            String insertClientString = "insert into accounts values(?,?,?,?)";
+            String insertClientString = "insert into accounts(login, password, fullName, email)  values(?, ?, ?, ?)";
             String login = request.getParameter("login");
             String password = request.getParameter("password");
             String fullName = request.getParameter("fullName");
@@ -35,7 +35,7 @@ public class RegistrationServlet extends HttpServlet {
             insertClient.setString(3,fullName);
             insertClient.setString(4,email);
 
-            insertClient.execute();
+            insertClient.executeUpdate();
 
             getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
 

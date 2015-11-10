@@ -1,0 +1,45 @@
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:c="http://java.sun.com/jsp/jstl/core" version="2.0">
+<jsp:directive.page contentType="text/html; UTF-8" isELIgnored="false"/>
+<html>
+    <head>
+        <title>view preferences of the trip</title>
+    </head>
+<body>
+    Preferences of the trip: <br/>
+    <c:forEach var="tripPref" items="${tripPreferences}">
+            <table>
+                <tr>
+                    <td>Quantity of travelers: </td>
+                    <td><c:out value="${tripPref.travelersQuantity}"/></td>
+                </tr>
+                <tr>
+                    <td>Budget: </td>
+                    <td><c:out value="${tripPref.budget}"/></td>
+                </tr>
+                <tr>
+                    <td>Date of the departure</td>
+                    <td><c:out value="${tripPref.departureDate}"/></td>
+                </tr>
+                <tr>
+                    <td>Date of the arrival</td>
+                    <td><c:out value="${tripPref.arrivalDate}"/></td>
+                </tr>
+                <tr>
+                    <td>Kind of the transport</td>
+                    <td><c:out value="${tripPref.transportKind}"/></td>
+                </tr>
+                <tr>
+                    <td>Kind of the resident hotel</td>
+                    <td><c:out value="${tripPref.residentHotelKind}"/></td>
+                </tr>
+                <tr>
+                    <td>Trip's documents</td>
+                    <td><c:out value="${tripPref.tripDocuments}"/></td>
+                </tr>
+            </table>  <br/>
+
+        </c:forEach> <br/>
+
+</body>
+</html>
+</jsp:root>

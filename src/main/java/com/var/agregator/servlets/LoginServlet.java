@@ -52,17 +52,21 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 	try	{
 		con = SimpleDAO.getConnection();
 		st = con.createStatement();
-		rs = st.executeQuery("select login from accounts where password=\"" + userPassword + "\"" );
+		rs = st.executeQuery("select * from accounts where login=\"" + userLogin + "\"" );
 
-		String login = null;
+		String password = null;
+		String fullName = null;
 		if(rs.next()) {
-			login = rs.getString("login");
+			password = rs.getString("password");
+			fullName = rs.getString("fullName");
 		}
 
-		request.setAttribute("login", login);
 
-		if (login != null){
-			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/welcome.jspx");
+
+		if (password != null && password.equals(userPassword)){
+//			request.setAttribute("login", userLogin);
+			request.setAttribute("fullName", fullName);
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/personalArea.jspx");
 			dispatcher.forward(request,response);
 		}
 		else{
