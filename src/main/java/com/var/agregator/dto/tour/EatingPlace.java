@@ -7,10 +7,22 @@ import com.var.agregator.dto.enums.RestaurantType;
  */
 public class EatingPlace {
 
+    private long id;
     private long idTour;
     private RestaurantType restaurantType;
-    private String resaurantAdress;
+    private String restaurantAddress;
     private String cuisineType;
+
+    public EatingPlace() {}
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
 
     public long getIdTour() {
         return idTour;
@@ -28,12 +40,12 @@ public class EatingPlace {
         this.restaurantType = restaurantType;
     }
 
-    public String getResaurantAdress() {
-        return resaurantAdress;
+    public String getRestaurantAddress() {
+        return restaurantAddress;
     }
 
-    public void setResaurantAdress(String resaurantAdress) {
-        this.resaurantAdress = resaurantAdress;
+    public void setRestaurantAddress(String restaurantAddress) {
+        this.restaurantAddress = restaurantAddress;
     }
 
     public String getCuisineType() {

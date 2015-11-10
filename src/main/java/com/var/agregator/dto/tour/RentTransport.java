@@ -7,12 +7,24 @@ import com.var.agregator.dto.enums.CarCategory;
  */
 public class RentTransport {
 
+    private long id;
     private long idTour;
     private String companyName;
-    private String companyAdress;
+    private String companyAddress;
     private String carBrand;
+    private String carNumber;
     private double castPerDay;
     private CarCategory carCategory;
+
+    public RentTransport() {}
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 
     public long getIdTour() {
         return idTour;
@@ -20,6 +32,14 @@ public class RentTransport {
 
     public void setIdTour(long idTour) {
         this.idTour = idTour;
+    }
+
+    public String getCarNumber() {
+        return carNumber;
+    }
+
+    public void setCarNumber(String carNumber) {
+        this.carNumber = carNumber;
     }
 
     public String getCompanyName() {
@@ -30,12 +50,12 @@ public class RentTransport {
         this.companyName = companyName;
     }
 
-    public String getCompanyAdress() {
-        return companyAdress;
+    public String getCompanyAddress() {
+        return companyAddress;
     }
 
-    public void setCompanyAdress(String companyAdress) {
-        this.companyAdress = companyAdress;
+    public void setCompanyAddress(String companyAddress) {
+        this.companyAddress = companyAddress;
     }
 
     public String getCarBrand() {

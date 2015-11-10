@@ -7,8 +7,20 @@ import com.var.agregator.dto.enums.TripDocuments;
  */
 public class TravelerDocument {
 
+    private long id;
     private long idTour;
     private TripDocuments tripDocuments;
+
+
+    public TravelerDocument() {}
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 
     public long getIdTour() {
         return idTour;

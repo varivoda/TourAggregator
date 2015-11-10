@@ -7,10 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 /**
  * Created by ivan on 03.11.15.
@@ -21,14 +18,24 @@ public class RegistrationServlet extends HttpServlet {
         Connection con = null;
         Statement st = null;
         ResultSet rs = null;
+        PreparedStatement insertClient = null;
 
         try {
             con = SimpleDAO.getConnection();
-            st = con.createStatement();
+//            st = con.createStatement();
+            String insertClientString = "insert into accounts values(?,?,?,?)";
             String login = request.getParameter("login");
             String password = request.getParameter("password");
-            String sql = "insert into accounts values(\"" + login + "\", \"" + password + "\")";
-            st.executeUpdate(sql);
+            String fullName = request.getParameter("fullName");
+            String email = request.getParameter("email");
+
+            insertClient = con.prepareStatement(insertClientString);
+            insertClient.setString(1,login);
+            insertClient.setString(2,password);
+            insertClient.setString(3,fullName);
+            insertClient.setString(4,email);
+
+            insertClient.execute();
 
             getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
 

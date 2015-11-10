@@ -1,7 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b27ebe12-8952-4835-b1b4-f89f0a9c0d9e" name="Default" comment="" />
+    <list default="true" id="b27ebe12-8952-4835-b1b4-f89f0a9c0d9e" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/var/agregator/dto/tour/Tour.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/var/agregator/dto/client/PersonalData.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/var/agregator/dto/enums/Location.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/var/agregator/dto/enums/RestouranType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/var/agregator/dto/enums/Transport.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/var/agregator/dto/tour/GeneralInformation.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/touragregator/WEB-INF/classes/com/var/agregator/dto/client/PersonalData.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/touragregator/WEB-INF/classes/com/var/agregator/dto/enums/Location.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/touragregator/WEB-INF/classes/com/var/agregator/dto/enums/RestouranType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/touragregator/WEB-INF/classes/com/var/agregator/dto/enums/Transport.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/touragregator/WEB-INF/classes/com/var/agregator/dto/tour/GeneralInformation.class" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/var/agregator/dto/enums/Location.java" afterPath="$PROJECT_DIR$/src/main/java/com/var/agregator/dto/enums/HotelKind.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/var/agregator/dto/enums/Transport.java" afterPath="$PROJECT_DIR$/src/main/java/com/var/agregator/dto/enums/TransportKind.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/var/agregator/dto/client/Client.class" afterPath="$PROJECT_DIR$/target/classes/com/var/agregator/dto/client/Client.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/touragregator/WEB-INF/classes/com/var/agregator/dto/client/Client.class" afterPath="$PROJECT_DIR$/target/touragregator/WEB-INF/classes/com/var/agregator/dto/client/Client.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/var/agregator/dto/tour/EatingPlace.class" afterPath="$PROJECT_DIR$/target/classes/com/var/agregator/dto/tour/EatingPlace.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/touragregator/WEB-INF/classes/com/var/agregator/dto/tour/EatingPlace.class" afterPath="$PROJECT_DIR$/target/touragregator/WEB-INF/classes/com/var/agregator/dto/tour/EatingPlace.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/var/agregator/dto/tour/RentTransport.class" afterPath="$PROJECT_DIR$/target/classes/com/var/agregator/dto/tour/RentTransport.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/touragregator/WEB-INF/classes/com/var/agregator/dto/tour/RentTransport.class" afterPath="$PROJECT_DIR$/target/touragregator/WEB-INF/classes/com/var/agregator/dto/tour/RentTransport.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/var/agregator/dto/tour/ResidentLocation.class" afterPath="$PROJECT_DIR$/target/classes/com/var/agregator/dto/tour/ResidentLocation.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/touragregator/WEB-INF/classes/com/var/agregator/dto/tour/ResidentLocation.class" afterPath="$PROJECT_DIR$/target/touragregator/WEB-INF/classes/com/var/agregator/dto/tour/ResidentLocation.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/var/agregator/dto/tour/Transportation.class" afterPath="$PROJECT_DIR$/target/classes/com/var/agregator/dto/tour/Transportation.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/touragregator/WEB-INF/classes/com/var/agregator/dto/tour/Transportation.class" afterPath="$PROJECT_DIR$/target/touragregator/WEB-INF/classes/com/var/agregator/dto/tour/Transportation.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/var/agregator/dto/tour/TravelerDocument.class" afterPath="$PROJECT_DIR$/target/classes/com/var/agregator/dto/tour/TravelerDocument.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/touragregator/WEB-INF/classes/com/var/agregator/dto/tour/TravelerDocument.class" afterPath="$PROJECT_DIR$/target/touragregator/WEB-INF/classes/com/var/agregator/dto/tour/TravelerDocument.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/var/agregator/dto/client/TripPreferences.class" afterPath="$PROJECT_DIR$/target/classes/com/var/agregator/dto/client/TripPreferences.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/touragregator/WEB-INF/classes/com/var/agregator/dto/client/TripPreferences.class" afterPath="$PROJECT_DIR$/target/touragregator/WEB-INF/classes/com/var/agregator/dto/client/TripPreferences.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/touragregator.war" afterPath="$PROJECT_DIR$/target/touragregator.war" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/var/agregator/dto/client/Client.java" afterPath="$PROJECT_DIR$/src/main/java/com/var/agregator/dto/client/Client.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/var/agregator/dto/tour/EatingPlace.java" afterPath="$PROJECT_DIR$/src/main/java/com/var/agregator/dto/tour/EatingPlace.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/var/agregator/dto/tour/GeneralInformation.java" afterPath="$PROJECT_DIR$/src/main/java/com/var/agregator/dto/tour/GeneralInformation.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/var/agregator/dto/client/PersonalData.java" afterPath="$PROJECT_DIR$/src/main/java/com/var/agregator/dto/client/PersonalData.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/var/agregator/servlets/RegistrationServlet.java" afterPath="$PROJECT_DIR$/src/main/java/com/var/agregator/servlets/RegistrationServlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/var/agregator/dto/tour/RentTransport.java" afterPath="$PROJECT_DIR$/src/main/java/com/var/agregator/dto/tour/RentTransport.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/var/agregator/dto/tour/ResidentLocation.java" afterPath="$PROJECT_DIR$/src/main/java/com/var/agregator/dto/tour/ResidentLocation.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/var/agregator/dto/tour/Transportation.java" afterPath="$PROJECT_DIR$/src/main/java/com/var/agregator/dto/tour/Transportation.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/var/agregator/dto/tour/TravelerDocument.java" afterPath="$PROJECT_DIR$/src/main/java/com/var/agregator/dto/tour/TravelerDocument.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/var/agregator/dto/client/TripPreferences.java" afterPath="$PROJECT_DIR$/src/main/java/com/var/agregator/dto/client/TripPreferences.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/registration.html" afterPath="$PROJECT_DIR$/src/main/webapp/registration.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="TourAgregator.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -23,108 +66,101 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Location.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/var/agregator/dto/enums/Location.java">
+      <file leaf-file-name="LoginServlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/var/agregator/servlets/LoginServlet.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+              <caret line="79" column="8" selection-start-line="79" selection-start-column="8" selection-end-line="79" selection-end-column="8" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GeneralInformation.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/var/agregator/dto/tour/GeneralInformation.java">
+      <file leaf-file-name="registration.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/registration.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.47619048">
+              <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RentTransport.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/var/agregator/dto/tour/RentTransport.java">
+      <file leaf-file-name="worked.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/worked.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
-              <folding>
-                <element signature="e#402#403#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="27" column="37" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="37" />
+              <caret line="16" column="2" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ResidentLocation.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/var/agregator/dto/tour/ResidentLocation.java">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+            <state vertical-scroll-proportion="-10.0">
+              <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Transportation.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/var/agregator/dto/tour/Transportation.java">
+      <file leaf-file-name="error.jspx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/error.jspx">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="42" column="29" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
-              <folding>
-                <element signature="e#924#925#0" expanded="true" />
-                <element signature="e#966#967#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TravelerDocument.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/var/agregator/dto/tour/TravelerDocument.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="12" column="29" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
-              <folding>
-                <element signature="e#285#286#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Client.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/var/agregator/dto/client/Client.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            <state vertical-scroll-proportion="-9.9">
+              <caret line="21" column="2" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="2" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TripPreferences.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/var/agregator/dto/client/TripPreferences.java">
+      <file leaf-file-name="welcome.jspx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/welcome.jspx">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+            <state vertical-scroll-proportion="-0.6">
+              <caret line="1" column="72" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="72" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PersonalData.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/var/agregator/dto/client/PersonalData.java">
+      <file leaf-file-name="RegistrationServlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/var/agregator/servlets/RegistrationServlet.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+              <caret line="57" column="12" selection-start-line="57" selection-start-column="12" selection-end-line="57" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="4" column="7" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SimpleDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/var/agregator/dao/SimpleDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="context.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/META-INF/context.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -153,19 +189,13 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/main/webapp/META-INF/resources.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/var/agregator/dto/client/Client.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/var/agregator/dto/tour/LocationOfResident.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/var/agregator/dto/tour/enums/CarCategory.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/var/agregator/dto/tour/residentLocation.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/var/agregator/dto/tour/RentTransport.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/var/agregator/dto/client/enums/CarCategory.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/var/agregator/dto/enums/CarCategory.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/var/agregator/dto/tour/TravelerDocument.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/var/agregator/dto/tour/TourGeneralInformation.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/var/agregator/dto/tour/Transportation.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/var/agregator/dto/client/TripPreferences.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/var/agregator/dto/enums/RentTransport.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/var/agregator/dto/tour/GeneralInformation.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/var/agregator/dao/PersonalDataDAO.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/worked.jsp" />
@@ -177,11 +207,24 @@
         <option value="$PROJECT_DIR$/src/main/webapp/error.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/var/agregator/servlets/LoginServlet.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/error.jspx" />
-        <option value="$PROJECT_DIR$/src/main/webapp/registration.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/index.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/var/agregator/servlets/RegistrationServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/var/agregator/dto/client/PersonalData.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/var/agregator/dto/tour/Tour.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/var/agregator/dto/tour/GeneralInformation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/var/agregator/dto/client/Client.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/var/agregator/dto/tour/EatingPlace.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/var/agregator/dto/tour/RentTransport.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/var/agregator/dto/tour/TravelerDocument.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/var/agregator/dto/client/TripPreferences.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/var/agregator/dto/tour/Transportation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/var/agregator/dto/enums/Location.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/var/agregator/dto/enums/HotelKind.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/var/agregator/dto/tour/ResidentLocation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/var/agregator/dto/enums/Transport.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/var/agregator/dto/enums/TransportKind.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/var/agregator/servlets/RegistrationServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/registration.html" />
       </list>
     </option>
   </component>
@@ -190,6 +233,11 @@
       <MavenGeneralSettings>
         <option name="mavenHome" value="Bundled (Maven 3)" />
       </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
     </option>
   </component>
   <component name="MavenProjectNavigator">
@@ -252,7 +300,8 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -426,74 +475,6 @@
               <option name="myItemId" value="dto" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tour" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TourAgregator" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TourAgregator" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="agregator" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dto" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TourAgregator" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TourAgregator" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="agregator" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dto" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -527,8 +508,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -760,16 +740,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1301" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34103584" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3287037" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3287037" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24940239" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -777,7 +758,6 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -807,13 +787,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/error.jspx">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -984,82 +957,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/worked.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="2" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/error.jspx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="2" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/welcome.jspx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.6">
-          <caret line="1" column="72" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/var/agregator/servlets/LoginServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="91" column="5" selection-start-line="78" selection-start-column="5" selection-end-line="91" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/var/agregator/dao/SimpleDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49514562">
-          <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/META-INF/context.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="7" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="21" column="41" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="41" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="38" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/registration.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/var/agregator/servlets/RegistrationServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="39" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
         </state>
       </provider>
     </entry>
@@ -1084,91 +986,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/var/agregator/dto/enums/Transport.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/var/agregator/dto/tour/EatingPlace.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/var/agregator/dto/enums/Location.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/var/agregator/dto/tour/GeneralInformation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/var/agregator/dto/tour/RentTransport.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
-          <folding>
-            <element signature="e#402#403#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/var/agregator/dto/tour/ResidentLocation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/var/agregator/dto/tour/Transportation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="42" column="29" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
-          <folding>
-            <element signature="e#924#925#0" expanded="true" />
-            <element signature="e#966#967#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/var/agregator/dto/tour/TravelerDocument.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="29" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
-          <folding>
-            <element signature="e#285#286#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/var/agregator/dto/client/TripPreferences.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/var/agregator/dto/client/PersonalData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1177,10 +994,290 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/var/agregator/dto/client/Client.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/var/agregator/dto/client/PersonalData.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <caret line="31" column="5" selection-start-line="0" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/var/agregator/dto/tour/GeneralInformation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/var/agregator/dto/tour/Tour.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="37" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#628#629#0" expanded="true" />
+            <element signature="e#663#664#0" expanded="true" />
+            <element signature="e#730#731#0" expanded="true" />
+            <element signature="e#778#779#0" expanded="true" />
+            <element signature="e#832#833#0" expanded="true" />
+            <element signature="e#869#870#0" expanded="true" />
+            <element signature="e#942#943#0" expanded="true" />
+            <element signature="e#994#995#0" expanded="true" />
+            <element signature="e#1054#1055#0" expanded="true" />
+            <element signature="e#1094#1095#0" expanded="true" />
+            <element signature="e#1290#1291#0" expanded="true" />
+            <element signature="e#1328#1329#0" expanded="true" />
+            <element signature="e#1404#1405#0" expanded="true" />
+            <element signature="e#1458#1459#0" expanded="true" />
+            <element signature="e#1518#1519#0" expanded="true" />
+            <element signature="e#1558#1559#0" expanded="true" />
+            <element signature="e#1725#1726#0" expanded="true" />
+            <element signature="e#1750#1751#0" expanded="true" />
+            <element signature="e#1784#1785#0" expanded="true" />
+            <element signature="e#1812#1813#0" expanded="true" />
+            <element signature="e#1845#1846#0" expanded="true" />
+            <element signature="e#1876#1877#0" expanded="true" />
+            <element signature="e#1922#1923#0" expanded="true" />
+            <element signature="e#1962#1963#0" expanded="true" />
+            <element signature="e#1996#1997#0" expanded="true" />
+            <element signature="e#2026#2027#0" expanded="true" />
+            <element signature="e#2072#2073#0" expanded="true" />
+            <element signature="e#2110#2111#0" expanded="true" />
+            <element signature="e#2141#2142#0" expanded="true" />
+            <element signature="e#2168#2169#0" expanded="true" />
+            <element signature="e#2208#2209#0" expanded="true" />
+            <element signature="e#2240#2241#0" expanded="true" />
+            <element signature="e#2278#2279#0" expanded="true" />
+            <element signature="e#2314#2315#0" expanded="true" />
+            <element signature="e#2370#2371#0" expanded="true" />
+            <element signature="e#2420#2421#0" expanded="true" />
+            <element signature="e#2456#2457#0" expanded="true" />
+            <element signature="e#2490#2491#0" expanded="true" />
+            <element signature="e#2542#2543#0" expanded="true" />
+            <element signature="e#2588#2589#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/var/agregator/dto/tour/EatingPlace.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+          <folding>
+            <element signature="e#370#371#0" expanded="true" />
+            <element signature="e#395#396#0" expanded="true" />
+            <element signature="e#429#430#0" expanded="true" />
+            <element signature="e#457#458#0" expanded="true" />
+            <element signature="e#489#490#0" expanded="true" />
+            <element signature="e#518#519#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/var/agregator/dto/tour/RentTransport.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+          <folding>
+            <element signature="e#452#453#0" expanded="true" />
+            <element signature="e#477#478#0" expanded="true" />
+            <element signature="e#511#512#0" expanded="true" />
+            <element signature="e#539#540#0" expanded="true" />
+            <element signature="e#570#571#0" expanded="true" />
+            <element signature="e#599#600#0" expanded="true" />
+            <element signature="e#713#714#0" expanded="true" />
+            <element signature="e#745#746#0" expanded="true" />
+            <element signature="e#795#796#0" expanded="true" />
+            <element signature="e#837#838#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/var/agregator/dto/tour/TravelerDocument.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+          <folding>
+            <element signature="e#308#309#0" expanded="true" />
+            <element signature="e#333#334#0" expanded="true" />
+            <element signature="e#367#368#0" expanded="true" />
+            <element signature="e#395#396#0" expanded="true" />
+            <element signature="e#426#427#0" expanded="true" />
+            <element signature="e#455#456#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/var/agregator/dto/client/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.4">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding>
+            <element signature="e#540#541#0" expanded="true" />
+            <element signature="e#562#563#0" expanded="true" />
+            <element signature="e#606#607#0" expanded="true" />
+            <element signature="e#637#638#0" expanded="true" />
+            <element signature="e#763#764#0" expanded="true" />
+            <element signature="e#779#780#0" expanded="true" />
+            <element signature="e#810#811#0" expanded="true" />
+            <element signature="e#829#830#0" expanded="true" />
+            <element signature="e#883#884#0" expanded="true" />
+            <element signature="e#912#913#0" expanded="true" />
+            <element signature="e#986#987#0" expanded="true" />
+            <element signature="e#1031#1032#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/var/agregator/dto/tour/Transportation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="49" selection-start-line="24" selection-start-column="49" selection-end-line="24" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#603#604#0" expanded="true" />
+            <element signature="e#676#677#0" expanded="true" />
+            <element signature="e#734#735#0" expanded="true" />
+            <element signature="e#761#762#0" expanded="true" />
+            <element signature="e#786#787#0" expanded="true" />
+            <element signature="e#820#821#0" expanded="true" />
+            <element signature="e#848#849#0" expanded="true" />
+            <element signature="e#1419#1420#0" expanded="true" />
+            <element signature="e#1462#1463#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/var/agregator/dto/enums/HotelKind.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/var/agregator/dto/tour/ResidentLocation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="37" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
+          <folding>
+            <element signature="e#460#461#0" expanded="true" />
+            <element signature="e#513#514#0" expanded="true" />
+            <element signature="e#555#556#0" expanded="true" />
+            <element signature="e#582#583#0" expanded="true" />
+            <element signature="e#607#608#0" expanded="true" />
+            <element signature="e#641#642#0" expanded="true" />
+            <element signature="e#669#670#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/var/agregator/dto/enums/TransportKind.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/var/agregator/dto/client/TripPreferences.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.8">
+          <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
+          <folding>
+            <element signature="e#560#561#0" expanded="true" />
+            <element signature="e#576#577#0" expanded="true" />
+            <element signature="e#607#608#0" expanded="true" />
+            <element signature="e#626#627#0" expanded="true" />
+            <element signature="e#656#657#0" expanded="true" />
+            <element signature="e#678#679#0" expanded="true" />
+            <element signature="e#721#722#0" expanded="true" />
+            <element signature="e#752#753#0" expanded="true" />
+            <element signature="e#796#797#0" expanded="true" />
+            <element signature="e#827#828#0" expanded="true" />
+            <element signature="e#893#894#0" expanded="true" />
+            <element signature="e#942#943#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/var/agregator/dao/SimpleDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/META-INF/context.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/var/agregator/servlets/LoginServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="79" column="8" selection-start-line="79" selection-start-column="8" selection-end-line="79" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/welcome.jspx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.6">
+          <caret line="1" column="72" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/worked.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="2" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/error.jspx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.9">
+          <caret line="21" column="2" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/var/agregator/servlets/RegistrationServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="57" column="12" selection-start-line="57" selection-start-column="12" selection-end-line="57" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="7" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.0">
+          <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/registration.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.47619048">
+          <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
           <folding />
         </state>
       </provider>

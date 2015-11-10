@@ -1,5 +1,7 @@
 package com.var.agregator.dto.tour;
 
+import com.var.agregator.dto.enums.TransportKind;
+
 import java.util.Date;
 
 /**
@@ -7,13 +9,34 @@ import java.util.Date;
  */
 public class Transportation {
 
+    private long id;
     private long idTour;
+    private TransportKind transportKindKind;
     private String companyName;
-    private String departureAdressTo;
-    private String departureAdressFrom;
+    private String departureAddressTo;
+    private String departureAddressFrom;
     private Date departureDateTo;
     private Date departureDateFrom;
     private double cast;
+
+    public Transportation() {}
+
+
+    public TransportKind getTransportKindKind() {
+        return transportKindKind;
+    }
+
+    public void setTransportKindKind(TransportKind transportKindKind) {
+        this.transportKindKind = transportKindKind;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 
     public long getIdTour() {
         return idTour;
@@ -31,20 +54,20 @@ public class Transportation {
         this.companyName = companyName;
     }
 
-    public String getDepartureAdressTo() {
-        return departureAdressTo;
+    public String getDepartureAddressTo() {
+        return departureAddressTo;
     }
 
-    public void setDepartureAdressTo(String departureAdressTo) {
-        this.departureAdressTo = departureAdressTo;
+    public void setDepartureAddressTo(String departureAddressTo) {
+        this.departureAddressTo = departureAddressTo;
     }
 
-    public String getDepartureAdressFrom() {
-        return departureAdressFrom;
+    public String getDepartureAddressFrom() {
+        return departureAddressFrom;
     }
 
-    public void setDepartureAdressFrom(String departureAdressFrom) {
-        this.departureAdressFrom = departureAdressFrom;
+    public void setDepartureAddressFrom(String departureAddressFrom) {
+        this.departureAddressFrom = departureAddressFrom;
     }
 
     public Date getDepartureDateTo() {

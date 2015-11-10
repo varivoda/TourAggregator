@@ -1,7 +1,7 @@
 package com.var.agregator.dto.enums;
 
 
-public enum Transport {
+public enum TransportKind {
 	AVTO,
 	AIRPLANE,
 	BUS

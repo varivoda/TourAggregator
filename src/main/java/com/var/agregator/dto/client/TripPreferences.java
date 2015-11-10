@@ -2,30 +2,60 @@ package com.var.agregator.dto.client;
 
 import java.util.Date;
 
-import com.var.agregator.dto.enums.Location;
-import com.var.agregator.dto.enums.Transport;
+import com.var.agregator.dto.enums.HotelKind;
+import com.var.agregator.dto.enums.TransportKind;
 import com.var.agregator.dto.enums.TripDocuments;
 
 public class TripPreferences {
-	
-	private int quantityOfTourists;
-	private double budget;
+
+	private long id;
+	private long idClient;
+	private int touristsQuantity;
+	private long budget;
 	private Date departureDate;
 	private Date arrivalDate;
-	private Transport transport;
-	private Location residentLocation;
+	private TransportKind transportKind;
+	private HotelKind residentHotelKind;
 	private TripDocuments tripDocuments;
-	
-	public int getQuantityOfTourists() {
-		return quantityOfTourists;
+
+	public TripPreferences(){}
+
+
+
+	public long getId() {
+		return id;
 	}
-	public void setQuantityOfTourists(int quantityOfTourists) {
-		this.quantityOfTourists = quantityOfTourists;
+
+	public void setId(long id) {
+		this.id = id;
 	}
-	public double getBudget() {
+
+	public long getIdClient() {
+		return idClient;
+	}
+
+	public void setIdClient(long idClient) {
+		this.idClient = idClient;
+	}
+
+	public HotelKind getResidentHotelKind() {
+		return residentHotelKind;
+	}
+
+	public void setResidentHotelKind(HotelKind residentHotelKind) {
+		this.residentHotelKind = residentHotelKind;
+	}
+
+	public int getTouristsQuantity() {
+		return touristsQuantity;
+	}
+	public void setTouristsQuantity(int touristsQuantity) {
+		this.touristsQuantity = touristsQuantity;
+	}
+	public long getBudget() {
 		return budget;
 	}
-	public void setBudget(double budget) {
+	public void setBudget(long budget) {
 		this.budget = budget;
 	}
 	public Date getDepartureDate() {
@@ -40,17 +70,17 @@ public class TripPreferences {
 	public void setArrivalDate(Date arrivalDate) {
 		this.arrivalDate = arrivalDate;
 	}
-	public Transport getTransport() {
-		return transport;
+	public TransportKind getTransportKind() {
+		return transportKind;
 	}
-	public void setTransport(Transport transport) {
-		this.transport = transport;
+	public void setTransportKind(TransportKind transportKind) {
+		this.transportKind = transportKind;
 	}
-	public Location getLocation() {
-		return residentLocation;
+	public HotelKind getLocation() {
+		return residentHotelKind;
 	}
-	public void setLocation(Location location) {
-		this.residentLocation = location;
+	public void setLocation(HotelKind hotelKind) {
+		this.residentHotelKind = hotelKind;
 	}
 	public TripDocuments getTripDocuments() {
 		return tripDocuments;

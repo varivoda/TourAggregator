@@ -1,15 +1,39 @@
 package com.var.agregator.dto.tour;
 
+import com.var.agregator.dto.enums.HotelKind;
+
 /**
  * Created by ivan on 29.10.15.
  */
 public class ResidentLocation {
 
+    private long id;
     private long idTour;
-    private String City;
+    private HotelKind hotelKind;
+    private String city;
     private String hotelName;
-    private String hotelAdress;
+    private String hotelAddress;
     private double costPerDay;
+
+
+    public ResidentLocation() {}
+
+
+    public HotelKind getHotelKind() {
+        return hotelKind;
+    }
+
+    public void setHotelKind(HotelKind hotelKind) {
+        this.hotelKind = hotelKind;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 
     public double getCostPerDay() {
         return costPerDay;
@@ -28,11 +52,11 @@ public class ResidentLocation {
     }
 
     public String getCity() {
-        return City;
+        return city;
     }
 
     public void setCity(String city) {
-        City = city;
+        this.city = city;
     }
 
     public String getHotelName() {
@@ -43,11 +67,11 @@ public class ResidentLocation {
         this.hotelName = hotelName;
     }
 
-    public String getHotelAdress() {
-        return hotelAdress;
+    public String getHotelAddress() {
+        return hotelAddress;
     }
 
-    public void setHotelAdress(String hotelAdress) {
-        this.hotelAdress = hotelAdress;
+    public void setHotelAddress(String hotelAddress) {
+        this.hotelAddress = hotelAddress;
     }
 }

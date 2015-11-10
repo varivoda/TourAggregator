@@ -22,10 +22,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="TourAggregator" />
         <module name="TourAgregator" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="TourAggregator" target="1.5" />
       <module name="TourAgregator" target="1.5" />
     </bytecodeTargetLevel>
   </component>
