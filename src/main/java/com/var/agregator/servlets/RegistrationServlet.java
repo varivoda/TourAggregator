@@ -37,7 +37,7 @@ public class RegistrationServlet extends HttpServlet {
 
             insertClient.executeUpdate();
 
-            getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
+            getServletContext().getRequestDispatcher("/index.html").forward(request, response);
 
         } catch (SQLException e) {
             try {
