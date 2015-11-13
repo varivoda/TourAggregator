@@ -66,7 +66,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 		if (password != null && password.equals(userPassword)){
 //			request.setAttribute("login", userLogin);
 			request.setAttribute("fullName", fullName);
-			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/personalArea.jspx");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/client/personalArea.jspx");
 			dispatcher.forward(request,response);
 		}
 		else{
