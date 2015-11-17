@@ -1,6 +1,5 @@
 package com.var.agregator.dto.tour;
 
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -10,10 +9,7 @@ public class Tour {
 
     private long id;
     private long idClient;
-    private String country;
-    private String city;
-    private Date departureDate;
-    private Date arrivalDate;
+    private List<GeneralInformation> generalInformations;
     private List<EatingPlace> eatingPlaces;
     private List<RentTransport> rentTransports;
     private List<ResidentLocation> residentLocations;
@@ -21,6 +17,14 @@ public class Tour {
     private List<TravelerDocument> travelerDocuments;
 
     public Tour() {}
+
+    public List<GeneralInformation> getGeneralInformations() {
+        return generalInformations;
+    }
+
+    public void setGeneralInformations(List<GeneralInformation> generalInformations) {
+        this.generalInformations = generalInformations;
+    }
 
     public List<EatingPlace> getEatingPlaces() {
         return eatingPlaces;
@@ -76,37 +80,5 @@ public class Tour {
 
     public void setIdClient(long idClient) {
         this.idClient = idClient;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public Date getDepartureDate() {
-        return departureDate;
-    }
-
-    public void setDepartureDate(Date departureDate) {
-        this.departureDate = departureDate;
-    }
-
-    public Date getArrivalDate() {
-        return arrivalDate;
-    }
-
-    public void setArrivalDate(Date arrivalDate) {
-        this.arrivalDate = arrivalDate;
     }
 }

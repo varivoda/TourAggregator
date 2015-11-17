@@ -58,7 +58,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 		String fullName = null;
 		if(rs.next()) {
 			password = rs.getString("password");
-			fullName = rs.getString("fullName");
+			fullName = rs.getString("name");
 		}
 
 
