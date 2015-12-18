@@ -1,42 +1,40 @@
 package com.var.agregator.dto.tour;
 
-import com.var.agregator.dto.enums.RestaurantType;
-
 /**
  * Created by ivan on 29.10.15.
  */
 public class EatingPlace {
 
-    private long id;
-    private long idTour;
-    private RestaurantType restaurantType;
+    private int id;
+    private int idTour;
+    private String restaurantType;
     private String restaurantAddress;
     private String cuisineType;
 
     public EatingPlace() {}
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
 
-    public long getIdTour() {
+    public int getIdTour() {
         return idTour;
     }
 
-    public void setIdTour(long idTour) {
+    public void setIdTour(int idTour) {
         this.idTour = idTour;
     }
 
-    public RestaurantType getRestaurantType() {
+    public String getRestaurantType() {
         return restaurantType;
     }
 
-    public void setRestaurantType(RestaurantType restaurantType) {
+    public void setRestaurantType(String restaurantType) {
         this.restaurantType = restaurantType;
     }
 

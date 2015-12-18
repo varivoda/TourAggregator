@@ -8,7 +8,7 @@
     <c:out value="Hello ${fullName}!"/>    <br/>
 
     <a href="../index.html">Main page</a> <br/>
-    <a href="../tour/createTripPreferences.html">Create the preferences</a> <br/>
+    <a href="../tour/createTripPreferences.jspx">Create the preferences</a> <br/>
     <form name="viewTripPreferences" action="GetTripPreferences" method="get">
     <input type="submit" value="submit"/>
     </form>

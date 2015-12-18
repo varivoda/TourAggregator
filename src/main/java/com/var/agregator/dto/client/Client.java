@@ -1,52 +1,69 @@
 package com.var.agregator.dto.client;
 
+import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
-public class Client {
+@Entity
+@Table(name = "clients")
+public class Client implements Serializable{
 
-	private long id;
-	private String login;
+
+	private int clientId;
+//	private String login;
 	private String password;
 	private String fullName;
 	private String email;
 	private List<TripPreferences> tripPreferences;
 
 
-	public Client() {}
+	public Client() {
+		clientId = 0;
+	}
 
-	public String getLogin() {
-		return login;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "account_id")
+	public int getClientId() {
+		return clientId;
 	}
-	public void setLogin(String login) {
-		this.login = login;
+	public void setClientId(int clientId) {
+		this.clientId = clientId;
 	}
+
+//	@Column(name = "login")
+//	public String getLogin() {
+//		return login;
+//	}
+//	public void setLogin(String login) {
+//		this.login = login;
+//	}
+
+	@Column(name = "password")
 	public String getPassword() {
 		return password;
 	}
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+	@Column(name = "name")
 	public String getFullName() {
 		return fullName;
 	}
 	public void setFullName(String fullName) {
 		this.fullName = fullName;
 	}
+
+	@Column(name = "email")
 	public String getEmail() {return email;	}
 	public void setEmail(String email) {this.email = email;	}
 
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
-
+	@OneToMany(cascade = CascadeType.ALL,
+			   mappedBy = "client", fetch = FetchType.LAZY)
 	public List<TripPreferences> getTripPreferences() {
 		return tripPreferences;
 	}
-
 	public void setTripPreferences(List<TripPreferences> tripPreferences) {
 		this.tripPreferences = tripPreferences;
 	}

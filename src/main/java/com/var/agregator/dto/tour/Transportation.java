@@ -1,7 +1,6 @@
 package com.var.agregator.dto.tour;
 
-import com.var.agregator.dto.enums.TransportKind;
-
+import java.math.BigDecimal;
 import java.util.Date;
 
 /**
@@ -9,40 +8,40 @@ import java.util.Date;
  */
 public class Transportation {
 
-    private long id;
-    private long idTour;
-    private TransportKind transportKindKind;
+    private int id;
+    private int idTour;
+    private String transportKindKind;
     private String companyName;
     private String departureAddressTo;
     private String departureAddressFrom;
     private Date departureDateTo;
     private Date departureDateFrom;
-    private double cast;
+    private BigDecimal cast;
 
     public Transportation() {}
 
 
-    public TransportKind getTransportKindKind() {
+    public String getTransportKindKind() {
         return transportKindKind;
     }
 
-    public void setTransportKindKind(TransportKind transportKindKind) {
+    public void setTransportKindKind(String transportKindKind) {
         this.transportKindKind = transportKindKind;
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public long getIdTour() {
+    public int getIdTour() {
         return idTour;
     }
 
-    public void setIdTour(long idTour) {
+    public void setIdTour(int idTour) {
         this.idTour = idTour;
     }
 
@@ -86,11 +85,11 @@ public class Transportation {
         this.departureDateFrom = departureDateFrom;
     }
 
-    public double getCast() {
+    public BigDecimal getCast() {
         return cast;
     }
 
-    public void setCast(double cast) {
+    public void setCast(BigDecimal cast) {
         this.cast = cast;
     }
 }

@@ -1,0 +1,36 @@
+<!--
+  Created by IntelliJ IDEA.
+  User: ivan
+  Date: 23.11.15
+  Time: 19:35
+  To change this template use File | Settings | File Templates.
+-->
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+          xmlns:c="http://java.sun.com/jsp/jstl/core"
+          xmlns="http://www.w3.org/1999/xhtml" version="2.0">
+    <jsp:directive.page contentType="text/html; UTF-8"
+                        isELIgnored="false"/>
+    <html>
+    <head><title>Creating the preferences of the trip</title></head>
+    <body>
+    <!--<jsp:useBean id="tripPreferences" type="com.var.agregator.dto.client.TripPreferences"/>-->
+    Enter your preferences
+    <form name="createPreferences" action="" method="post">
+        
+        Quantity of travelers: <input name="travelersQuantity" type="number"/>
+        <!--<jsp:setProperty name="tripPreferences" property="travelersQuantity" value="${travelersQuantity}"/> -->
+        <br/>
+        Budget: <input name="budget" type="number"/> <br/>
+        Date of departure: <input name="departureDate" type="datetime"/> <br/>
+        Date of arrival: <input name="arrivalDate" type="datetime"/> <br/>
+        Kind of transport:
+        <select name="TransportKind">
+            <c:forEach items="${transportKinds}" var="trantportKind">
+                <option value="${trantportKind.name}"><c:out value="${trantportKind.name}"/></option>
+            </c:forEach>
+        </select>
+
+    </form>
+    </body>
+    </html>
+</jsp:root>

@@ -1,25 +1,23 @@
 package com.var.agregator.servlets;
 
+import com.var.agregator.dao.ClientService;
+import com.var.agregator.dto.client.Client;
+import com.var.agregator.utils.HibernateUtil;
 import com.var.agregator.dao.SimpleDAO;
+import org.hibernate.Session;
 
-import java.awt.*;
 import java.io.IOException;
+import java.io.Writer;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import javax.annotation.Resource;
-import javax.naming.Context;
-import javax.naming.InitialContext;
-import javax.naming.NamingException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-//import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.sql.DataSource;
 
 /**
  * Servlet implementation class ClientManager
@@ -45,14 +43,23 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 	String userLogin = request.getParameter("userLogin");
 	String userPassword = request.getParameter("userPassword");
 
+	System.out.println("Hello from servlet 1");
+
+
 	Connection con = null;
 	Statement st = null;
 	ResultSet rs = null;
+	Client client = ClientService.findByEmail("Fedy@mail.co");
+
+	System.out.println(client.getFullName());
+	Writer wr = response.getWriter();
+	wr.write(client.getFullName());
+
 
 	try	{
 		con = SimpleDAO.getConnection();
 		st = con.createStatement();
-		rs = st.executeQuery("select * from accounts where login=\"" + userLogin + "\"" );
+		rs = st.executeQuery("select * from clients where login=\"" + userLogin + "\"" );
 
 		String password = null;
 		String fullName = null;

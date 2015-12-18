@@ -1,0 +1,1 @@
+Bar,Barbecue,Bistro,Cafe,Coffe house,Fast food restaurant,Pancake,Pizzeria,Pub,Restaurant,Tavern

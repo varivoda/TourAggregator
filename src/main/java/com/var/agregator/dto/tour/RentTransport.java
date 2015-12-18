@@ -1,36 +1,35 @@
 package com.var.agregator.dto.tour;
 
-import com.var.agregator.dto.enums.CarCategory;
 
 /**
  * Created by ivan on 29.10.15.
  */
 public class RentTransport {
 
-    private long id;
-    private long idTour;
+    private int id;
+    private int idTour;
     private String companyName;
     private String companyAddress;
     private String carBrand;
     private String carNumber;
     private double castPerDay;
-    private CarCategory carCategory;
+    private String carCategory;
 
     public RentTransport() {}
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public long getIdTour() {
+    public int getIdTour() {
         return idTour;
     }
 
-    public void setIdTour(long idTour) {
+    public void setIdTour(int idTour) {
         this.idTour = idTour;
     }
 
@@ -74,11 +73,11 @@ public class RentTransport {
         this.castPerDay = castPerDay;
     }
 
-    public CarCategory getCarCategory() {
+    public String getCarCategory() {
         return carCategory;
     }
 
-    public void setCarCategory(CarCategory carCategory) {
+    public void setCarCategory(String carCategory) {
         this.carCategory = carCategory;
     }
 }

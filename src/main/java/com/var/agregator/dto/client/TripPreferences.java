@@ -1,92 +1,122 @@
 package com.var.agregator.dto.client;
 
+import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 
-import com.var.agregator.dto.enums.HotelKind;
-import com.var.agregator.dto.enums.TransportKind;
-import com.var.agregator.dto.enums.TripDocuments;
+import javax.persistence.*;
 
-public class TripPreferences {
+@Entity
+@Table(name = "trip_preferences")
+public class TripPreferences implements Serializable {
 
-	private long id;
-	private long idClient;
+	private int id;
+	private Client client;
 	private int travelersQuantity;
-	private long budget;
+	private BigDecimal budget;
 	private Date departureDate;
 	private Date arrivalDate;
-	private TransportKind transportKind;
-	private HotelKind residentHotelKind;
-	private TripDocuments tripDocuments;
+	private String transportKind;
+	private String residentHotelKind;
+	private String tripDocumentType;
 
 	public TripPreferences(){}
 
-
-
-	public long getId() {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "trip_preference_id")
+	public int getId() {
 		return id;
 	}
-
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
+//	@ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.PERSIST}, fetch = FetchType.LAZY)
+//	@JoinColumn(name = "account_id")
+//	@Column(name = "client")
+//	public Client getClientId() {
+//		return client;
+//	}
+//	public void setClientId(int client) {
+//		this.clientId = client;
+//	}
 
-	public long getIdClient() {
-		return idClient;
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "client")
+	public Client getClient() {
+		return client;
 	}
 
-	public void setIdClient(long idClient) {
-		this.idClient = idClient;
+	public void setClient(Client client) {
+		this.client = client;
 	}
 
-	public HotelKind getResidentHotelKind() {
+	@Column(name = "resident_hotel_kind" ,insertable = false, updatable = false)
+	public String getResidentHotelKind() {
 		return residentHotelKind;
 	}
-
-	public void setResidentHotelKind(HotelKind residentHotelKind) {
+	public void setResidentHotelKind(String residentHotelKind) {
 		this.residentHotelKind = residentHotelKind;
 	}
 
+	@Column(name = "travelers_quantity")
 	public int getTravelersQuantity() {
 		return travelersQuantity;
 	}
 	public void setTravelersQuantity(int travelersQuantity) {
 		this.travelersQuantity = travelersQuantity;
 	}
-	public long getBudget() {
+
+	@Column(name = "budget")
+	public BigDecimal getBudget() {
 		return budget;
 	}
-	public void setBudget(long budget) {
+	public void setBudget(BigDecimal budget) {
 		this.budget = budget;
 	}
+
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "departure_date")
 	public Date getDepartureDate() {
 		return departureDate;
 	}
 	public void setDepartureDate(Date departureDate) {
 		this.departureDate = departureDate;
 	}
+
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "arrival_date")
 	public Date getArrivalDate() {
 		return arrivalDate;
 	}
 	public void setArrivalDate(Date arrivalDate) {
 		this.arrivalDate = arrivalDate;
 	}
-	public TransportKind getTransportKind() {
+//	@ManyToOne(cascade = {CascadeType.PERSIST,CascadeType.REFRESH},
+//			fetch = FetchType.EAGER)
+
+	@Column(name = "transport_kind")
+	public String getTransportKind() {
 		return transportKind;
 	}
-	public void setTransportKind(TransportKind transportKind) {
+	public void setTransportKind(String transportKind) {
 		this.transportKind = transportKind;
 	}
-	public HotelKind getLocation() {
+
+	@Column(name = "resident_hotel_kind")
+	public String getLocation() {
 		return residentHotelKind;
 	}
-	public void setLocation(HotelKind hotelKind) {
+	public void setLocation(String hotelKind) {
 		this.residentHotelKind = hotelKind;
 	}
-	public TripDocuments getTripDocuments() {
-		return tripDocuments;
+
+	@Column(name = "trip_document")
+	public String getTripDocumentType() {
+		return tripDocumentType;
 	}
-	public void setTripDocuments(TripDocuments tripDocuments) {
-		this.tripDocuments = tripDocuments;
+	public void setTripDocumentType(String tripDocumentType) {
+		this.tripDocumentType = tripDocumentType;
 	}
 	
 }

@@ -1,63 +1,63 @@
 package com.var.agregator.dto.tour;
 
-import com.var.agregator.dto.enums.HotelKind;
+import java.math.BigDecimal;
 
 /**
  * Created by ivan on 29.10.15.
  */
 public class ResidentLocation {
 
-    private long id;
-    private long idTour;
-    private HotelKind hotelKind;
-    private String city;
+    private int id;
+    private int idTour;
+    private String hotelKind;
+//    private String city;
     private String hotelName;
     private String hotelAddress;
-    private double costPerDay;
+    private BigDecimal costPerDay;
 
 
     public ResidentLocation() {}
 
 
-    public HotelKind getHotelKind() {
+    public String getHotelKind() {
         return hotelKind;
     }
 
-    public void setHotelKind(HotelKind hotelKind) {
+    public void setHotelKind(String hotelKind) {
         this.hotelKind = hotelKind;
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public double getCostPerDay() {
+    public BigDecimal getCostPerDay() {
         return costPerDay;
     }
 
-    public void setCostPerDay(double costPerDay) {
+    public void setCostPerDay(BigDecimal costPerDay) {
         this.costPerDay = costPerDay;
     }
 
-    public long getIdTour() {
+    public int getIdTour() {
         return idTour;
     }
 
-    public void setIdTour(long idTour) {
+    public void setIdTour(int idTour) {
         this.idTour = idTour;
     }
 
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
+//    public String getCity() {
+//        return city;
+//    }
+//
+//    public void setCity(String city) {
+//        this.city = city;
+//    }
 
     public String getHotelName() {
         return hotelName;

@@ -7,26 +7,26 @@ import java.util.Date;
  */
 public class GeneralInformation {
 
-    private long id;
-    private long idTour;
+    private int id;
+    private int idTour;
     private String country;
     private String city;
     private Date departureDate;
     private Date arrivalDate;
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public long getIdTour() {
+    public int getIdTour() {
         return idTour;
     }
 
-    public void setIdTour(long idTour) {
+    public void setIdTour(int idTour) {
         this.idTour = idTour;
     }
 

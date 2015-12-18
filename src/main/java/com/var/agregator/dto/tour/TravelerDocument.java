@@ -1,40 +1,38 @@
-package com.var.agregator.dto.tour;
-
-import com.var.agregator.dto.enums.TripDocuments;
-
-/**
- * Created by ivan on 29.10.15.
- */
-public class TravelerDocument {
-
-    private long id;
-    private long idTour;
-    private TripDocuments tripDocuments;
-
-
-    public TravelerDocument() {}
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public long getIdTour() {
-        return idTour;
-    }
-
-    public void setIdTour(long idTour) {
-        this.idTour = idTour;
-    }
-
-    public TripDocuments getTripDocuments() {
-        return tripDocuments;
-    }
-
-    public void setTripDocuments(TripDocuments tripDocuments) {
-        this.tripDocuments = tripDocuments;
-    }
-}
+//package com.var.agregator.dto.tour;
+//
+///**
+// * Created by ivan on 29.10.15.
+// */
+//public class TravelerDocument {
+//
+//    private int id;
+//    private int idTour;
+//    private TripDocumentType tripDocuments;
+//
+//
+//    public TravelerDocument() {}
+//
+//    public int getId() {
+//        return id;
+//    }
+//
+//    public void setId(int id) {
+//        this.id = id;
+//    }
+//
+//    public int getIdTour() {
+//        return idTour;
+//    }
+//
+//    public void setIdTour(int idTour) {
+//        this.idTour = idTour;
+//    }
+//
+//    public TripDocumentType getTripDocuments() {
+//        return tripDocuments;
+//    }
+//
+//    public void setTripDocuments(TripDocumentType tripDocuments) {
+//        this.tripDocuments = tripDocuments;
+//    }
+//}
