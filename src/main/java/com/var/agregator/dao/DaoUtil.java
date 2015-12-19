@@ -1,11 +1,8 @@
 package com.var.agregator.dao;
 
-import com.var.agregator.dto.client.Client;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-
 import java.io.Serializable;
-import java.util.List;
 
 import static com.var.agregator.utils.HibernateUtil.getSessionFactory;
 

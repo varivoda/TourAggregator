@@ -44,12 +44,13 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 	String userPassword = request.getParameter("userPassword");
 
 	System.out.println("Hello from servlet 1");
+	ClientService cs = new ClientService();
 
 
 	Connection con = null;
 	Statement st = null;
 	ResultSet rs = null;
-	Client client = ClientService.findByEmail("Fedy@mail.co");
+	Client client = cs.findByEmail("Fedy@mail.co");
 
 	System.out.println(client.getFullName());
 	Writer wr = response.getWriter();

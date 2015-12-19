@@ -8,7 +8,7 @@
 
     <session-factory>
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/aggregator</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/agregator</property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.connection.password">,ekmrekm</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLInnoDBDialect</property>

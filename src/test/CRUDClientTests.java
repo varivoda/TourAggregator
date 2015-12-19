@@ -13,29 +13,28 @@ public class CRUDClientTests {
 
 //    @Test
 //    public void insertSelectByIdTest(){
+//
 //        Client newClient = new Client();
 //        newClient.setEmail("email@yandex.ru");
 //        newClient.setFullName("Ivanov Ivan Ivanovich");
 //        newClient.setPassword("Password");
 //
-////        newClient.setClientId(4);
+//        ClientService cs = new ClientService();
+//        cs.persist(newClient);
 //
-//        ClientService.persist(newClient);
-//
-//        Client selClient = ClientService.findById(newClient.getClientId());
+//        Client selClient = cs.findById(newClient.getClientId());
 //
 //        assertEquals(true, selClient != null);
 //
-////        assertEquals(newClient.getClientId(),selClient.getClientId());
 //        System.out.println(selClient.getClientId());
 //        assertEquals(newClient.getEmail(),selClient.getEmail());
 //        assertEquals(newClient.getFullName(),selClient.getFullName());
 //        assertEquals(newClient.getPassword(),selClient.getPassword());
 //
 //
-//        ClientService.delete(newClient);
+//        cs.delete(newClient);
 //
-//        Client selClient2 = ClientService.findById(newClient.getClientId());
+//        Client selClient2 = cs.findById(newClient.getClientId());
 //
 //        assertEquals(null,selClient2);
 //
@@ -43,24 +42,24 @@ public class CRUDClientTests {
 
     @Test
     public void insertSelectByEmailTest(){
+
         Client newClient = new Client();
         newClient.setEmail("email@yandex.ru");
         newClient.setFullName("Ivanov Ivan Ivanovich");
         newClient.setPassword("Password");
 
         ClientService cs = new ClientService();
+        cs.persist(newClient);
 
         Client selClient = cs.findByEmail(newClient.getEmail());
+        Client sel3Client = cs.findById(selClient.getClientId());
 
         assertEquals(true, selClient != null);
 
-//        assertEquals(newClient.getClientId(),selClient.getClientId());
         System.out.println(selClient.getClientId());
         assertEquals(newClient.getEmail(),selClient.getEmail());
         assertEquals(newClient.getFullName(),selClient.getFullName());
         assertEquals(newClient.getPassword(),selClient.getPassword());
-
-
 
         cs.delete(selClient);
 
