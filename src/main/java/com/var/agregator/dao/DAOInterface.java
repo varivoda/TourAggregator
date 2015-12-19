@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by ivan on 15.12.15.
  */
-public interface DAOInterface<T> {
+public interface DAOInterface<T,Id extends Integer> {
 
     public void persist(T entity);
 
@@ -15,10 +15,9 @@ public interface DAOInterface<T> {
 
     public void delete(T entity);
 
-//    public T findById(Id id);
+    public T findById(Id id);
 
+    public List<T> findAll();
 
-//    public List<T> findAll();
-
-//    public void deleteAll();
+    public void deleteAll();
 }

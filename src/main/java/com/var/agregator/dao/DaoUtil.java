@@ -12,7 +12,7 @@ import static com.var.agregator.utils.HibernateUtil.getSessionFactory;
 /**
  * Created by ivan on 16.12.15.
  */
-public abstract class DAOAbstract<T,Id extends Serializable> {
+public class DaoUtil<T,Id extends Serializable> {
 
     private Session currentSession;
     private Transaction currentTransaction;
@@ -26,15 +26,6 @@ public abstract class DAOAbstract<T,Id extends Serializable> {
         currentSession = getSessionFactory().openSession();
         currentTransaction = currentSession.beginTransaction();
         return currentSession;
-    }
-
-    public void closeCurrentSession() {
-        currentSession.close();
-    }
-
-    public void closeCurrentSessionWithTransaction() {
-        currentTransaction.commit();
-        currentSession.close();
     }
 
     public Session getCurrentSession() {
@@ -53,22 +44,24 @@ public abstract class DAOAbstract<T,Id extends Serializable> {
         this.currentTransaction = currentTransaction;
     }
 
+    public void closeCurrentSession() {
+        currentSession.close();
+    }
+
+    public void closeCurrentSessionWithTransaction() {
+        currentTransaction.commit();
+        currentSession.close();
+    }
+
     public void persist(T entity) {
-        getCurrentSession().save(entity);
+        currentSession.save(entity);
     }
 
     public void update(T entity) {
-        getCurrentSession().update(entity);
+        currentSession.update(entity);
     }
 
     public void delete(T entity) {
-        getCurrentSession().delete(entity);
+        currentSession.delete(entity);
     }
-
-    public abstract T findById(Id id);
-
-    public abstract List<T> findAll();
-
-    public abstract void deleteAll();
-
 }

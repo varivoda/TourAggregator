@@ -2,80 +2,81 @@ package com.var.agregator.dao;
 
 import com.var.agregator.dto.client.Client;
 import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 import java.util.List;
 
 /**
  * Created by ivan on 15.12.15.
  */
-public class ClientService {
+public class ClientService implements DAOInterface<Client,Integer> {
 
-    private static ClientDAO clientDAO;
-
-    static {
-        clientDAO = new ClientDAO();
-    }
+    private DaoUtil<Client,Integer> daoUtil;
 
     public ClientService(){
-    }
-    public static void persist(Client entity) {
-        clientDAO.openCurrentSessionWithTransaction();
-        clientDAO.persist(entity);
-        clientDAO.closeCurrentSessionWithTransaction();
+        daoUtil = new DaoUtil<Client, Integer>();
     }
 
-    public static void update(Client entity) {
-        clientDAO.openCurrentSessionWithTransaction();
-        clientDAO.update(entity);
-        clientDAO.closeCurrentSessionWithTransaction();
+    public void persist(Client entity) {
+        daoUtil.openCurrentSessionWithTransaction();
+        daoUtil.persist(entity);
+        daoUtil.closeCurrentSessionWithTransaction();
     }
 
-    public static Client findById(Integer id) {
-        clientDAO.openCurrentSession();
-        Client client = clientDAO.findById(id);
-        clientDAO.closeCurrentSession();
+    public void update(Client entity) {
+        daoUtil.openCurrentSessionWithTransaction();
+        daoUtil.update(entity);
+        daoUtil.closeCurrentSessionWithTransaction();
+    }
+
+    public Client findById(Integer id) {
+        daoUtil.openCurrentSession();
+        Client client = (Client) daoUtil.getCurrentSession().get(Client.class, id);
+        daoUtil.closeCurrentSession();
         return client;
     }
 
-    public static Client findByEmail(String email){
-        clientDAO.openCurrentSession();
-        Query query = clientDAO.getCurrentSession().createQuery("from Client where email=:emailParam");
+    public Client findByEmail(String email){
+        daoUtil.openCurrentSession();
+        Query query = daoUtil.getCurrentSession().createQuery("from Client where email=:emailParam");
         query.setParameter("emailParam",email);
         List<Client> clients = query.list();
-        clientDAO.closeCurrentSession();
+        daoUtil.closeCurrentSession();
         if (clients == null || clients.isEmpty()){
             return null;
         }
         return clients.get(0);
     }
 
-    public static void delete(Integer id) {
-        clientDAO.openCurrentSessionWithTransaction();
-        Client client = clientDAO.findById(id);
-        clientDAO.delete(client);
-        clientDAO.closeCurrentSessionWithTransaction();
+    public void delete(Integer id) {
+        daoUtil.openCurrentSessionWithTransaction();
+        Client client = findById(id);
+        daoUtil.delete(client);
+        daoUtil.closeCurrentSessionWithTransaction();
     }
 
-    public static List<Client> findAll() {
-        clientDAO.openCurrentSession();
-        List<Client> clients = clientDAO.findAll();
-        clientDAO.closeCurrentSession();
-        return clients;
+    public void delete(Client client){
+        daoUtil.openCurrentSessionWithTransaction();
+        daoUtil.delete(client);
+        daoUtil.closeCurrentSessionWithTransaction();
     }
 
-    public static void deleteAll() {
-        clientDAO.openCurrentSessionWithTransaction();
-        clientDAO.deleteAll();
-        clientDAO.closeCurrentSessionWithTransaction();
+    public List<Client> findAll() {
+        daoUtil.openCurrentSession();
+        List<Client> clientsList = (List<Client>) daoUtil.getCurrentSession().createQuery("from clients").list();
+        daoUtil.closeCurrentSession();
+        if (clientsList.isEmpty())
+            return null;
+        return clientsList;
     }
 
-    public static void delete(Client client){
-        clientDAO.openCurrentSessionWithTransaction();
-        clientDAO.delete(client);
-        clientDAO.closeCurrentSessionWithTransaction();
-    }
-
-    public static ClientDAO clientDAO() {
-        return clientDAO;
+    public void deleteAll() {
+        daoUtil.openCurrentSessionWithTransaction();
+        List<Client> entityList = findAll();
+        for (Client entity : entityList) {
+            delete(entity);
+        }
+        daoUtil.closeCurrentSessionWithTransaction();
     }
 }

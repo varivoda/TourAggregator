@@ -48,11 +48,9 @@ public class CRUDClientTests {
         newClient.setFullName("Ivanov Ivan Ivanovich");
         newClient.setPassword("Password");
 
-//        newClient.setClientId(4);
+        ClientService cs = new ClientService();
 
-        ClientService.persist(newClient);
-
-        Client selClient = ClientService.findByEmail(newClient.getEmail());
+        Client selClient = cs.findByEmail(newClient.getEmail());
 
         assertEquals(true, selClient != null);
 
@@ -64,9 +62,9 @@ public class CRUDClientTests {
 
 
 
-        ClientService.delete(selClient);
+        cs.delete(selClient);
 
-        Client selClient2 = ClientService.findByEmail(newClient.getEmail());
+        Client selClient2 = cs.findByEmail(newClient.getEmail());
 
         assertEquals(null,selClient2);
 
