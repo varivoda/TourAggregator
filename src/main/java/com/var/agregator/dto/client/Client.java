@@ -60,7 +60,7 @@ public class Client implements Serializable{
 	public void setEmail(String email) {this.email = email;	}
 
 	@OneToMany(cascade = CascadeType.ALL,
-			   mappedBy = "client", fetch = FetchType.LAZY)
+			   mappedBy = "client", fetch = FetchType.EAGER)
 	public List<TripPreferences> getTripPreferences() {
 		return tripPreferences;
 	}

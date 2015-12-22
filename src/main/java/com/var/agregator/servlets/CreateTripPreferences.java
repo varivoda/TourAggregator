@@ -55,7 +55,7 @@ public class CreateTripPreferences extends HttpServlet {
         tripPreferences.setArrivalDate(arrivalDate);
         tripPreferences.setDepartureDate(departureDate);
         tripPreferences.setBudget(budget);
-        tripPreferences.setLocation(null);
+//        tripPreferences.setLocation(null);
         tripPreferences.setResidentHotelKind(null);
         tripPreferences.setTripDocumentType(null);
 

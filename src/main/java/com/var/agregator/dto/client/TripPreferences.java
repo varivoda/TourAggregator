@@ -20,7 +20,9 @@ public class TripPreferences implements Serializable {
 	private String residentHotelKind;
 	private String tripDocumentType;
 
-	public TripPreferences(){}
+	public TripPreferences(){
+		id = 0;
+	}
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,18 +33,9 @@ public class TripPreferences implements Serializable {
 	public void setId(int id) {
 		this.id = id;
 	}
-//	@ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.PERSIST}, fetch = FetchType.LAZY)
-//	@JoinColumn(name = "account_id")
-//	@Column(name = "client")
-//	public Client getClientId() {
-//		return client;
-//	}
-//	public void setClientId(int client) {
-//		this.clientId = client;
-//	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "client")
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "client_id")
 	public Client getClient() {
 		return client;
 	}
@@ -51,7 +44,7 @@ public class TripPreferences implements Serializable {
 		this.client = client;
 	}
 
-	@Column(name = "resident_hotel_kind" ,insertable = false, updatable = false)
+	@Column(name = "resident_hotel_kind" ,insertable = true, updatable = true)
 	public String getResidentHotelKind() {
 		return residentHotelKind;
 	}
@@ -101,14 +94,6 @@ public class TripPreferences implements Serializable {
 	}
 	public void setTransportKind(String transportKind) {
 		this.transportKind = transportKind;
-	}
-
-	@Column(name = "resident_hotel_kind")
-	public String getLocation() {
-		return residentHotelKind;
-	}
-	public void setLocation(String hotelKind) {
-		this.residentHotelKind = hotelKind;
 	}
 
 	@Column(name = "trip_document")
