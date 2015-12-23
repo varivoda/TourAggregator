@@ -6,6 +6,8 @@ import java.io.Serializable;
 /**
  * Created by ivan on 29.10.15.
  */
+@Entity
+@Table(name = "eating_places")
 public class EatingPlace implements Serializable {
 
     private int id;

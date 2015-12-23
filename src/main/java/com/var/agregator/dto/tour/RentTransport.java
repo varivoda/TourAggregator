@@ -7,6 +7,8 @@ import java.math.BigDecimal;
 /**
  * Created by ivan on 29.10.15.
  */
+@Entity
+@Table(name = "rent_transport")
 public class RentTransport {
 
     private int id;
@@ -15,7 +17,7 @@ public class RentTransport {
     private String companyAddress;
     private String carBrand;
     private String carNumber;
-    private BigDecimal castPerDay;
+    private BigDecimal pricePerDay;
     private String carCategory;
 
     public RentTransport() {}
@@ -71,12 +73,12 @@ public class RentTransport {
         this.carBrand = carBrand;
     }
 
-    @Column(name = "cast_per_day")
-    public BigDecimal getCastPerDay() {
-        return castPerDay;
+    @Column(name = "price_per_day")
+    public BigDecimal getPricePerDay() {
+        return pricePerDay;
     }
-    public void setCastPerDay(BigDecimal castPerDay) {
-        this.castPerDay = castPerDay;
+    public void setPricePerDay(BigDecimal pricePerDay) {
+        this.pricePerDay = pricePerDay;
     }
 
     @Column(name = "car_category")

@@ -52,11 +52,11 @@ public class CRUDClientTests {
         cs.persist(newClient);
 
         Client selClient = cs.findByEmail(newClient.getEmail());
-        Client sel3Client = cs.findById(selClient.getClientId());
+        Client sel3Client = cs.findById(selClient.getId());
 
         assertEquals(true, selClient != null);
 
-        System.out.println(selClient.getClientId());
+        System.out.println(selClient.getId());
         assertEquals(newClient.getEmail(),selClient.getEmail());
         assertEquals(newClient.getFullName(),selClient.getFullName());
         assertEquals(newClient.getPassword(),selClient.getPassword());

@@ -8,6 +8,8 @@ import java.util.Date;
 /**
  * Created by ivan on 29.10.15.
  */
+@Entity
+@Table(name = "general_information")
 public class GeneralInformation implements Serializable {
 
     private int id;

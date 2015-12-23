@@ -1,5 +1,6 @@
 package com.var.agregator.dto.client;
 
+import com.var.agregator.dto.tour.Tour;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
@@ -9,35 +10,27 @@ import java.util.List;
 public class Client implements Serializable{
 
 
-	private int clientId;
-//	private String login;
+	private int id;
 	private String password;
 	private String fullName;
 	private String email;
 	private List<TripPreferences> tripPreferences;
+	private List<Tour> tours;
 
 
 	public Client() {
-		clientId = 0;
+		id = 0;
 	}
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "account_id")
-	public int getClientId() {
-		return clientId;
+	public int getId() {
+		return id;
 	}
-	public void setClientId(int clientId) {
-		this.clientId = clientId;
+	public void setId(int clientId) {
+		this.id = clientId;
 	}
-
-//	@Column(name = "login")
-//	public String getLogin() {
-//		return login;
-//	}
-//	public void setLogin(String login) {
-//		this.login = login;
-//	}
 
 	@Column(name = "password")
 	public String getPassword() {
@@ -66,5 +59,14 @@ public class Client implements Serializable{
 	}
 	public void setTripPreferences(List<TripPreferences> tripPreferences) {
 		this.tripPreferences = tripPreferences;
+	}
+
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "client", fetch = FetchType.EAGER)
+	public List<Tour> getTours(){
+		return tours;
+	}
+
+	public void setTours(List<Tour> tours) {
+		this.tours = tours;
 	}
 }
