@@ -22,7 +22,7 @@ public class CarCategories {
         Properties property = new Properties();
         try {
             property.load(new FileInputStream(System.getProperty("user.dir")+"/src/resources/config/initdata.properties"));
-            elements = CategoriesParser.getSet(System.getProperty("user.dir" + property.getProperty("dirCarCategories")));
+            elements = new HashSet<String>(Arrays.asList(property.getProperty("TransportKinds").split(",")));
         } catch (IOException e) {
             e.printStackTrace();
         }

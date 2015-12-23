@@ -19,6 +19,9 @@ public class SimpleDAO {
         try {
             Context ctx = new InitialContext();
             dataSource = (DataSource) ctx.lookup("java:comp/env/jdbc/agregator");
+//            dataSource = (DataSource) ctx.lookup("jdbc/agregator");
+            System.out.println("");
+
         }
         catch (Exception ex) {
         }
@@ -26,6 +29,14 @@ public class SimpleDAO {
 
     public static Connection getConnection() throws SQLException {
         return dataSource.getConnection();
+    }
+
+    public static void main(String[] args) {
+        try {
+            getConnection();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
 }
