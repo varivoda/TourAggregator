@@ -1,35 +1,42 @@
 package com.var.agregator.dto.tour;
 
+import javax.persistence.*;
+import java.io.Serializable;
+
 /**
  * Created by ivan on 29.10.15.
  */
-public class EatingPlace {
+public class EatingPlace implements Serializable {
 
     private int id;
-    private int idTour;
+    private Tour tour;
     private String restaurantType;
     private String restaurantAddress;
     private String cuisineType;
 
     public EatingPlace() {}
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "eating_place_id")
     public int getId() {
         return id;
     }
-
     public void setId(int id) {
         this.id = id;
     }
 
-
-    public int getIdTour() {
-        return idTour;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "tour_id")
+    public Tour getTour() {
+        return tour;
     }
 
-    public void setIdTour(int idTour) {
-        this.idTour = idTour;
+    public void setTour(Tour tour) {
+        this.tour = tour;
     }
 
+    @Column(name = "restaurant_type")
     public String getRestaurantType() {
         return restaurantType;
     }
@@ -38,6 +45,7 @@ public class EatingPlace {
         this.restaurantType = restaurantType;
     }
 
+    @Column(name = "restaurant_address")
     public String getRestaurantAddress() {
         return restaurantAddress;
     }
@@ -46,6 +54,7 @@ public class EatingPlace {
         this.restaurantAddress = restaurantAddress;
     }
 
+    @Column(name = "cuisine_type")
     public String getCuisineType() {
         return cuisineType;
     }

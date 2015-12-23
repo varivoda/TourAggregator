@@ -2,8 +2,6 @@ package com.var.agregator.dao;
 
 import com.var.agregator.dto.client.Client;
 import org.hibernate.Query;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
 
 import java.util.List;
 

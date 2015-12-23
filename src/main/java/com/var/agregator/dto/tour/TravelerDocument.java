@@ -20,11 +20,11 @@
 //        this.id = id;
 //    }
 //
-//    public int getIdTour() {
+//    public int getTour() {
 //        return idTour;
 //    }
 //
-//    public void setIdTour(int idTour) {
+//    public void setTour(int idTour) {
 //        this.idTour = idTour;
 //    }
 //
