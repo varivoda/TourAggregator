@@ -1,82 +1,88 @@
 package com.var.agregator.dto.tour;
 
 
+import javax.persistence.*;
+import java.math.BigDecimal;
+
 /**
  * Created by ivan on 29.10.15.
  */
 public class RentTransport {
 
     private int id;
-    private int idTour;
+    private Tour tour;
     private String companyName;
     private String companyAddress;
     private String carBrand;
     private String carNumber;
-    private double castPerDay;
+    private BigDecimal castPerDay;
     private String carCategory;
 
     public RentTransport() {}
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "rent_transport_id")
     public int getId() {
         return id;
     }
-
     public void setId(int id) {
         this.id = id;
     }
 
-    public int getIdTour() {
-        return idTour;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "tour_id")
+    public Tour getTour() {
+        return tour;
+    }
+    public void setTour(Tour tour) {
+        this.tour = tour;
     }
 
-    public void setIdTour(int idTour) {
-        this.idTour = idTour;
-    }
-
+    @Column(name = "car_number")
     public String getCarNumber() {
         return carNumber;
     }
-
     public void setCarNumber(String carNumber) {
         this.carNumber = carNumber;
     }
 
+    @Column(name = "company_name")
     public String getCompanyName() {
         return companyName;
     }
-
     public void setCompanyName(String companyName) {
         this.companyName = companyName;
     }
 
+    @Column(name = "company_address")
     public String getCompanyAddress() {
         return companyAddress;
     }
-
     public void setCompanyAddress(String companyAddress) {
         this.companyAddress = companyAddress;
     }
 
+    @Column(name = "car_brand")
     public String getCarBrand() {
         return carBrand;
     }
-
     public void setCarBrand(String carBrand) {
         this.carBrand = carBrand;
     }
 
-    public double getCastPerDay() {
+    @Column(name = "cast_per_day")
+    public BigDecimal getCastPerDay() {
         return castPerDay;
     }
-
-    public void setCastPerDay(double castPerDay) {
+    public void setCastPerDay(BigDecimal castPerDay) {
         this.castPerDay = castPerDay;
     }
 
+    @Column(name = "car_category")
     public String getCarCategory() {
         return carCategory;
     }
-
     public void setCarCategory(String carCategory) {
         this.carCategory = carCategory;
     }
