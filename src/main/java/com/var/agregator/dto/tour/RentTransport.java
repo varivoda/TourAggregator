@@ -8,7 +8,7 @@ import java.math.BigDecimal;
  * Created by ivan on 29.10.15.
  */
 @Entity
-@Table(name = "rent_transport")
+@Table(name = "rent_transports")
 public class RentTransport {
 
     private int id;

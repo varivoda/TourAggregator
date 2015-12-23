@@ -3,6 +3,7 @@ package com.var.agregator.dto.client;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.*;
 
@@ -44,7 +45,7 @@ public class TripPreferences implements Serializable {
 		this.client = client;
 	}
 
-	@Column(name = "resident_hotel_kind" ,insertable = true, updatable = true)
+	@Column(name = "resident_hotel_kind")
 	public String getResidentHotelKind() {
 		return residentHotelKind;
 	}

@@ -7,7 +7,7 @@ import java.io.Serializable;
  * Created by ivan on 29.10.15.
  */
 @Entity
-@Table(name = "eating_places")
+@Table(name = "eating_places" )
 public class EatingPlace implements Serializable {
 
     private int id;
@@ -33,7 +33,6 @@ public class EatingPlace implements Serializable {
     public Tour getTour() {
         return tour;
     }
-
     public void setTour(Tour tour) {
         this.tour = tour;
     }
@@ -42,7 +41,6 @@ public class EatingPlace implements Serializable {
     public String getRestaurantType() {
         return restaurantType;
     }
-
     public void setRestaurantType(String restaurantType) {
         this.restaurantType = restaurantType;
     }

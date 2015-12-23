@@ -18,9 +18,12 @@
 
         <mapping class="com.var.agregator.dto.client.Client"/>
         <mapping class="com.var.agregator.dto.client.TripPreferences"/>
-        <!--<mapping class="com.var.agregator.dto.data.TransportKind"/>-->
-        <!--<mapping class="com.var.agregator.dto.data.HotelKind"/>-->
-        <!--<mapping class="com.var.agregator.dto.data.TripDocumentType"/>-->
+        <mapping class="com.var.agregator.dto.tour.Tour"/>
+        <mapping class="com.var.agregator.dto.tour.Transportation"/>
+        <mapping class="com.var.agregator.dto.tour.EatingPlace"/>
+        <mapping class="com.var.agregator.dto.tour.GeneralInformation"/>
+        <mapping class="com.var.agregator.dto.tour.RentTransport"/>
+        <mapping class="com.var.agregator.dto.tour.ResidentLocation"/>
     </session-factory>
 
 </hibernate-configuration>

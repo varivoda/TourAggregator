@@ -12,7 +12,8 @@ public class SelectClientWithTripPreferences {
     @Test
     public void test(){
         ClientService cs = new ClientService();
-        Client client = cs.findById(1);
+//        Client client = cs.findById(1);
+        Client client = cs.findByEmail("varivoda_ivan@mail.ru");
 
         TripPreferencesService tps = new TripPreferencesService();
         TripPreferences tp = tps.findById(2);

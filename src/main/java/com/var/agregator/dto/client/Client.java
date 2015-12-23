@@ -4,6 +4,7 @@ import com.var.agregator.dto.tour.Tour;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "clients")
@@ -14,8 +15,8 @@ public class Client implements Serializable{
 	private String password;
 	private String fullName;
 	private String email;
-	private List<TripPreferences> tripPreferences;
-	private List<Tour> tours;
+	private Set<TripPreferences> tripPreferences;
+	private Set<Tour> tours;
 
 
 	public Client() {
@@ -24,7 +25,7 @@ public class Client implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "account_id")
+	@Column(name = "client_id")
 	public int getId() {
 		return id;
 	}
@@ -54,19 +55,19 @@ public class Client implements Serializable{
 
 	@OneToMany(cascade = CascadeType.ALL,
 			   mappedBy = "client", fetch = FetchType.EAGER)
-	public List<TripPreferences> getTripPreferences() {
+	public Set<TripPreferences> getTripPreferences() {
 		return tripPreferences;
 	}
-	public void setTripPreferences(List<TripPreferences> tripPreferences) {
+	public void setTripPreferences(Set<TripPreferences> tripPreferences) {
 		this.tripPreferences = tripPreferences;
 	}
 
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "client", fetch = FetchType.EAGER)
-	public List<Tour> getTours(){
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "client",  fetch = FetchType.EAGER)
+	public Set<Tour> getTours(){
 		return tours;
 	}
 
-	public void setTours(List<Tour> tours) {
+	public void setTours(Set<Tour> tours) {
 		this.tours = tours;
 	}
 }
