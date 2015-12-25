@@ -24,15 +24,15 @@ import javax.servlet.http.HttpServletResponse;
  */
 //@WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
-	public LoginServlet() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+//	private static final long serialVersionUID = 1L;
+//
+//	/**
+//	 * @see HttpServlet#HttpServlet()
+//	 */
+//	public LoginServlet() {
+//		super();
+//		// TODO Auto-generated constructor stub
+//	}
 
 
 	/**
@@ -40,68 +40,57 @@ public class LoginServlet extends HttpServlet {
 	 */
 protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-	String userLogin = request.getParameter("userLogin");
-	String userPassword = request.getParameter("userPassword");
+	String email = request.getParameter("email");
+	String password = request.getParameter("password");
 
-	System.out.println("Hello from servlet 1");
 	ClientService cs = new ClientService();
+	Client client = cs.findByEmail(email);
 
-
-	Connection con = null;
-	Statement st = null;
-	ResultSet rs = null;
-	Client client = cs.findByEmail("Fedy@mail.co");
-
-	System.out.println(client.getFullName());
-	Writer wr = response.getWriter();
-	wr.write(client.getFullName());
-
-
-	try	{
-		con = SimpleDAO.getConnection();
-		st = con.createStatement();
-		rs = st.executeQuery("select * from clients where login=\"" + userLogin + "\"" );
-
-		String password = null;
-		String fullName = null;
-		if(rs.next()) {
-			password = rs.getString("password");
-			fullName = rs.getString("name");
-		}
-
-
-
-		if (password != null && password.equals(userPassword)){
-//			request.setAttribute("login", userLogin);
-			request.setAttribute("fullName", fullName);
-			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/client/personalArea.jspx");
-			dispatcher.forward(request,response);
-		}
-		else{
-			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/error.jspx");
-			Exception ex = new Exception("Check your login or password");
-			request.setAttribute("exception", ex);
-			dispatcher.forward(request,response);
-		}
-
+	if (client == null) {
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/error.jspx");
+		Exception ex = new Exception("Check your login or password");
+		request.setAttribute("exception", ex);
+		dispatcher.forward(request,response);
 	}
-	catch (SQLException e){
-		e.printStackTrace();
+
+
+	if (password != null && password.equals(client.getPassword())) {
+		Writer wr = response.getWriter();
+		wr.write("Hello " + client.getFullName() + "!!!" );
 	}
-	finally {
-		if(rs != null)
-			try {
-				rs.close();
-			} catch (SQLException e) {e.printStackTrace();}
-		if(st != null)
-			try {
-				st.close();
-			} catch (SQLException e) {e.printStackTrace();}
-		if (con != null)
-			try {
-				con.close();
-			} catch (SQLException e) {e.printStackTrace();}
-	}
+
+
+//		if (password != null && password.equals(password)){
+////			request.setAttribute("login", userLogin);
+//			request.setAttribute("fullName", fullName);
+//			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/client/personalArea.jspx");
+//			dispatcher.forward(request,response);
+//		}
+//		else{
+//			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/error.jspx");
+//			Exception ex = new Exception("Check your login or password");
+//			request.setAttribute("exception", ex);
+//			dispatcher.forward(request,response);
+//		}
+
+//	}
+//	catch (SQLException e){
+//		e.printStackTrace();
+//	}
+//	finally {
+//		if(rs != null)
+//			try {
+//				rs.close();
+//			} catch (SQLException e) {e.printStackTrace();}
+//		if(st != null)
+//			try {
+//				st.close();
+//			} catch (SQLException e) {e.printStackTrace();}
+//		if (con != null)
+//			try {
+//				con.close();
+//			} catch (SQLException e) {e.printStackTrace();}
+//	}
 }
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
