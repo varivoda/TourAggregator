@@ -15,21 +15,13 @@ public class HibernateUtil {
 
     static {
         try {
-//                sessionFactory = new Configuration().configure().buildSessionFactory();
-//            Configuration configuration = new Configuration();
-//            configuration.configure();
-//            ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
-//            // Create the SessionFactory from hibernate.cfg.xml
-//            sessionFactory = configuration.buildSessionFactory(serviceRegistry);
             Configuration configuration = new Configuration();
             configuration.configure();
             ServiceRegistry serviceRegistry = new ServiceRegistryBuilder().applySettings(configuration.getProperties()).buildServiceRegistry();
-            // Create the SessionFactory from hibernate.cfg.xml
             sessionFactory = configuration.buildSessionFactory(serviceRegistry);
         } catch (Throwable ex) {
-            // Make sure you log the exception, as it might be swallowed
             System.err.println("Initial SessionFactory creation failed." + ex);
-            throw new ExceptionInInitializerError("Good morning Ivan!");
+            throw new ExceptionInInitializerError(ex);
         }
     }
 
