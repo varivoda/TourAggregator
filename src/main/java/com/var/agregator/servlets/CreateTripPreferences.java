@@ -24,14 +24,17 @@ public class CreateTripPreferences extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-
+        // Getting parameters
 
         int travelersQuantity = Integer.parseInt(req.getParameter("travelersQuantity"));
         BigDecimal budget = new BigDecimal(req.getParameter("budget"));
-
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm");
         String departureDateStr =req.getParameter("departureDate");
         String arrivalDateStr = req.getParameter("arrivalDate");
+        String transportKind = req.getParameter("TransportKind");
+
+        // Creating correct date format for MySQL
+
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm");
         Date departureDate = null;
         Date arrivalDate = null;
 
@@ -41,25 +44,16 @@ public class CreateTripPreferences extends HttpServlet {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        int transportKindId = Integer.parseInt(req.getParameter("transportKindId"));
-        String transportKindStr = req.getParameter("TransportKind");
 
-//        TransportKind transportKind = new TransportKind();
-//        transportKind.setName(transportKindStr);
-//        transportKind.setId(transportKindId);
-
-        // Creating TripPreferences
+        // Creating TripPreferences instance for data base
 
         TripPreferences tripPreferences = new TripPreferences();
         tripPreferences.setId(0);
         tripPreferences.setArrivalDate(arrivalDate);
         tripPreferences.setDepartureDate(departureDate);
         tripPreferences.setBudget(budget);
-//        tripPreferences.setLocation(null);
         tripPreferences.setResidentHotelKind(null);
         tripPreferences.setTripDocumentType(null);
-
-
     }
 
     @Override

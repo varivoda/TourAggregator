@@ -18,6 +18,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class ClientManager
@@ -46,52 +47,25 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 	ClientService cs = new ClientService();
 	Client client = cs.findByEmail(email);
 
-	if (client == null) {
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/error.jspx");
-		Exception ex = new Exception("Check your login or password");
-		request.setAttribute("exception", ex);
-		dispatcher.forward(request,response);
-	}
 
-
-	if (password != null && password.equals(client.getPassword())) {
+	if (client != null && password != null && password.equals(client.getPassword())) {
 		Writer wr = response.getWriter();
-		wr.write("Hello " + client.getFullName() + "!!!" );
+		HttpSession session = request.getSession(true);
+		session.setAttribute("authorized", true);
+		session.setAttribute("fullName", client.getFullName());
+		session.setAttribute("email", email);
+		response.sendRedirect("/client/personalArea.jspx");
+		return;
 	}
 
+	response.sendRedirect("/error.jspx");
+	Exception ex = new Exception("Check your login or password");
+	request.setAttribute("exception", ex);
 
-//		if (password != null && password.equals(password)){
-////			request.setAttribute("login", userLogin);
-//			request.setAttribute("fullName", fullName);
-//			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/client/personalArea.jspx");
-//			dispatcher.forward(request,response);
-//		}
-//		else{
-//			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/error.jspx");
-//			Exception ex = new Exception("Check your login or password");
-//			request.setAttribute("exception", ex);
-//			dispatcher.forward(request,response);
-//		}
 
-//	}
-//	catch (SQLException e){
-//		e.printStackTrace();
-//	}
-//	finally {
-//		if(rs != null)
-//			try {
-//				rs.close();
-//			} catch (SQLException e) {e.printStackTrace();}
-//		if(st != null)
-//			try {
-//				st.close();
-//			} catch (SQLException e) {e.printStackTrace();}
-//		if (con != null)
-//			try {
-//				con.close();
-//			} catch (SQLException e) {e.printStackTrace();}
-//	}
 }
+
+
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */

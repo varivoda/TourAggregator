@@ -10,25 +10,34 @@
           xmlns="http://www.w3.org/1999/xhtml" version="2.0">
     <jsp:directive.page contentType="text/html; UTF-8"
                         isELIgnored="false"/>
+
     <html>
     <head><title>Creating the preferences of the trip</title></head>
     <body>
+    <!--<body background="../images/bg/bg2.jpg">-->
     <!--<jsp:useBean id="tripPreferences" type="com.var.agregator.dto.client.TripPreferences"/>-->
     Enter your preferences
-    <form name="createPreferences" action="" method="post">
-        
-        Quantity of travelers: <input name="travelersQuantity" type="number"/>
-        <!--<jsp:setProperty name="tripPreferences" property="travelersQuantity" value="${travelersQuantity}"/> -->
-        <br/>
+    <form name="createPreferences" action="/CreateTripPreferences" method="post">
+
+        Quantity of travelers: <input name="travelersQuantity" type="number"/> <br/>
         Budget: <input name="budget" type="number"/> <br/>
         Date of departure: <input name="departureDate" type="datetime"/> <br/>
         Date of arrival: <input name="arrivalDate" type="datetime"/> <br/>
         Kind of transport:
         <select name="TransportKind">
             <c:forEach items="${transportKinds}" var="trantportKind">
-                <option value="${trantportKind.name}"><c:out value="${trantportKind.name}"/></option>
+                <option value="${trantportKind}"><c:out value="${trantportKind}"/></option>
+            </c:forEach>
+        </select> <br/>
+        Kind of resident hotels:
+        <select name="residentHotelKind">
+            <c:forEach items="${hotelKinds}" var="residentHotelKind">
+                <option value="${residentHotelKind}">
+                    <c:out value="${residentHotelKind}"></c:out>
+                </option>
             </c:forEach>
         </select>
+    <!--<a href=</a>-->
 
     </form>
     </body>

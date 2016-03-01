@@ -1,10 +1,7 @@
 package com.var.agregator.dto.data;
 
-import com.var.agregator.utils.CategoriesParser;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.util.Properties;
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -12,9 +9,10 @@ import java.util.Set;
  */
 public class TransportKinds {
 
-    private static Set<String> elements;
+    private static Set<String> elements = new HashSet<String>();
 
     static{
+        elements.add("Plane");
         upDate();
     }
 
@@ -24,13 +22,13 @@ public class TransportKinds {
     }
 
     public static Set<String> getElements(){
-        Properties property = new Properties();
-        try {
-            property.load(new FileInputStream(System.getProperty("user.dir")+"/src/resources/config/initdata.properties"));
-            elements = CategoriesParser.getSet(System.getProperty("user.dir" + property.getProperty("dirTransportKinds")));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//        Properties property = new Properties();
+//        try {
+//            property.load(new FileInputStream(System.getProperty("user.dir")+"/src/resources/config/initdata.properties"));
+//            elements = CategoriesParser.getSet(System.getProperty("user.dir" + property.getProperty("dirTransportKinds")));
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
         return elements;
     }
 
