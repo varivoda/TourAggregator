@@ -16,7 +16,8 @@ public class TestForCategories {
         Properties property = new Properties();
         Set<String> elements = new HashSet<String>();
         try {
-            property.load(new FileInputStream(System.getProperty("user.dir")+"/src/resources/config/initdata.properties"));
+            String userDir = System.getProperty("user.dir");
+            property.load(new FileInputStream(System.getProperty("user.dir")+"/src/resources/config/initData.properties"));
             elements = new HashSet<String>(Arrays.asList(property.getProperty("TransportKinds").split(",")));
         } catch (IOException e) {
             e.printStackTrace();

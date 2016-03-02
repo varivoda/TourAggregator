@@ -21,7 +21,7 @@ public class CarCategories {
     public static boolean upDate(){
         Properties property = new Properties();
         try {
-            property.load(new FileInputStream(System.getProperty("user.dir")+"/src/resources/config/initdata.properties"));
+            property.load(new FileInputStream(System.getProperty("user.dir")+"/src/resources/config/initData.properties"));
             elements = new HashSet<String>(Arrays.asList(property.getProperty("TransportKinds").split(",")));
         } catch (IOException e) {
             e.printStackTrace();

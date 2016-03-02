@@ -14,13 +14,6 @@ public class RestaurantTypes {
 
     private static Set<String> elements;
 
-    public static void main(String[] args) {
-        upDate();
-        for (String s: elements) {
-            System.out.println(s);
-
-        }
-    }
     static {
         upDate();
     }
@@ -28,8 +21,8 @@ public class RestaurantTypes {
     public static boolean upDate(){
         Properties property = new Properties();
         try {
-            property.load(new FileInputStream(System.getProperty("user.dir")+"/src/resources/config/initdata.properties"));
-            elements = CategoriesParser.getSet(System.getProperty("user.dir") + property.getProperty("dirRestaurantTypes"));
+            property.load(new FileInputStream(System.getProperty("user.dir") + "/src/resources/config/initData.properties"));
+            elements = CategoriesParser.getSet(System.getProperty("user.dir" + property.getProperty("RestaurantTypes")));
         } catch (IOException e) {
             e.printStackTrace();
         }

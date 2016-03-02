@@ -1,5 +1,6 @@
 package com.var.agregator.servlets;
 
+import com.var.agregator.dto.data.DataTypes;
 import com.var.agregator.dto.data.HotelKinds;
 import com.var.agregator.dto.data.TransportKinds;
 
@@ -15,10 +16,9 @@ import java.io.IOException;
 public class InitDataServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        TransportKinds.upDate();
-        HotelKinds.upDate();
-        req.setAttribute("transportKinds", TransportKinds.toArray());
-        req.setAttribute("hotelKinds", HotelKinds.toArray());
+
+        req.setAttribute("transportKinds", DataTypes.getTransportKinds());
+        req.setAttribute("hotelKinds", DataTypes.getHotelKinds());
         getServletContext().getRequestDispatcher("/tour/createTripPreferences.jspx").forward(req,resp);
 //        resp.sendRedirect("/tour/createTripPreferences.jspx");
     }

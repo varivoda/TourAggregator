@@ -9,44 +9,54 @@ import java.util.Properties;
  */
 public class DataTypes {
 
-    private String[] cuisineTypes;
-    private String[] hotelKinds;
-    private String[] restaurantTypes;
-    private String[] transportKinds;
-    private String[] tripDocumentsTypes;
+    private static String[] cuisineTypes;
+    private static String[] hotelKinds;
+    private static String[] restaurantTypes;
+    private static String[] transportKinds;
+    private static String[] tripDocumentsTypes;
 
-    public DataTypes(){ }
-
-    public boolean upDate() throws IOException {
-        Properties property = new Properties();
-        property.load(new FileInputStream(System.getProperty("user.dir") + "/src/resources/config/initdata.properties"));
-
-        transportKinds = property.getProperty("TransportKinds").split(",");
-        cuisineTypes = property.getProperty("CuisineTypes").split(",");
-        hotelKinds = property.getProperty("HotelKinds").split(",");
-        restaurantTypes = property.getProperty("RestaurantTypes").split(",");
-        tripDocumentsTypes = property.getProperty("TripDocumentTypes").split(",");
-
-        return true;
+    static{
+//        upDate();
+        restaurantTypes = new String[]{"Bar","Barbecue","Bistro","Cafe","Coffe house","Fast food restaurant","Pancake","Pizzeria","Pub","Restaurant","Tavern"};
+        hotelKinds = new String[]{"Bed and breakfast","Boutique hotel","Business hotel","Hostel","Hotel","Lodge","Motel","Resort hotel","Ski hotel","Spa Hotel"};
+        transportKinds = new String[]{"Bus","Car","Plane","Train","Vessel"};
+        cuisineTypes = new String[]{"Italian","Korean","Russian"};
+        tripDocumentsTypes = new String[]{"International passport","Schengen visa","Visa"};
     }
 
-    public String[] getCuisineTypes() {
+//    public boolean upDate(){
+//        Properties property = new Properties();
+//        try {
+//            String userDir = System.getProperty("user.dir");
+//            String fullPath = System.getProperty("user.dir") + "/../webapps/TourAgregator/src/resources/config/initData.properties";
+////            property.load(getClass().getClassLoader().getResourceAsStream("initData.properties"));
+//            property.load(new FileInputStream("/src/resources/config/initData.properties"));
+//            transportKinds = property.getProperty("TransportKinds").split(",");
+//            cuisineTypes = property.getProperty("CuisineTypes").split(",");
+//            hotelKinds = property.getProperty("HotelKinds").split(",");
+//            restaurantTypes = property.getProperty("RestaurantTypes").split(",");
+//            tripDocumentsTypes = property.getProperty("TripDocumentTypes").split(",");
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        return true;
+//    }
+
+    public static String[] getCuisineTypes() {
         return cuisineTypes;
     }
 
-    public String[] getHotelKinds() {
+    public static String[] getHotelKinds() {
         return hotelKinds;
     }
 
-    public String[] getRestaurantTypes() {
+    public static String[] getRestaurantTypes() {
         return restaurantTypes;
     }
 
-    public String[] getTransportKinds() {
-        return transportKinds;
-    }
+    public static String[] getTransportKinds() {return transportKinds; }
 
-    public String[] getTripDocumentsTypes() {
+    public static String[] getTripDocumentsTypes() {
         return tripDocumentsTypes;
     }
 
