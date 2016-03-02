@@ -1,5 +1,8 @@
 package com.var.agregator.servlets;
 
+import com.var.agregator.dao.ClientService;
+import com.var.agregator.dao.TripPreferencesService;
+import com.var.agregator.dto.client.Client;
 import com.var.agregator.dto.client.TripPreferences;
 
 import javax.servlet.ServletException;
@@ -30,11 +33,13 @@ public class CreateTripPreferences extends HttpServlet {
         BigDecimal budget = new BigDecimal(req.getParameter("budget"));
         String departureDateStr =req.getParameter("departureDate");
         String arrivalDateStr = req.getParameter("arrivalDate");
-        String transportKind = req.getParameter("TransportKind");
+        String transportKind = req.getParameter("transportKind");
+        String hotelKind = req.getParameter("hotelKind");
+        String tripDocumentType = req.getParameter("tripDocumentType");
 
         // Creating correct date format for MySQL
 
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm");
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         Date departureDate = null;
         Date arrivalDate = null;
 
@@ -49,11 +54,25 @@ public class CreateTripPreferences extends HttpServlet {
 
         TripPreferences tripPreferences = new TripPreferences();
         tripPreferences.setId(0);
+        tripPreferences.setTravelersQuantity(travelersQuantity);
         tripPreferences.setArrivalDate(arrivalDate);
         tripPreferences.setDepartureDate(departureDate);
+        tripPreferences.setTransportKind(transportKind);
         tripPreferences.setBudget(budget);
-        tripPreferences.setResidentHotelKind(null);
-        tripPreferences.setTripDocumentType(null);
+        tripPreferences.setResidentHotelKind(hotelKind);
+        tripPreferences.setTripDocumentType(tripDocumentType);
+
+        // Creating services for persisting preferences
+
+        ClientService clientService = new ClientService();
+        TripPreferencesService tripPreferencesService = new TripPreferencesService();
+
+        String clientEmail = (String) req.getSession().getAttribute("email");
+        Client client = clientService.findByEmail(clientEmail);
+        tripPreferences.setClient(client);
+
+        tripPreferencesService.persist(tripPreferences);
+        resp.sendRedirect("/successfulRegistration.html");
     }
 
     @Override

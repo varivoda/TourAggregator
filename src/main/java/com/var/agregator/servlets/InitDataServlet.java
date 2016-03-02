@@ -19,8 +19,8 @@ public class InitDataServlet extends HttpServlet {
 
         req.setAttribute("transportKinds", DataTypes.getTransportKinds());
         req.setAttribute("hotelKinds", DataTypes.getHotelKinds());
+        req.setAttribute("tripDocumentTypes", DataTypes.getTripDocumentsTypes());
         getServletContext().getRequestDispatcher("/tour/createTripPreferences.jspx").forward(req,resp);
-//        resp.sendRedirect("/tour/createTripPreferences.jspx");
     }
 
     @Override

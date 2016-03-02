@@ -16,7 +16,6 @@ public class DataTypes {
     private static String[] tripDocumentsTypes;
 
     static{
-//        upDate();
         restaurantTypes = new String[]{"Bar","Barbecue","Bistro","Cafe","Coffe house","Fast food restaurant","Pancake","Pizzeria","Pub","Restaurant","Tavern"};
         hotelKinds = new String[]{"Bed and breakfast","Boutique hotel","Business hotel","Hostel","Hotel","Lodge","Motel","Resort hotel","Ski hotel","Spa Hotel"};
         transportKinds = new String[]{"Bus","Car","Plane","Train","Vessel"};

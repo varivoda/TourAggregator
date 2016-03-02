@@ -19,26 +19,61 @@
     Enter your preferences
     <form name="createPreferences" action="/CreateTripPreferences" method="post">
 
-        Quantity of travelers: <input name="travelersQuantity" type="number"/> <br/>
-        Budget: <input name="budget" type="number"/> <br/>
-        Date of departure: <input name="departureDate" type="datetime"/> <br/>
-        Date of arrival: <input name="arrivalDate" type="datetime"/> <br/>
-        Kind of transport:
-        <select name="TransportKind">
-            <c:forEach items="${transportKinds}" var="trantportKind">
-                <option value="${trantportKind}"><c:out value="${trantportKind}"/></option>
-            </c:forEach>
-        </select> <br/>
-        Kind of resident hotels:
-        <select name="residentHotelKind">
-            <c:forEach items="${hotelKinds}" var="residentHotelKind">
-                <option value="${residentHotelKind}">
-                    <c:out value="${residentHotelKind}"></c:out>
-                </option>
-            </c:forEach>
-        </select>
-    <!--<a href=</a>-->
-
+        <table>
+            <tr>
+                <td>Quantity of travelers:</td>
+                <td><input name="travelersQuantity" type="number"/></td>
+            </tr>
+            <tr>
+                <td>Budget:</td>
+                <td><input name="budget" type="number"/></td>
+            </tr>
+            <tr>
+                <td>Date of departure:</td>
+                <td><input name="departureDate" type="datetime"/></td>
+            </tr>
+            <tr>
+                <td>Date of arrival:</td>
+                <td><input name="arrivalDate" type="datetime"/></td>
+            </tr>
+            <tr>
+                <td>Kind of transport:</td>
+                <td>
+                    <select name="transportKind">
+                        <c:forEach items="${transportKinds}" var="trantportKind">
+                            <option value="${trantportKind}"><c:out value="${trantportKind}"/></option>
+                        </c:forEach>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Kind of resident hotels:</td>
+                <td>
+                    <select name="hotelKind">
+                        <c:forEach items="${hotelKinds}" var="hotelKind">
+                            <option value="${hotelKind}">
+                                <c:out value="${hotelKind}"></c:out>
+                            </option>
+                        </c:forEach>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Trip document type:</td>
+                <td>
+                    <select name="tripDocumentType">
+                        <c:forEach items="${tripDocumentTypes}" var="tripDocumentType">
+                            <option value="${tripDocumentType}">
+                                <c:out value="${tripDocumentType}"></c:out>
+                            </option>
+                        </c:forEach>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="create"/></td>
+            </tr>
+        </table>
     </form>
     </body>
     </html>
