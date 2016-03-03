@@ -5,36 +5,46 @@
 
     <head>
         <title>Personal area</title>
-        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/style.css"/>
     </head>
 
-<body class="body" background="images/bg/bg2.jpg" >
+<body class="body">
 
 <c:if test="${not authorized}">
     <c:redirect url="../index.html"/>
 </c:if>
 
-<div class="persArea">
-
+<div class="toolBar">
     <table>
+
         <tr>
-            <td><c:out value="${fullName}"/></td>
-        </tr>
-        <tr>
-            <td><form action="/Logout" method="post">
-                <input type="submit" value="exit"/>
-            </form></td>
+            <td>
+                <a href="../index.html">Main page</a>
+            </td>
+            <td>
+                <form action="/InitData" method="post">
+                    <input type="submit" value="Create preferences"/>
+                </form>
+            </td>
+            <td>
+                <form name="viewTripPreferences" action="/ViewTripPreferences" method="get">
+                    <input type="submit" value="View preferences"/>
+                </form>
+            </td>
+            <td>
+                <div class="persArea">
+                    <c:out value="${fullName}"/> <br/>
+                    <form action="/Logout" method="post">
+                        <input type="submit" value="exit"/>
+                    </form>
+                </div>
+            </td>
+            <td></td>
         </tr>
     </table>
 </div>
 
-    <a href="../index.html">Main page</a> <br/>
-    <form action="/InitData" method="post">
-        <input type="submit" value="Create the preferences"/>
-    </form>
-    <form name="viewTripPreferences" action="GetTripPreferences" method="get">
-    <input type="submit" value="submit"/>
-    </form>
+
 </body>
 
 </html>

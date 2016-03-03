@@ -1,7 +1,9 @@
 package com.var.agregator.dao;
 
 import com.var.agregator.dto.client.TripPreferences;
+import org.hibernate.Query;
 
+import javax.persistence.criteria.Expression;
 import java.util.List;
 
 /**
@@ -33,6 +35,19 @@ public class TripPreferencesService implements DAOInterface<TripPreferences,Inte
         daoUtil.closeCurrentSession();
         return entity;
     }
+
+    public List<TripPreferences> findByClientId(Integer clientId){
+        daoUtil.openCurrentSession();
+        Query query = daoUtil.getCurrentSession().createQuery("from TripPreferences where client.id =:clientIdParam" );
+        query.setParameter("clientIdParam", clientId);
+        List<TripPreferences> tp = query.list();
+        daoUtil.closeCurrentSession();
+        if (tp == null || tp.isEmpty()){
+            return null;
+        }
+        return tp;
+    }
+
 //    .
     public void delete(Integer id) {
         daoUtil.openCurrentSessionWithTransaction();
@@ -49,7 +64,7 @@ public class TripPreferencesService implements DAOInterface<TripPreferences,Inte
 
     public List<TripPreferences> findAll() {
         daoUtil.openCurrentSession();
-        List<TripPreferences> entityList = (List<TripPreferences>) daoUtil.getCurrentSession().createQuery("from trip_preferences").list();
+        List<TripPreferences> entityList = (List<TripPreferences>) daoUtil.getCurrentSession().createQuery("from TripPreferences ").list();
         daoUtil.closeCurrentSession();
         if (entityList.isEmpty())
             return null;

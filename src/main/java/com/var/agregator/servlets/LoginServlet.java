@@ -54,6 +54,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 		session.setAttribute("authorized", true);
 		session.setAttribute("fullName", client.getFullName());
 		session.setAttribute("email", email);
+		session.setAttribute("id", client.getId());
 		response.sendRedirect("/client/personalArea.jspx");
 		return;
 	}

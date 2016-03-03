@@ -33,8 +33,15 @@ div.createTour{
 div.persArea{
     position: absolute;
     left: 1050px;
-    top: 20px;
-    width: 150px;
-    height: 200px;
+    top: 0px;
+    width: 200px;
+    height: 50px;
     /*border: solid #0b0b0b;*/
+}
+
+div.toolBar{
+    position: absolute;
+    background-color: aliceblue;
+    width: 100%;
+    height: 10%;
 }
