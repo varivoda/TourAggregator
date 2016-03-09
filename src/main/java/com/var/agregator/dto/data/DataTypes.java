@@ -3,10 +3,11 @@ package com.var.agregator.dto.data;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
-
+import javax.ejb.Stateless;
 /**
  * Created by ivan on 23.12.15.
  */
+@Stateless
 public class DataTypes {
 
     private static String[] cuisineTypes;

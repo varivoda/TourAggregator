@@ -48,6 +48,15 @@
         <url-pattern>/CreateTripPreferences</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>ViewTripPreferencesServlet</servlet-name>
+        <servlet-class>com.var.agregator.servlets.ViewTripPreferencesServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ViewTripPreferencesServlet</servlet-name>
+        <url-pattern>/ViewTripPreferences</url-pattern>
+    </servlet-mapping>
+
 
 
 
