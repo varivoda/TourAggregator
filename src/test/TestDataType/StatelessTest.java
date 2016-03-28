@@ -1,6 +1,6 @@
 package TestDataType;
 
-import com.var.agregator.dto.data.DataTypes;
+import model.DataTypes;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.assertTrue;

@@ -1,8 +1,8 @@
 /**
  * Created by ivan on 16.12.15.
  */
-import com.var.agregator.dao.ClientService;
-import com.var.agregator.dto.client.Client;
+import controller.dao.ClientService;
+import model.client.Client;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

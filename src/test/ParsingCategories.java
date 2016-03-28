@@ -2,7 +2,7 @@
  * Created by ivan on 12.12.15.
  */
 
-import com.var.agregator.utils.CategoriesParser;
+import controller.utils.CategoriesParser;
 import org.junit.Test;
 import java.io.IOException;
 import java.util.*;

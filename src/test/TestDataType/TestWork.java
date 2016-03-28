@@ -1,8 +1,8 @@
 //package TestDataType; /**
 // * Created by ivan on 14.12.15.
 // */
-//import com.var.agregator.dto.data.DataTypes;
-//import com.var.agregator.utils.CategoriesParser;
+//import DataTypes;
+//import CategoriesParser;
 //import org.junit.Test;
 //
 //import java.io.FileInputStream;

@@ -15,7 +15,7 @@
     <head><title>Creating the preferences of the trip</title></head>
     <body>
     <!--<body background="../images/bg/bg2.jpg">-->
-    <!--<jsp:useBean id="tripPreferences" type="com.var.agregator.dto.client.TripPreferences"/>-->
+    <!--<jsp:useBean id="tripPreferences" type="TripPreferences"/>-->
     Enter your preferences
     <form name="createPreferences" action="/CreateTripPreferences" method="post">
 
@@ -35,6 +35,14 @@
             <tr>
                 <td>Date of arrival:</td>
                 <td><input name="arrivalDate" type="datetime"/></td>
+            </tr>
+            <tr>
+                <td>Origin airport code</td>
+                <td><input name="originAirportCode" type="text"/></td>
+            </tr>
+            <tr>
+                <td>Destination airport code</td>
+                <td><input name="destinationAirportCode" type="text"/></td>
             </tr>
             <tr>
                 <td>Kind of transport:</td>

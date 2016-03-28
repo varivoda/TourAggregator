@@ -16,14 +16,14 @@
         <property name="show_sql">true</property>
 
 
-        <mapping class="com.var.agregator.dto.client.Client"/>
-        <mapping class="com.var.agregator.dto.client.TripPreferences"/>
-        <mapping class="com.var.agregator.dto.tour.Tour"/>
-        <mapping class="com.var.agregator.dto.tour.Transportation"/>
-        <mapping class="com.var.agregator.dto.tour.EatingPlace"/>
-        <mapping class="com.var.agregator.dto.tour.GeneralInformation"/>
-        <mapping class="com.var.agregator.dto.tour.RentTransport"/>
-        <mapping class="com.var.agregator.dto.tour.ResidentLocation"/>
+        <mapping class="model.client.Client"/>
+        <mapping class="model.client.TripPreferences"/>
+        <mapping class="model.tour.Tour"/>
+        <mapping class="model.tour.Transportation"/>
+        <mapping class="model.tour.EatingPlace"/>
+        <mapping class="model.tour.GeneralInformation"/>
+        <mapping class="model.tour.RentTransport"/>
+        <mapping class="model.tour.ResidentLocation"/>
     </session-factory>
 
 </hibernate-configuration>

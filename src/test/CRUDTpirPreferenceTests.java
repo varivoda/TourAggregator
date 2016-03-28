@@ -1,7 +1,7 @@
-import com.var.agregator.dao.ClientService;
-import com.var.agregator.dao.TripPreferencesService;
-import com.var.agregator.dto.client.Client;
-import com.var.agregator.dto.client.TripPreferences;
+import controller.dao.ClientService;
+import controller.dao.TripPreferencesService;
+import model.client.Client;
+import model.client.TripPreferences;
 import org.junit.Test;
 
 import java.math.BigDecimal;

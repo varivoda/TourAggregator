@@ -1,7 +1,7 @@
 package TripPreferencesTests;
 
-import com.var.agregator.dao.TripPreferencesService;
-import com.var.agregator.dto.client.TripPreferences;
+import controller.dao.TripPreferencesService;
+import model.client.TripPreferences;
 import org.junit.Test;
 
 import java.util.List;
