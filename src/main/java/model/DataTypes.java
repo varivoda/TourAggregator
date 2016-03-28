@@ -1,10 +1,10 @@
 package model;
 
+import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 /**
  * Created by ivan on 23.12.15.
  */
-@Stateless
 public class DataTypes {
 
     private static String[] cuisineTypes;

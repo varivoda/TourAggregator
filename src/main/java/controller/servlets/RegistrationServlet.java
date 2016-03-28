@@ -1,8 +1,9 @@
 package controller.servlets;
 
-import controller.dao.ClientService;
+import controller.dao.impl.DaoClientImpl;
 import model.client.Client;
 
+import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -14,9 +15,10 @@ import java.io.IOException;
  */
 public class RegistrationServlet extends HttpServlet {
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException{
+    @EJB
+    private DaoClientImpl clientService;
 
-        ClientService cs = new ClientService();
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException{
 
         String password = request.getParameter("password");
         String fullName = request.getParameter("fullName");
@@ -29,14 +31,12 @@ public class RegistrationServlet extends HttpServlet {
         newClient.setFullName(fullName);
         newClient.setEmail(email);
 
-        cs.persist(newClient);
+        clientService.persist(newClient);
         try {
             getServletContext().getRequestDispatcher("/successfulRegistration.html").forward(request, response);
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
 //
 //            con = SimpleDAO.getConnection();
 ////            st = con.createStatement();

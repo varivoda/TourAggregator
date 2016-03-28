@@ -1,7 +1,7 @@
 /**
  * Created by ivan on 16.12.15.
  */
-import controller.dao.ClientService;
+import controller.dao.impl.DaoClientImpl;
 import model.client.Client;
 import org.junit.Test;
 
@@ -19,7 +19,7 @@ public class CRUDClientTests {
 //        newClient.setFullName("Ivanov Ivan Ivanovich");
 //        newClient.setPassword("Password");
 //
-//        ClientService cs = new ClientService();
+//        DaoClientImpl cs = new DaoClientImpl();
 //        cs.persist(newClient);
 //
 //        Client selClient = cs.findById(newClient.getClientId());
@@ -32,7 +32,7 @@ public class CRUDClientTests {
 //        assertEquals(newClient.getPassword(),selClient.getPassword());
 //
 //
-//        cs.delete(newClient);
+//        cs.deleteById(newClient);
 //
 //        Client selClient2 = cs.findById(newClient.getClientId());
 //
@@ -48,7 +48,7 @@ public class CRUDClientTests {
         newClient.setFullName("Ivanov Ivan Ivanovich");
         newClient.setPassword("Password");
 
-        ClientService cs = new ClientService();
+        DaoClientImpl cs = new DaoClientImpl();
         cs.persist(newClient);
 
         Client selClient = cs.findByEmail(newClient.getEmail());

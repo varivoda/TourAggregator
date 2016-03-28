@@ -8,6 +8,9 @@ import controller.utils.JsonUtil;
 import controller.utils.JsonUtilImpl;
 import org.json.simple.parser.ParseException;
 
+import javax.ejb.EJB;
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
 import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.Map;
@@ -15,11 +18,15 @@ import java.util.Map;
 /**
  * Created by ivan on 03.03.16.
  */
+@Stateless
+@LocalBean
 public class TourServiceImpl implements TourService {
 
     private static String URL = "https://api.test.sabre.com/v2/shop/flights/fares";
 
+    @EJB
     private JsonUtil jsonUtil;
+
     private SimpleDateFormat sdf;
 
     {

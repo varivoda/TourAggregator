@@ -1,10 +1,11 @@
 package controller.servlets;
 
-import controller.dao.ClientService;
-import controller.dao.TripPreferencesService;
+import controller.dao.impl.DaoClientImpl;
+import controller.dao.impl.DaoTripPreferencesImpl;
 import model.client.Client;
 import model.client.TripPreferences;
 
+import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -19,6 +20,11 @@ import java.util.Date;
  * Created by ivan on 23.11.15.
  */
 public class CreateTripPreferences extends HttpServlet {
+
+    @EJB
+    private DaoClientImpl clientService;
+    @EJB
+    private DaoTripPreferencesImpl daoTripPreferencesImpl;
 
     public CreateTripPreferences() {
         super();
@@ -68,14 +74,14 @@ public class CreateTripPreferences extends HttpServlet {
 
         // Creating services for persisting preferences
 
-        ClientService clientService = new ClientService();
-        TripPreferencesService tripPreferencesService = new TripPreferencesService();
+//        DaoClientImpl clientService = new DaoClientImpl();
+//        DaoTripPreferencesImpl daoTripPreferencesImpl = new DaoTripPreferencesImpl();
 
         String clientEmail = (String) req.getSession().getAttribute("email");
         Client client = clientService.findByEmail(clientEmail);
         tripPreferences.setClient(client);
 
-        tripPreferencesService.persist(tripPreferences);
+        daoTripPreferencesImpl.persist(tripPreferences);
         resp.sendRedirect("/successfulRegistration.html");
     }
 

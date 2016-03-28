@@ -1,5 +1,7 @@
 package controller.utils;
 
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
 import java.io.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -7,7 +9,12 @@ import java.util.Set;
 /**
  * Created by ivan on 12.12.15.
  */
+@Stateless
+@LocalBean
 public class CategoriesParser {
+
+    public CategoriesParser() {
+    }
 
     public static final char separator = ',';
 

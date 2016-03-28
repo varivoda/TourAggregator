@@ -18,7 +18,6 @@ public class LogOutServlet extends HttpServlet {
         session.removeAttribute("authorized");
         session.invalidate();
         resp.sendRedirect("/index.html");
-//        getServletContext().getRequestDispatcher("/index.html").forward(req,resp);
     }
 
     @Override

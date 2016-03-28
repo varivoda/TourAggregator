@@ -6,9 +6,14 @@ import org.hibernate.service.ServiceRegistry;
 //import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.service.ServiceRegistryBuilder;
 
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+
 /**
  * Created by ivan on 17.11.15.
  */
+@Stateless
+@LocalBean
 public class HibernateUtil {
 
     private static final SessionFactory sessionFactory;

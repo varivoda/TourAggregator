@@ -1,5 +1,7 @@
 package controller.utils;
 
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -10,6 +12,8 @@ import java.util.Map;
 /**
  * Created by ivan on 09.03.16.
  */
+@Stateless
+@LocalBean
 public class RestUtilImpl implements RestUtil {
 
 //    private static final String AUTHORIZATION = "Bearer T1RLAQItZWfLF01dxEAgeQ8N2hWb7fgBLRD5Q8XM8EMyNfYIa"+
@@ -18,6 +22,10 @@ public class RestUtilImpl implements RestUtil {
 //            "Wqrx+iasIUYvsNwGx5FrbZJHr4sxY1OIy83+ExQonC3DQwGzeubg"+
 //            "tEw18tbAoeQQCBOtdyTTbTn20o9vhs+yRa7qkYWrEETWuT4ss84t"+
 //            "GP4nrcGg48U5i+gHorLGA**";
+
+
+    public RestUtilImpl() {
+    }
 
     private static final String AUTHORIZATION ="Bearer T1RLAQIQe1NQs+YfBVQgflI5XSkNXxFOvBDpGhTpczmMjMD027h9TWkHAACgdLUCIDbpZVLAZos5EvnIRa0TkValw/0fMY+DFVWLVowka2PQSNPi7e/tlwTdupydsduYIUbapfZTRKvPDj18Y7xV/UdbVqkQiyDyOdFDJ75biwpZOnO/xRBqwXmgI3+pspxwfVezfGW/D6sdxLo2WslrL0cNf/luws3fo/EOjfKDxOWDOgCo0rlEhm1CclJHJDKNZNEN+Xd/hAMWWwKKQg**";
 
