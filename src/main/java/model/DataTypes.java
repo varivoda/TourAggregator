@@ -1,59 +1,67 @@
 package model;
 
 import javax.ejb.LocalBean;
-import javax.ejb.Stateless;
+import javax.ejb.Singleton;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
+
 /**
  * Created by ivan on 23.12.15.
  */
+@Singleton
+@LocalBean
 public class DataTypes {
 
-    private static String[] cuisineTypes;
-    private static String[] hotelKinds;
-    private static String[] restaurantTypes;
-    private static String[] transportKinds;
-    private static String[] tripDocumentsTypes;
+    private String[] cuisineTypes;
+    private String[] hotelKinds;
+    private String[] restaurantTypes;
+    private String[] transportKinds;
+    private String[] tripDocumentsTypes;
 
-    static{
-        restaurantTypes = new String[]{"Bar","Barbecue","Bistro","Cafe","Coffe house","Fast food restaurant","Pancake","Pizzeria","Pub","Restaurant","Tavern"};
-        hotelKinds = new String[]{"Bed and breakfast","Boutique hotel","Business hotel","Hostel","Hotel","Lodge","Motel","Resort hotel","Ski hotel","Spa Hotel"};
-        transportKinds = new String[]{"Bus","Car","Plane","Train","Vessel"};
-        cuisineTypes = new String[]{"Italian","Korean","Russian"};
-        tripDocumentsTypes = new String[]{"International passport","Schengen visa","Visa"};
+//    static{
+//        restaurantTypes = new String[]{"Bar","Barbecue","Bistro","Cafe","Coffe house","Fast food restaurant","Pancake","Pizzeria","Pub","Restaurant","Tavern"};
+//        hotelKinds = new String[]{"Bed and breakfast","Boutique hotel","Business hotel","Hostel","Hotel","Lodge","Motel","Resort hotel","Ski hotel","Spa Hotel"};
+//        transportKinds = new String[]{"Bus","Car","Plane","Train","Vessel"};
+//        cuisineTypes = new String[]{"Italian","Korean","Russian"};
+//        tripDocumentsTypes = new String[]{"International passport","Schengen visa","Visa"};
+//    }
+    public DataTypes() throws IOException, ClassNotFoundException {
+        upDate();
     }
 
-//    public boolean upDate(){
-//        Properties property = new Properties();
-//        try {
-//            String userDir = System.getProperty("user.dir");
-//            String fullPath = System.getProperty("user.dir") + "/../webapps/TourAgregator/src/resources/config/initData.properties";
-////            property.load(getClass().getClassLoader().getResourceAsStream("initData.properties"));
-//            property.load(new FileInputStream("/src/resources/config/initData.properties"));
-//            transportKinds = property.getProperty("TransportKinds").split(",");
-//            cuisineTypes = property.getProperty("CuisineTypes").split(",");
-//            hotelKinds = property.getProperty("HotelKinds").split(",");
-//            restaurantTypes = property.getProperty("RestaurantTypes").split(",");
-//            tripDocumentsTypes = property.getProperty("TripDocumentTypes").split(",");
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        return true;
-//    }
+    // Updating initial data
+    public boolean upDate() throws ClassNotFoundException, IOException {
 
-    public static String[] getCuisineTypes() {
+        Class<DataTypes> dataTypesClass = (Class<DataTypes>) Class.forName("model.DataTypes");
+        InputStream inputStream = dataTypesClass.getClassLoader().getResourceAsStream("initData.properties");
+        Properties properties = new Properties();
+        properties.load(inputStream);
+
+        transportKinds = properties.getProperty("TransportKinds").split(",");
+        cuisineTypes = properties.getProperty("CuisineTypes").split(",");
+        hotelKinds = properties.getProperty("HotelKinds").split(",");
+        restaurantTypes = properties.getProperty("RestaurantTypes").split(",");
+        tripDocumentsTypes = properties.getProperty("TripDocumentTypes").split(",");
+
+        return true;
+    }
+
+    public String[] getCuisineTypes() {
         return cuisineTypes;
     }
 
-    public static String[] getHotelKinds() {
+    public String[] getHotelKinds() {
         return hotelKinds;
     }
 
-    public static String[] getRestaurantTypes() {
+    public String[] getRestaurantTypes() {
         return restaurantTypes;
     }
 
-    public static String[] getTransportKinds() {return transportKinds; }
+    public String[] getTransportKinds() {return transportKinds; }
 
-    public static String[] getTripDocumentsTypes() {
+    public String[] getTripDocumentsTypes() {
         return tripDocumentsTypes;
     }
 
