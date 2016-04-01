@@ -1,6 +1,6 @@
 package controller.servlets;
 
-import model.DataTypes;
+import model.ContentDataBean;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -14,14 +14,15 @@ import java.io.IOException;
  */
 public class InitDataServlet extends HttpServlet {
 
-    @EJB DataTypes dataTypes;
+    @EJB
+    ContentDataBean contentDataBean;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        req.setAttribute("transportKinds", dataTypes.getTransportKinds());
-        req.setAttribute("hotelKinds", dataTypes.getHotelKinds());
-        req.setAttribute("tripDocumentTypes", dataTypes.getTripDocumentsTypes());
+        req.setAttribute("transportKinds", contentDataBean.getTransportKinds());
+        req.setAttribute("hotelKinds", contentDataBean.getHotelKinds());
+        req.setAttribute("tripDocumentTypes", contentDataBean.getTripDocumentsTypes());
         getServletContext().getRequestDispatcher("/tour/createTripPreferences.jspx").forward(req,resp);
     }
 
