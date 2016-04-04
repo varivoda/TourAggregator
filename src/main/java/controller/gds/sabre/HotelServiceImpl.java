@@ -20,7 +20,7 @@ public class HotelServiceImpl implements HotelService {
     }
 
     public <T> boolean bookHotel(T id) {
-        System.out.println("Hello< I'm AirService for Sabre. bookHotel");
+        System.out.println("Hello< I'm TransportationService for Sabre. bookHotel");
         return false;
     }
 }

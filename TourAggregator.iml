@@ -71,5 +71,28 @@
     <orderEntry type="library" name="Maven: org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec:1.0.0.Final" level="project" />
     <orderEntry type="library" name="Maven: com.googlecode.json-simple:json-simple:1.1" level="project" />
     <orderEntry type="library" name="Maven: commons-io:commons-io:2.2" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish.jersey.bundles:jaxrs-ri:2.0" level="project" />
+    <orderEntry type="library" name="Maven: javax.ws.rs:javax.ws.rs-api:sources:2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish.jersey.core:jersey-common:2.0" level="project" />
+    <orderEntry type="library" name="Maven: javax.ws.rs:javax.ws.rs-api:2.0" level="project" />
+    <orderEntry type="library" name="Maven: javax.annotation:javax.annotation-api:1.2" level="project" />
+    <orderEntry type="library" name="Maven: com.google.guava:guava:14.0.1" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish.hk2:hk2-api:2.1.88" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish.hk2:hk2-utils:2.1.88" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish.hk2.external:javax.inject:2.1.88" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish.hk2:hk2-locator:2.1.88" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish.hk2.external:asm-all-repackaged:2.1.88" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish.hk2.external:cglib:2.1.88" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish.hk2:osgi-resource-locator:1.0.1" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish.jersey.core:jersey-client:2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish.jersey.core:jersey-server:2.0" level="project" />
+    <orderEntry type="library" name="Maven: javax.validation:validation-api:1.1.0.Final" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish.jersey.containers:jersey-container-servlet-core:2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish.jersey.containers:jersey-container-servlet:2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish.jersey.core:jersey-common:sources:2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish.jersey.core:jersey-client:sources:2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish.jersey.core:jersey-server:sources:2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish.jersey.containers:jersey-container-servlet-core:sources:2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish.jersey.containers:jersey-container-servlet:sources:2.0" level="project" />
   </component>
 </module>

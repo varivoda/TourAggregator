@@ -4,6 +4,8 @@ import javax.ejb.LocalBean;
 import javax.ejb.Singleton;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 
 /**
@@ -13,11 +15,11 @@ import java.util.Properties;
 @LocalBean
 class SabrePropertiesBean {
 
-    private String accessToken;
-    private String xOriginatingIp;
-    private String flightsURL;
-    private String hotelsURL;
-    private String carsURL;
+    private Map<String, String> headers;
+
+    private String flightsURI;
+    private String hotelsURI;
+    private String carsURI;
 
     public SabrePropertiesBean() throws IOException {
         upDate();
@@ -30,31 +32,34 @@ class SabrePropertiesBean {
         Properties properties = new Properties();
         properties.load(inputStream);
 
-        accessToken = properties.getProperty("accessToken");
-        xOriginatingIp = properties.getProperty("xOriginatingIp");
-        flightsURL = properties.getProperty("flightsURL");
-        hotelsURL = properties.getProperty("hotelsURL");
-        carsURL = properties.getProperty("carsURL");
+        flightsURI = properties.getProperty("flightsURL");
+        hotelsURI = properties.getProperty("hotelsURL");
+        carsURI = properties.getProperty("carsURL");
+
+        if (headers == null){
+            headers = new HashMap<String, String>();
+        }else{
+            headers.clear();
+        }
+
+        headers.put("Authorization", properties.getProperty("accessToken"));
+        headers.put("X-Originating-Ip", properties.getProperty("xOriginatingIp"));
         return true;
     }
 
-    String getAccessToken() {
-        return accessToken;
+    public Map<String, String> getHeaders() {
+        return headers;
     }
 
-    String getxOriginatingIp() {
-        return xOriginatingIp;
+    String getFlightsURI() {
+        return flightsURI;
     }
 
-    String getFlightsURL() {
-        return flightsURL;
+    String getHotelsURI() {
+        return hotelsURI;
     }
 
-    String getHotelsURL() {
-        return hotelsURL;
-    }
-
-    String getCarsURL() {
-        return carsURL;
+    String getCarsURI() {
+        return carsURI;
     }
 }

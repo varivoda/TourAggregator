@@ -27,6 +27,8 @@ public class Transportation {
 
     public Transportation() {}
 
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "transportation_id")
@@ -55,11 +57,12 @@ public class Transportation {
     }
 
     @Column(name = "airline_code")
-    public String getCompanyName() {
+    public String getAirlineCode() {
         return airlineCode;
     }
-    public void setCompanyName(String companyName) {
-        this.airlineCode = companyName;
+
+    public void setAirlineCode(String airlineCode) {
+        this.airlineCode = airlineCode;
     }
 
     @Column(name = "departure_address_to")

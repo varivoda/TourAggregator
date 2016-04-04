@@ -19,13 +19,13 @@ import java.util.List;
 @LocalBean
 public class TourContentBean {
 
-    private AirService airService;
+    private TransportationService transportationService;
     private CarService carService;
     private HotelService hotelService;
     @EJB private FactoryService factoryService;
 
     public void initServices(NameGDS nameGDS){
-        airService = factoryService.getAirService(nameGDS);
+        transportationService = factoryService.getAirService(nameGDS);
         carService = factoryService.getCarService(nameGDS);
         hotelService = factoryService.getHotelService(nameGDS);
     }
