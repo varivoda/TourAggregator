@@ -1,6 +1,6 @@
 package ejb;
 
-import model.ContentDataBean;
+import model.TourContentData;
 import org.junit.*;
 
 import java.io.IOException;
@@ -10,24 +10,12 @@ import java.io.IOException;
  */
 public class TestContentDataBean {
 
-    private static ContentDataBean contentDataBean;
-
-    @BeforeClass
-    public static void setUpClass() {
-        try {
-            contentDataBean = new ContentDataBean();
-            System.out.println("Start testing");
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
+    private static TourContentData tourContentData;
 
     @Test
     public void test(){
         try {
-            contentDataBean.upDate();
+            TourContentData.upDate();
             System.out.println();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();

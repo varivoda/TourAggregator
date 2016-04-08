@@ -1,7 +1,7 @@
 /**
  * Created by ivan on 16.12.15.
  */
-import controller.dao.impl.DaoClientImpl;
+import controller.dao.impl.ClientDAOImpl;
 import model.client.Client;
 import org.junit.Test;
 
@@ -19,7 +19,7 @@ public class CRUDClientTests {
 //        newClient.setFullName("Ivanov Ivan Ivanovich");
 //        newClient.setPassword("Password");
 //
-//        DaoClientImpl cs = new DaoClientImpl();
+//        ClientDAOImpl cs = new ClientDAOImpl();
 //        cs.persist(newClient);
 //
 //        Client selClient = cs.findById(newClient.getClientId());
@@ -48,7 +48,7 @@ public class CRUDClientTests {
         newClient.setFullName("Ivanov Ivan Ivanovich");
         newClient.setPassword("Password");
 
-        DaoClientImpl cs = new DaoClientImpl();
+        ClientDAOImpl cs = new ClientDAOImpl();
         cs.persist(newClient);
 
         Client selClient = cs.findByEmail(newClient.getEmail());

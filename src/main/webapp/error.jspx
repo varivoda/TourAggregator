@@ -10,12 +10,21 @@
 <html>
 <head>
     <title>Error</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
 </head>
-<body>
+<body class="main" style="background-color: whitesmoke">
 
-Message:
+<div class="center">
+
+    <h1>Ops!</h1>
+
+<p>Message:
 
 <c:out value="${exception.getMessage()}"/>
+
+</p>
+
+</div>
 
 </body>
 </html>

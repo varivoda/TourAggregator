@@ -5,15 +5,16 @@
 
     <head>
         <title>Personal area</title>
-        <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="css/style.css"/>
     </head>
 
-<body class="body">
+<body class="body" background="../images/bg/bg3.jpg">
 
 <c:if test="${not authorized}">
-    <c:redirect url="../index.html"/>
+    <c:redirect url="../notAuthorize.html"/>
 </c:if>
 
+<div class="main">
 <div class="toolBar">
     <table>
 
@@ -43,7 +44,7 @@
         </tr>
     </table>
 </div>
-
+</div>
 
 </body>
 

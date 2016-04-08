@@ -1,6 +1,6 @@
 package controller.servlets;
 
-import controller.dao.impl.DaoClientImpl;
+import controller.dao.impl.ClientDAOImpl;
 import model.client.Client;
 
 import java.io.IOException;
@@ -18,7 +18,7 @@ import javax.servlet.http.HttpSession;
 public class LoginServlet extends HttpServlet {
 
 @EJB
-private DaoClientImpl clientService;
+private ClientDAOImpl clientService;
 
 protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

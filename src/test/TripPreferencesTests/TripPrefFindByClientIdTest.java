@@ -1,6 +1,6 @@
 package TripPreferencesTests;
 
-import controller.dao.impl.DaoTripPreferencesImpl;
+import controller.dao.impl.TripPreferencesDAOImpl;
 import model.client.TripPreferences;
 import org.junit.Test;
 
@@ -13,17 +13,17 @@ public class TripPrefFindByClientIdTest {
 
     @Test
     public void findByClientId(){
-        DaoTripPreferencesImpl daoTripPreferencesImpl = new DaoTripPreferencesImpl();
+        TripPreferencesDAOImpl tripPreferencesDAOImpl = new TripPreferencesDAOImpl();
 
-        List<TripPreferences> tripPreferences = daoTripPreferencesImpl.findByClientId(5);
+        List<TripPreferences> tripPreferences = tripPreferencesDAOImpl.findByClientId(5);
 
     }
 
     @Test
     public void findAll(){
-        DaoTripPreferencesImpl daoTripPreferencesImpl = new DaoTripPreferencesImpl();
+        TripPreferencesDAOImpl tripPreferencesDAOImpl = new TripPreferencesDAOImpl();
 
-        List<TripPreferences> tripPreferences = daoTripPreferencesImpl.findAll();
+        List<TripPreferences> tripPreferences = tripPreferencesDAOImpl.findAll();
     }
 
 

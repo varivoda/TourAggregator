@@ -27,7 +27,7 @@
 //        return true;
 //    }
 //
-//    public static Set<String> getTransportKinds(){
+//    public static Set<String> getTransportKindsAsArray(){
 //        return elements;
 //    }
 //

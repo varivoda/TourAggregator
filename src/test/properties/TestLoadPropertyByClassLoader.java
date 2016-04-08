@@ -3,7 +3,6 @@ package properties;
 import org.junit.Test;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
@@ -21,7 +20,7 @@ public class TestLoadPropertyByClassLoader {
 //            ClassLoader classLoader = cls.getClassLoader();
 //            Class cl = Class.forName("java.util.Properties");
 //            ClassLoader classLoader = cls.getClassLoader();
-            InputStream inputStream = cls.getClassLoader().getResourceAsStream("initData.properties");
+            InputStream inputStream = cls.getClassLoader().getResourceAsStream("src/initData.properties");
             Properties properties = new Properties();
             properties.load(inputStream);
 
@@ -39,7 +38,7 @@ public class TestLoadPropertyByClassLoader {
     public void testRelPath(){
         try {
 //            InputStream inputStream = new FileInputStream("/home/ivan/IdeaProjects/TourAgregator/src/resources/initData.properties");
-            InputStream inputStream = new FileInputStream("./initData.properties");
+            InputStream inputStream = new FileInputStream("src/initData.properties");
             Properties properties = new Properties();
             properties.load(inputStream);
             System.out.println();

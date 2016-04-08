@@ -1,6 +1,6 @@
 package controller.servlets;
 
-import controller.dao.impl.DaoClientImpl;
+import controller.dao.impl.ClientDAOImpl;
 import model.client.Client;
 
 import javax.ejb.EJB;
@@ -20,7 +20,7 @@ import java.io.UnsupportedEncodingException;
 public class RegistrationServlet extends HttpServlet {
 
     @EJB
-    private DaoClientImpl clientService;
+    private ClientDAOImpl clientService;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException{
 

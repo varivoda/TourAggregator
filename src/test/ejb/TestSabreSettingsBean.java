@@ -1,6 +1,6 @@
 //package ejb;
 //
-//import controller.gds.sabre.SabrePropertiesBean;
+//import controller.gds.sabre.SabreProperties;
 //import org.junit.Assert;
 //import org.junit.BeforeClass;
 //import org.junit.Test;
@@ -12,12 +12,12 @@
 // */
 //public class TestSabreSettingsBean {
 //
-//    private static SabrePropertiesBean sbp;
+//    private static SabreProperties sbp;
 //
 //    @BeforeClass
 //    public static void setUpClass(){
 //        try {
-//            sbp = new SabrePropertiesBean();
+//            sbp = new SabreProperties();
 //        } catch (IOException e) {
 //            e.printStackTrace();
 //        }

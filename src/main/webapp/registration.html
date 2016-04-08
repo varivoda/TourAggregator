@@ -3,34 +3,30 @@
 <head>
     <meta charset="utf-8">
     <title>Registration</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
-<body>
 
-<form action="/Registration" method="post">
-    <table>
-        <tr>
-            <td>Email</td>
-            <td><input type="text" name="email"></td>
-        </tr>
-        <tr>
-            <td>Full name</td>
-            <td><input type="text" name="fullName"></td>
-        </tr>
-        <tr>
-            <td>Password</td>
-            <td><input type="password"  name="password"></td>
-        </tr>
-        <tr>
-            <td>Cofirm password</td>
-            <td><input type="password" name="confirmPassword"></td>
-        </tr>
-        <tr>
-            <td><input type="submit" value="submit"></td>
-        </tr>
+<body class="body" background="images/bg/bg2.jpg">
 
+<div class="main">
 
-    </table>
-</form>
+    <form class="registration" action="/Registration" method="post">
 
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" />
+
+        <label for="fullName">Full name</label>
+        <input type="text" id="fullName" name="fullName"/>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" />
+
+        <label for="confPassword">Confirm password</label>
+        <input type="password" id="confPassword" name="confPassword">
+
+        <input type="submit" value="Submit"/>
+    </form>
+
+</div>
 </body>
 </html>

@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="TourAggregator:war exploded">
-    <output-path>$PROJECT_DIR$/target/touragregator</output-path>
+    <output-path>$PROJECT_DIR$/target/TourAggregator</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
@@ -48,10 +48,11 @@
           <element id="library" level="project" name="Maven: org.glassfish.jersey.core:jersey-server:sources:2.0" />
           <element id="library" level="project" name="Maven: org.glassfish.jersey.containers:jersey-container-servlet-core:sources:2.0" />
           <element id="library" level="project" name="Maven: org.glassfish.jersey.containers:jersey-container-servlet:sources:2.0" />
+          <element id="library" level="project" name="Maven: org.apache.openejb:javaee-api:6.0-6" />
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/target/touragregator/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/target/TourAggregator/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="TourAggregator/web/Web" />
     </root>

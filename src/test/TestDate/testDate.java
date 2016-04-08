@@ -1,7 +1,5 @@
 package TestDate;
 
-import controller.selecttourservice.TourService;
-import controller.selecttourservice.TourServiceImpl;
 import org.junit.Test;
 
 import java.text.ParseException;
@@ -29,8 +27,6 @@ public class testDate {
         strDate = simpleDateFormat.format(date);
         System.out.println();
 
-        TourService ts = new TourServiceImpl();
-//        ts.createTour()
 
     }
 }

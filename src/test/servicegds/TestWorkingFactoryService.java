@@ -1,6 +1,6 @@
 //package servicegds;
 //
-//import controller.dao.impl.DaoClientImpl;
+//import controller.dao.impl.ClientDAOImpl;
 //import controller.gds.*;
 //import model.client.TripPreferences;
 //import org.junit.Before;
@@ -19,7 +19,7 @@
 //    FactoryService factoryService;
 //
 //    @EJB
-//    DaoClientImpl daoClient;
+//    ClientDAOImpl daoClient;
 //
 //    @Before
 //    public void init(){
@@ -28,7 +28,7 @@
 //
 //    @Test
 //    public void test(){
-//            TransportationService transportationService = factoryService.getAirService(NameGDS.Sabre);
+//            TransportationService transportationService = factoryService.getTransportationService(NameGDS.Sabre);
 //
 //        transportationService.bookFlight(1);
 //        transportationService.getFlightsByLengthOfDay(tripPreferences);

@@ -1,5 +1,5 @@
-import controller.dao.impl.DaoClientImpl;
-import controller.dao.impl.DaoTripPreferencesImpl;
+import controller.dao.impl.ClientDAOImpl;
+import controller.dao.impl.TripPreferencesDAOImpl;
 import model.client.Client;
 import model.client.TripPreferences;
 import org.junit.Test;
@@ -17,8 +17,8 @@ public class CRUDTpirPreferenceTests {
     @Test
     public void InsertUpdateTest(){
         TripPreferences tp = new TripPreferences();
-        DaoTripPreferencesImpl tps = new DaoTripPreferencesImpl();
-        DaoClientImpl cs = new DaoClientImpl();
+        TripPreferencesDAOImpl tps = new TripPreferencesDAOImpl();
+        ClientDAOImpl cs = new ClientDAOImpl();
         Client client = cs.findById(1);
 
         Date deaptureDate = null;

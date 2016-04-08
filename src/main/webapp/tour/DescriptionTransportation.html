@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Description transportation</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+</head>
+<body class="main" background="../images/bg/bg2.jpg">
+
+<div class="main">
+
+    <form class="transportation" action="" method="post">
+
+        <table>
+            <tr>
+                <td><label for="pointOfSaleCode">Point of sale code*</label></td>
+                <td>
+                    <select id="pointOfSaleCode" name="pointOfSaleCode">
+                        <option value="US">US</option>
+                        <option value="RUS">RUS</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td ><label for="originCode">Origin code*</label></td>
+
+                <td><select id="originCode" name="originCode">
+                    <option value="JFK">JFK</option>
+                    <option value="LAX">LAX</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td> <label for="destinationCode">Destination code*</label></td>
+
+                <td>
+                    <select id="destinationCode" name="destinationCode">
+                    <option value="JFK">JFK</option>
+                    <option value="LAX">LAX</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="departDate">Departure date*</label></td>
+                <td><input type="date" id="departDate" name="departureDate"/></td>
+            </tr>
+            <tr>
+                <td><label for="lengthOfStay">Days*</label></td>
+                <td><input type="number" id="lengthOfStay" name="lengthOfStay" /></td>
+            </tr>
+            <tr>
+                <td><label for="maxFare">Max fare</label></td>
+                <td><input type="text" id="maxFare" name="maxFare"></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+
+        <!--<label for=""></label>-->
+        <!--<input type="" id="" name="">-->
+
+
+        <input type="submit" value="Submit"/>
+    </form>
+
+</div>
+
+
+</body>
+</html>

@@ -1,6 +1,6 @@
 package properties;
 
-import model.ContentDataBean;
+import model.TourContentData;
 import org.junit.Test;
 
 import javax.naming.Context;
@@ -16,7 +16,7 @@ public class TestInitializeAndUpDateDataTypes {
     public void testInitialize(){
         try {
             Context ctx = new InitialContext();
-            ContentDataBean dt = (ContentDataBean) ctx.lookup("ContentDataBean");
+            TourContentData dt = (TourContentData) ctx.lookup("TourContentData");
             System.out.println();
         } catch (NamingException e) {
             e.printStackTrace();

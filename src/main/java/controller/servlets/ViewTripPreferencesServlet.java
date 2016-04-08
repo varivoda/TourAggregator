@@ -1,6 +1,6 @@
 package controller.servlets;
 
-import controller.dao.impl.DaoTripPreferencesImpl;
+import controller.dao.impl.TripPreferencesDAOImpl;
 import model.client.TripPreferences;
 
 import javax.ejb.EJB;
@@ -19,14 +19,14 @@ import java.util.List;
 public class ViewTripPreferencesServlet extends HttpServlet {
 
     @EJB
-    private DaoTripPreferencesImpl daoTripPreferencesImpl;
+    private TripPreferencesDAOImpl tripPreferencesDAOImpl;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         Integer clientId = (Integer) req.getSession().getAttribute("id");
 
-        List<TripPreferences> tripPreferences = daoTripPreferencesImpl.findByClientId(clientId);
+        List<TripPreferences> tripPreferences = tripPreferencesDAOImpl.findByClientId(clientId);
 
         if (tripPreferences != null) {
             req.setAttribute("tripPreferences", tripPreferences.toArray());
