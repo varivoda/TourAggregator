@@ -9,19 +9,19 @@
 <html>
 <head>
     <title>Rent car</title>
-    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/style.css"/>
 </head>
 
-<body class="body" background="../images/bg/bg3.jpg">
+<body class="body" background="../../images/bg/bg3.jpg">
 
 <div class="center">
 
     <ul>
-        <li><a href="../client/personalArea.jspx">Main</a></li>
-        <li><a href="../tour/DescriptionTransportation.jsp">Transportation</a></li>
+        <li><a href="../../client/personalArea.jspx">Main</a></li>
+        <li><a href="DescriptionTransportation.jsp">Transportation</a></li>
         <li><a href="../tour/DescriptionHotel.jsp">Hotel</a></li>
-        <li><a href="../tour/DescriptionRentCar.jsp">Rent car</a></li>
-        <li><a href="../tour/ViewMyTour.jspx">View my tour</a></li>
+        <li><a href="DescriptionRentCar.jsp">Rent car</a></li>
+        <li><a href="../ViewMyTour.jspx">View my tour</a></li>
         <li style="float:right" >
             <div>
                 <c:out value="${fullName}"/> <br/>

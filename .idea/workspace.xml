@@ -2,27 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b27ebe12-8952-4835-b1b4-f89f0a9c0d9e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/controller/InvalidDataException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/controller/servlets/FindTransportationServlet.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/tour/DescriptionHotel.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/tour/DescriptionRentCar.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/tour/DescriptionTransportation.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/tour/DesriptionRentCar.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/tour/createEatingPlace.html" afterPath="$PROJECT_DIR$/src/main/webapp/old/createEatingPlace.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/tour/createGeneralInformation.html" afterPath="$PROJECT_DIR$/src/main/webapp/old/createGeneralInformation.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/tour/createResidentLocation.html" afterPath="$PROJECT_DIR$/src/main/webapp/tour/DescriptionHotel.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/tour/createTripPreferences.html" afterPath="$PROJECT_DIR$/src/main/webapp/old/createTripPreferences.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/tour/createTripPreferences.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/old/createTripPreferences.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/tour/createTripPreferences.jspx" afterPath="$PROJECT_DIR$/src/main/webapp/old/createTripPreferences.jspx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/tour/viewTripPreferences.jspx" afterPath="$PROJECT_DIR$/src/main/webapp/tour/ViewMyTour.jspx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/controller/AccountNotFoundException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/tour/DescriptionHotel.jspx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/tour/DescriptionRentCar.jspx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/tour/DescriptionTransportation.jspx" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/old/createEatingPlace.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/old/createGeneralInformation.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/old/createTripPreferences.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/old/createTripPreferences.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/old/createTripPreferences.jspx" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/tour/DescriptionHotel.html" afterPath="$PROJECT_DIR$/src/main/webapp/tour/old/DescriptionHotel.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/tour/DescriptionHotel.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/tour/old/DescriptionHotel.jsp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/tour/DescriptionRentCar.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/tour/old/DescriptionRentCar.jsp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/tour/DescriptionTransportation.html" afterPath="$PROJECT_DIR$/src/main/webapp/tour/old/DescriptionTransportation.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/tour/DescriptionTransportation.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/tour/old/DescriptionTransportation.jsp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/tour/DesriptionRentCar.html" afterPath="$PROJECT_DIR$/src/main/webapp/tour/old/DesriptionRentCar.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controller/servlets/ViewTripPreferencesServlet.java" afterPath="$PROJECT_DIR$/src/main/java/controller/servlets/ViewTripPreferencesServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/model/Money.java" afterPath="$PROJECT_DIR$/src/main/java/model/Money.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/model/client/DescriptionTransportation.java" afterPath="$PROJECT_DIR$/src/main/java/model/client/DescriptionTransportation.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controller/servlets/LoginServlet.java" afterPath="$PROJECT_DIR$/src/main/java/controller/servlets/LoginServlet.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/client/personalArea.jspx" afterPath="$PROJECT_DIR$/src/main/webapp/client/personalArea.jspx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/css/style.css" afterPath="$PROJECT_DIR$/src/main/webapp/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/tour/DescriptionTransportation.html" afterPath="$PROJECT_DIR$/src/main/webapp/tour/DescriptionTransportation.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/tour/ViewMyTour.jspx" afterPath="$PROJECT_DIR$/src/main/webapp/tour/ViewMyTour.jspx" />
     </list>
     <ignored path="TourAgregator.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -77,88 +76,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="tmp.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/client/tmp.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.75">
-              <caret line="22" column="34" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
-              <folding>
-                <element signature="n#style#0;n#li#5;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="personalArea.jspx" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/client/personalArea.jspx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.89824563">
-              <caret line="22" column="51" selection-start-line="22" selection-start-column="51" selection-end-line="22" selection-end-column="51" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="DescriptionHotel.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/tour/DescriptionHotel.jsp">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/tour/old/DescriptionHotel.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="10.291667">
-              <caret line="26" column="50" selection-start-line="26" selection-start-column="50" selection-end-line="26" selection-end-column="50" />
+            <state vertical-scroll-proportion="-13.458333">
+              <caret line="64" column="7" selection-start-line="14" selection-start-column="0" selection-end-line="64" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="DescriptionRentCar.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/tour/DescriptionRentCar.jsp">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/tour/old/DescriptionRentCar.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.125">
-              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="53" />
+            <state vertical-scroll-proportion="-14.083333">
+              <caret line="36" column="14" selection-start-line="8" selection-start-column="0" selection-end-line="36" selection-end-column="14" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DescriptionTransportation.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/tour/DescriptionTransportation.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.208334">
-              <caret line="41" column="51" selection-start-line="41" selection-start-column="51" selection-end-line="41" selection-end-column="51" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="error.jspx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/error.jspx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.3333334">
-              <caret line="7" column="40" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DescriptionHotel.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/tour/DescriptionHotel.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-26.25">
-              <caret line="42" column="13" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
-              <folding>
-                <element signature="n#style#0;n#li#5;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DesriptionRentCar.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/tour/DesriptionRentCar.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.125">
-              <caret line="5" column="68" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="68" />
-              <folding>
-                <element signature="n#style#0;n#li#5;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -166,21 +99,79 @@
       <file leaf-file-name="ViewMyTour.jspx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/tour/ViewMyTour.jspx">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.25">
-              <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+            <state vertical-scroll-proportion="-5.5833335">
+              <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DescriptionTransportation.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/tour/DescriptionTransportation.html">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.375">
-              <caret line="7" column="53" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="53" />
-              <folding>
-                <element signature="n#style#0;n#li#5;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="-0.625">
+              <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="64" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="personalArea.jspx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/client/personalArea.jspx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-15.625">
+              <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DescriptionHotel.jspx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/tour/DescriptionHotel.jspx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-31.875">
+              <caret line="51" column="20" selection-start-line="51" selection-start-column="20" selection-end-line="51" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DescriptionRentCar.jspx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/tour/DescriptionRentCar.jspx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-15.0">
+              <caret line="24" column="56" selection-start-line="24" selection-start-column="56" selection-end-line="24" selection-end-column="56" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DescriptionTransportation.jspx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/tour/DescriptionTransportation.jspx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-53.125">
+              <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoginServlet.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/controller/servlets/LoginServlet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="2.3447537">
+              <caret line="86" column="0" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DescriptionTransportation.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/tour/old/DescriptionTransportation.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-14.708333">
+              <caret line="96" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -191,12 +182,12 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="XSLT Stylesheet" />
-        <option value="Jspx File" />
         <option value="Interface" />
         <option value="Enum" />
-        <option value="Class" />
         <option value="HTML File" />
         <option value="Jsp File" />
+        <option value="Class" />
+        <option value="Jspx File" />
       </list>
     </option>
   </component>
@@ -216,11 +207,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/controller/utils/JsonUtilImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/controller/gds/sabre/TransportationServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/controller/tour/TourContentBean.java" />
-        <option value="$PROJECT_DIR$/src/main/java/controller/servlets/TestServlet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/controller/selecttourservice/TourServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/test/TestDate/testDate.java" />
         <option value="$PROJECT_DIR$/src/test/ParsingCategories.java" />
         <option value="$PROJECT_DIR$/src/test/testJsonUtil/testJson.java" />
@@ -265,7 +251,12 @@
         <option value="$PROJECT_DIR$/src/main/webapp/tour/DescriptionRentCar.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/tour/DescriptionHotel.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/tour/DescriptionTransportation.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/AccountNotFoundException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/servlets/LoginServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/tour/DescriptionRentCar.jspx" />
         <option value="$PROJECT_DIR$/src/main/webapp/tour/ViewMyTour.jspx" />
+        <option value="$PROJECT_DIR$/src/main/webapp/tour/DescriptionTransportation.jspx" />
+        <option value="$PROJECT_DIR$/src/main/webapp/tour/DescriptionHotel.jspx" />
         <option value="$PROJECT_DIR$/src/main/webapp/client/personalArea.jspx" />
       </list>
     </option>
@@ -432,32 +423,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TourAgregator" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TourAgregator" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="client" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -480,13 +445,91 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TourAgregator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TourAgregator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TourAgregator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TourAgregator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TourAgregator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TourAgregator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="servlets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/old" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/tour/old" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.3237519" />
@@ -518,11 +561,11 @@
       <recent name="com.var.agregator.jpa" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp/tour/old" />
       <recent name="$PROJECT_DIR$/src/main/webapp/old" />
       <recent name="$PROJECT_DIR$/src/main/webapp" />
       <recent name="$PROJECT_DIR$/src/main/java/other" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
-      <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
   <component name="RunManager" selected="TomEE Server.Local TomEE">
@@ -1227,7 +1270,7 @@
       <workItem from="1459574827957" duration="44108000" />
       <workItem from="1460101662771" duration="8892000" />
       <workItem from="1460382736131" duration="2081000" />
-      <workItem from="1460521347609" duration="4871000" />
+      <workItem from="1460521347609" duration="8352000" />
     </task>
     <task id="LOCAL-00001" summary="Изменена структура БД. Все работает Без Hibernate">
       <created>1447781698711</created>
@@ -1379,7 +1422,13 @@
       <option name="project" value="LOCAL" />
       <updated>1460112601576</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Обнавлен окончаельный интерфейс. Добавлены JSP файлы.">
+      <created>1460542575897</created>
+      <option name="number" value="00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1460542575897</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1415,7 +1464,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="322018000" />
+    <option name="totallyTimeSpent" value="325499000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -1431,36 +1480,36 @@
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3283582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.49402985" sideWeight="0.49130765" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41343284" sideWeight="0.5086924" order="13" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3283582" sideWeight="0.49730977" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16477703" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25820896" sideWeight="0.49130765" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30298507" sideWeight="0.49577248" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2857143" sideWeight="0.5059701" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28420258" sideWeight="0.49402985" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.266062" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3283582" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.49850747" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3283582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19402985" sideWeight="0.49130765" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31791046" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25820896" sideWeight="0.49130765" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30298507" sideWeight="0.49577248" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2857143" sideWeight="0.5059701" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28420258" sideWeight="0.49402985" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3283582" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985073" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.06417911" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15522388" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1600,34 +1649,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/other/RestUtilImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="33" selection-start-line="0" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/other/TourContentBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="2" selection-start-line="0" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/other/SimpleDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/dao/util/DaoUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controller/dao/ClientDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1717,14 +1738,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/servlets/LoginServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1870,65 +1883,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.75">
-          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/old/createEatingPlace.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/old/createGeneralInformation.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/old/createTripPreferences.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/old/createTripPreferences.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/old/createTripPreferences.jspx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.25">
-          <caret line="11" column="34" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/client/tmp.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-13.75">
           <caret line="22" column="34" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
-          <folding>
-            <element signature="n#style#0;n#li#5;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/tour/DescriptionHotel.html">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/tour/old/DescriptionHotel.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-26.25">
           <caret line="42" column="13" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
@@ -1938,7 +1901,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/tour/DesriptionRentCar.html">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/tour/old/DesriptionRentCar.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.125">
           <caret line="5" column="68" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="68" />
@@ -1948,45 +1911,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/tour/DescriptionTransportation.html">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/tour/old/DescriptionTransportation.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.375">
           <caret line="7" column="53" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="53" />
           <folding>
             <element signature="n#style#0;n#li#5;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/tour/DescriptionHotel.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="10.291667">
-          <caret line="26" column="50" selection-start-line="26" selection-start-column="50" selection-end-line="26" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/tour/DescriptionRentCar.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.125">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/tour/DescriptionTransportation.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.208334">
-          <caret line="41" column="51" selection-start-line="41" selection-start-column="51" selection-end-line="41" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/tour/ViewMyTour.jspx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.25">
-          <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1998,10 +1929,97 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/AccountNotFoundException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+          <folding>
+            <element signature="e#236#237#0" expanded="true" />
+            <element signature="e#259#260#0" expanded="true" />
+            <element signature="e#308#309#0" expanded="true" />
+            <element signature="e#332#333#0" expanded="true" />
+            <element signature="e#402#403#0" expanded="true" />
+            <element signature="e#437#438#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/tour/old/DescriptionHotel.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.458333">
+          <caret line="64" column="7" selection-start-line="14" selection-start-column="0" selection-end-line="64" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/tour/old/DescriptionRentCar.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.083333">
+          <caret line="36" column="14" selection-start-line="8" selection-start-column="0" selection-end-line="36" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/tour/old/DescriptionTransportation.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.708333">
+          <caret line="96" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.625">
+          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/tour/ViewMyTour.jspx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.5833335">
+          <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/client/personalArea.jspx">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.89824563">
-          <caret line="22" column="51" selection-start-line="22" selection-start-column="51" selection-end-line="22" selection-end-column="51" />
+        <state vertical-scroll-proportion="-15.625">
+          <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/tour/DescriptionHotel.jspx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-31.875">
+          <caret line="51" column="20" selection-start-line="51" selection-start-column="20" selection-end-line="51" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/tour/DescriptionRentCar.jspx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.0">
+          <caret line="24" column="56" selection-start-line="24" selection-start-column="56" selection-end-line="24" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/tour/DescriptionTransportation.jspx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-53.125">
+          <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/servlets/LoginServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.3447537">
+          <caret line="86" column="0" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
           <folding />
         </state>
       </provider>
