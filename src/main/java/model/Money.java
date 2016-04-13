@@ -7,22 +7,22 @@ import java.math.BigDecimal;
  */
 public class Money {
 
-    private BigDecimal value;
+    private java.math.BigDecimal value;
     private String currencyCode;
 
     public Money() {
     }
 
-    public Money(BigDecimal value, String currencyCode) {
+    public Money(java.math.BigDecimal value, String currencyCode) {
         this.value = value;
         this.currencyCode = currencyCode;
     }
 
-    public BigDecimal getValue() {
+    public java.math.BigDecimal getValue() {
         return value;
     }
 
-    public void setValue(BigDecimal value) {
+    public void setValue(java.math.BigDecimal value) {
         this.value = value;
     }
 

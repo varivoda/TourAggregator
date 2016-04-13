@@ -34,10 +34,42 @@
     /*height: 50px;*/
 /*}*/
 
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+    /*background-color: #333;*/
+    /*background-image: linear-gradient(to bottom, #fff, #ddd);*/
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: #5dd9a1;
+}
+
 div.center{
-    width: 500px; /* Ширина элемента в пикселах */
+    width: 600px; /* Ширина элемента в пикселах */
+    height: 700px;
     padding: 10px; /* Поля вокруг текста */
     margin: auto;
+    /*padding:15px 20px;*/
+    background:#f5f5f5;
+    background-color:rgba(245,245,245,0.5);
+    border-radius: 10px;
 }
 
 div.toolBar{
@@ -93,7 +125,7 @@ form.transportation{
     margin:150px auto;
     padding:15px 20px;
     background:#f5f5f5;
-    background-color:rgba(245,245,245,0.7);
+    background-color:rgba(245,245,245,0);
     border-radius: 10px;
 }
 label{

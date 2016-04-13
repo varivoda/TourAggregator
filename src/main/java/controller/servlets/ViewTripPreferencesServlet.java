@@ -34,7 +34,7 @@ public class ViewTripPreferencesServlet extends HttpServlet {
             req.setAttribute("tripPreferences", null);
         }
 
-        getServletContext().getRequestDispatcher("/tour/viewTripPreferences.jspx").forward(req,resp);
+        getServletContext().getRequestDispatcher("/tour/ViewMyTour.jspx").forward(req,resp);
     }
 
     @Override

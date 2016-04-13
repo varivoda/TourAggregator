@@ -2,9 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>creating resident location</title>
+    <title>Hotel</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
 </head>
 <body>
+
+<div class="center">
+
+    <ul>
+        <li><a href="../client/personalArea.jspx">Main</a></li>
+        <li><a href="../tour/DescriptionTransportation.html">Transportation</a></li>
+        <li><a href="../tour/DescriptionHotel.html">Hotel</a></li>
+        <li><a href="../tour/DesriptionRentCar.html">Rent car</a></li>
+        <li><a href="../tour/ViewMyTour.jspx">View my tour</a></li>
+        <li style="float:right" >
+            <div>
+                Ivan Varivoda
+                <form action="/Logout" method="post">
+                    <input type="submit" value="exit"/>
+                </form>
+            </div>
+        </li>
+
+    </ul>
+
 <form name="createResidentLocation" action="" method="post">
     Enter the information about the resident location <br>
     <table>
@@ -28,6 +49,9 @@
             <td><input type="submit" value="submite"></td>
         </tr>
     </table>
+
 </form>
+
+</div>
 </body>
 </html>

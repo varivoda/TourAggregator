@@ -2,6 +2,7 @@ package model.client;
 
 import model.Money;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 /**
@@ -15,8 +16,8 @@ public class DescriptionTransportation {
     private Date departDate;
     private Date arrivalDate;
     private int lengthOfStay;
-    private Money minFare;
-    private Money maxFare;
+    private BigDecimal minFare;
+    private BigDecimal maxFare;
     private String pointOfSaleCode;
 
     public String getLocationCountry() {
@@ -70,19 +71,19 @@ public class DescriptionTransportation {
         this.lengthOfStay = lengthOfStay;
     }
 
-    public Money getMinFare() {
+    public BigDecimal getMinFare() {
         return minFare;
     }
 
-    public void setMinFare(Money minFare) {
+    public void setMinFare(BigDecimal minFare) {
         this.minFare = minFare;
     }
 
-    public Money getMaxFare() {
+    public BigDecimal getMaxFare() {
         return maxFare;
     }
 
-    public void setMaxFare(Money maxFare) {
+    public void setMaxFare(BigDecimal maxFare) {
         this.maxFare = maxFare;
     }
 

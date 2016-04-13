@@ -5,7 +5,7 @@
 
     <head>
         <title>Personal area</title>
-        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/style.css"/>
     </head>
 
 <body class="body" background="../images/bg/bg3.jpg">
@@ -14,36 +14,24 @@
     <c:redirect url="../notAuthorize.html"/>
 </c:if>
 
-<div class="main">
-<div class="toolBar">
-    <table>
+<div class="center">
 
-        <tr>
-            <td>
-                <a href="../index.html">Main page</a>
-            </td>
-            <td>
-                <form action="/InitData" method="post">
-                    <input type="submit" value="Create preferences"/>
-                </form>
-            </td>
-            <td>
-                <form name="viewTripPreferences" action="/ViewTripPreferences" method="get">
-                    <input type="submit" value="View preferences"/>
-                </form>
-            </td>
-            <td>
-                <div class="persArea">
-                    <c:out value="${fullName}"/> <br/>
-                    <form action="/Logout" method="post">
-                        <input type="submit" value="exit"/>
-                    </form>
-                </div>
-            </td>
-            <td></td>
-        </tr>
-    </table>
-</div>
+    <ul>
+        <li><a href="../client/personalArea.jspx">Main</a></li>
+        <li><a href="../tour/DescriptionTransportation.jsp">Transportation</a></li>
+        <li><a href="../tour/DescriptionHotel.jsp">Hotel</a></li>
+        <li><a href="../tour/DescriptionRentCar.jsp">Rent car</a></li>
+        <li><a href="../tour/ViewMyTour.jspx">View my tour</a></li>
+        <li style="float:right" >
+            <div>
+            <c:out value="${fullName}"/> <br/>
+            <form action="/Logout" method="post">
+            <input type="submit" value="exit"/>
+            </form>
+            </div>
+        </li>
+
+    </ul>
 </div>
 
 </body>
