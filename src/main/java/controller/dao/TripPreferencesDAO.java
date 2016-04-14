@@ -8,6 +8,6 @@ import java.util.List;
  */
 public interface TripPreferencesDAO extends IDAO<TripPreferences, Integer> {
 
-    public List<TripPreferences> findByClientId(Integer clientId);
+    List<TripPreferences> findByClientId(Integer clientId);
 
 }

@@ -9,6 +9,6 @@ import model.tour.Tour;
  */
 public interface TourService {
 
-    public Tour createTour(TripPreferences tripPreferences);
-    public ResidentLocation serachResidentLocation(TripPreferences tripPreferences);
+    Tour createTour(TripPreferences tripPreferences);
+    ResidentLocation serachResidentLocation(TripPreferences tripPreferences);
 }

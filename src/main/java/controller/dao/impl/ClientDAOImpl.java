@@ -47,7 +47,7 @@ public class ClientDAOImpl implements ClientDAO {
         daoUtil.openCurrentSession();
         Query query = daoUtil.getCurrentSession().createQuery("from Client where email=:emailParam");
         query.setParameter("emailParam",email);
-        List<Client> clients = query.list();
+        List<Client> clients = (List<Client>) query.list();
         daoUtil.closeCurrentSession();
         if (clients == null || clients.isEmpty()){
             return null;

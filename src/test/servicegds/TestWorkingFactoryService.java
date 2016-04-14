@@ -30,8 +30,8 @@
 //    public void test(){
 //            TransportationService transportationService = factoryService.getTransportationService(NameGDS.Sabre);
 //
-//        transportationService.bookFlight(1);
-//        transportationService.getFlightsByLengthOfDay(tripPreferences);
+//        transportationService.bookTransportation(1);
+//        transportationService.getTransportationsFromDescriptionTransportation(tripPreferences);
 //        transportationService.getFlightsByTwoDates(tripPreferences);
 //
 //        CarService carService = factoryService.getCarService(NameGDS.Sabre);

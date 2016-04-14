@@ -1,21 +1,21 @@
 package controller.gds;
 
+import controller.exceptions.TransportationServiceException;
 import model.client.DescriptionTransportation;
-import model.client.TripPreferences;
 import model.tour.Transportation;
-import org.json.simple.parser.ParseException;
 
 import java.util.List;
 
 /**
  * Created by ivan on 30.03.16.
+ * Интерфейс, предоставляющий механизм поиска перелетов по данным, содержащимся в DescriptionTransportation
+ * Также интерфейс позволяет осуществлять заказ необходимого контента по идентификатору
  */
+
 public interface TransportationService {
 
-    public List<Transportation> getFlightsByLengthOfDay(DescriptionTransportation dt) throws Exception;
+    List<Transportation> getTransportationsFromDescriptionTransportation(DescriptionTransportation descriptionTransportation) throws TransportationServiceException;
 
-    public List<Transportation> getFlightsByTwoDates(DescriptionTransportation dt);
-
-    public <T> boolean bookFlight(T id);
+    boolean bookTransportation(Transportation transportation) throws TransportationServiceException;
 
 }

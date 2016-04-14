@@ -1,7 +1,7 @@
 package controller.servlets;
 
-import controller.AccountNotFoundException;
-import controller.InvalidDataException;
+import controller.exceptions.AccountNotFoundException;
+import controller.exceptions.InvalidDataException;
 import controller.dao.impl.ClientDAOImpl;
 import model.client.Client;
 

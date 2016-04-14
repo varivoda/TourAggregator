@@ -22,17 +22,24 @@ public class RegistrationServlet extends HttpServlet {
     @EJB
     private ClientDAOImpl clientService;
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException{
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        try {
-            request.setCharacterEncoding("utf-8");
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
+        /*
+        Установка кодировки запроса для работы с кириллицей
+        Получение параметров из запроса
+        Параметры должны приходить непустые и не нулевые
+         */
+        request.setCharacterEncoding("utf-8");
+
         String password = request.getParameter("password");
         String fullName = request.getParameter("fullName");
         String email = request.getParameter("email");
 
+
+        /*
+        Создание экземпляра клиента и установка его полей
+        id устанавливается 0. Увеличение идентификатора отводится на базу данных
+         */
         Client newClient = new Client();
 
         newClient.setId(0);
@@ -40,55 +47,16 @@ public class RegistrationServlet extends HttpServlet {
         newClient.setFullName(fullName);
         newClient.setEmail(email);
 
+        /*
+        Сохранение экземпляра клиента в БД с обработкой исключения,
+        и переход на страничку успешной регестрации
+
+         */
         clientService.persist(newClient);
-        try {
-            getServletContext().getRequestDispatcher("/successfulRegistration.html").forward(request, response);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-//
-//            con = SimpleDAO.getConnection();
-////            st = con.createStatement();
-//            String insertClientString = "insert into clients(login, password, name, email)  values(?, ?, ?, ?)";
-//
-//
-//            insertClient = con.prepareStatement(insertClientString);
-//            insertClient.setString(1,login);
-//            insertClient.setString(2,password);
-//            insertClient.setString(3,fullName);
-//            insertClient.setString(4,email);
-//
-//            insertClient.executeUpdate();
-//
-//            getServletContext().getRequestDispatcher("/index.html").forward(request, response);
-//
-//            try {
-//                request.setAttribute("exception", e);
-//                getServletContext().getRequestDispatcher("/error.jspx").forward(request,response);
-//            } catch (IOException e1) {
-//                e1.printStackTrace();
-//            }
-//            e.printStackTrace();
-//
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        } finally {
-//            if(rs != null)
-//                try {
-//                    rs.close();
-//                } catch (SQLException e) {e.printStackTrace();}
-//            if(st != null)
-//                try {
-//                    st.close();
-//                } catch (SQLException e) {e.printStackTrace();}
-//            if (con != null)
-//                try {
-//                    con.close();
-//                } catch (SQLException e) {e.printStackTrace();}
-//        }
+        response.sendRedirect("/successfulRegistration.html");
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException{
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request,response);
     }
 }

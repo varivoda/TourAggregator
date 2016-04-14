@@ -1,7 +1,10 @@
 package controller.gds.sabre;
 
+import javax.ejb.LocalBean;
+import javax.ejb.Singleton;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.ObjectInput;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
@@ -9,25 +12,26 @@ import java.util.Properties;
 /**
  * Created by ivan on 01.04.16.
  */
-class SabreProperties {
+@Singleton
+@LocalBean
+public class SabreProperties {
 
-    private static Map<String, String> headers;
+    private Map<String, String> headers;
 
-    private static String flightsURI;
-    private static String hotelsURI;
-    private static String carsURI;
+    private String flightsURI;
+    private String hotelsURI;
+    private String carsURI;
 
-    static {
-        try {
-            upDate();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public SabreProperties() throws IOException {
+        upDate();
     }
-    // Updating initial data
-    public static void upDate() throws IOException {
 
-        InputStream inputStream = SabreProperties.class.getClassLoader().getResourceAsStream("src/sabreSettings.properties");
+    // Updating initial data
+    public void upDate() throws IOException {
+
+        Class saClass = SabreProperties.class;
+        ClassLoader classLoader = saClass.getClassLoader();
+        InputStream inputStream = SabreProperties.class.getClassLoader().getResourceAsStream("sabreSettings.properties");
         Properties properties = new Properties();
         properties.load(inputStream);
 
@@ -36,7 +40,7 @@ class SabreProperties {
         carsURI = properties.getProperty("carsURL");
 
         if (headers == null){
-            headers = new HashMap<String, String>();
+            headers = new HashMap<String, String >();
         }else{
             headers.clear();
         }
@@ -49,15 +53,15 @@ class SabreProperties {
         return headers;
     }
 
-    static String getFlightsURI() {
+    public String getFlightsURI() {
         return flightsURI;
     }
 
-    static String getHotelsURI() {
+    public String getHotelsURI() {
         return hotelsURI;
     }
 
-    static String getCarsURI() {
+    public String getCarsURI() {
         return carsURI;
     }
 }

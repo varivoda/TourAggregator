@@ -11,7 +11,7 @@ import java.util.List;
  */
 public interface HotelService {
 
-    public List<ResidentLocation> getHotels(TripPreferences tripPreferences);
+    List<ResidentLocation> getHotels(TripPreferences tripPreferences);
 
-    public <T> boolean bookHotel(T id);
+    <T> boolean bookHotel(T id);
 }

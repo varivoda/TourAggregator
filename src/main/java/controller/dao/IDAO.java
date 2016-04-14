@@ -11,13 +11,13 @@ import java.util.List;
  */
 public interface IDAO<T,Id extends Serializable> {
 
-    public void persist(T entity);
+    void persist(T entity);
 
-    public void update(T entity);
+    void update(T entity);
 
-    public void delete(T entity);
+    void delete(T entity);
 
-    public void deleteById(Integer id);
+    void deleteById(Integer id);
 
     T findById(Id id);
 

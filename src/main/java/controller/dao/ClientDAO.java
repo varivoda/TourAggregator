@@ -7,6 +7,6 @@ import model.client.Client;
  */
 public interface ClientDAO extends IDAO<Client, Integer> {
 
-    public Client findByEmail(String email);
+    Client findByEmail(String email);
 
 }

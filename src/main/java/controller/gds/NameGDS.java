@@ -5,5 +5,5 @@ package controller.gds;
  */
 public enum NameGDS {
 
-    Sabre;
+    Sabre
 }

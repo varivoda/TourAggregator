@@ -10,7 +10,7 @@ import java.util.List;
  */
 public interface CarService {
 
-    public List<RentTransport> getCars(TripPreferences tripPreferences);
+    List<RentTransport> getCars(TripPreferences tripPreferences);
 
-    public <T> boolean bookCar(T id);
+    <T> boolean bookCar(T id);
 }

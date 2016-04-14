@@ -16,8 +16,11 @@ public class LogOutServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        /*
+        Получаем экземпляр сессии из запроса и удаляем его
+        переходим на страницу авторизации
+         */
         HttpSession session = req.getSession();
-        session.removeAttribute("authorized");
         session.invalidate();
         resp.sendRedirect("/index.html");
     }

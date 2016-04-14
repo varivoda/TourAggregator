@@ -47,7 +47,7 @@ public class TestResponseStringTransportationService {
         List<Transportation> transportationList = null;
 
         try {
-            transportationList = ts.getFlightsByLengthOfDay(dt);
+            transportationList = ts.getTransportationsFromDescriptionTransportation(dt);
         }
         catch (Exception e){
             e.printStackTrace();
