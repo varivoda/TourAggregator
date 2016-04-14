@@ -22,6 +22,7 @@ public class TestServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
             TransportationService ts = FactoryService.getTransportationService(NameGDS.Sabre);
+            System.out.println();
         } catch (NamingException e) {
             e.printStackTrace();
         }

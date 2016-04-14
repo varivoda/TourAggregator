@@ -17,8 +17,8 @@ public class FactoryService {
 
         Context ctx = null;
         ctx = new InitialContext();
-        TransportationService transportationService = (TransportationService) ctx.
-                lookup("java:global/TourAggregator/TransportationServiceBean");
+        TransportationService transportationService = (TransportationServiceBean) ctx.
+                lookup("java:global/TransportationServiceBean"); //was "java:global/TourAggregator/TransportationServiceBean"
 
         return transportationService;
     }

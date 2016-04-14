@@ -28,10 +28,9 @@ import java.util.List;
 /**
  * Created by ivan on 30.03.16.
  */
-@Stateless
+@Stateless(mappedName = "TransportationServiceBean")
 @LocalBean
 public class TransportationServiceBean implements TransportationService {
-
 
     @EJB
     SabreProperties sabreProperties;

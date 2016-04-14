@@ -4,6 +4,7 @@ import controller.exceptions.TransportationServiceException;
 import model.client.DescriptionTransportation;
 import model.tour.Transportation;
 
+import javax.ejb.Local;
 import java.util.List;
 
 /**
