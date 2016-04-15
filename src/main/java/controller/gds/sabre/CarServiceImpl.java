@@ -4,6 +4,7 @@ import controller.gds.CarService;
 import model.client.TripPreferences;
 import model.tour.RentTransport;
 
+
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import java.util.List;

@@ -8,17 +8,21 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
 
-import javax.ws.rs.client.Client;
 
-import javax.ejb.EJB;
-import javax.ejb.LocalBean;
-import javax.ejb.Stateless;
+import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Invocation;
 import javax.ws.rs.client.WebTarget;
-import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.MultivaluedHashMap;
+
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+
+import javax.ws.rs.core.MediaType;
+
 import javax.ws.rs.core.MultivaluedMap;
+import javax.ws.rs.core.Response;
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -27,25 +31,50 @@ import java.util.List;
 
 /**
  * Created by ivan on 30.03.16.
+ * Данный класс реализует интерфейс TransportationService и предназначен для работы
+ * с транспортным контентом посредством взаимодействия с GDS Sabre
  */
 @Stateless(mappedName = "TransportationServiceBean")
 @LocalBean
 public class TransportationServiceBean implements TransportationService {
 
-    @EJB
-    SabreProperties sabreProperties;
+    //предоставляет информацию необходимую для взаимодействия с Sabre
 
+    //TEST BEGIN
+//    @EJB
+//    SabreProperties sabreProperties; //TODO TEST
+    // TEST END
+
+
+    //Клиент для взаимодействия с RESTfull сервисами
     private Client client = ClientBuilder.newClient();
-
+    //Предназначен для конвертирования строк и даты
     private static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-
+    //Сообщение об ошибке при взаимодейтсвии с Sabre
     public static final String SABRE_ERROR = "Error was appeared with Sabre";
+    public static final int STATUS_OK = 200;
 
 
     public TransportationServiceBean() {
     }
 
+    /*
+    Метод получает на вход описание транспортного контента в виде экзмемпляра класса DescriptionTransportation
+    Подключается к сервису, запрашивает информацию по данному набору данных и возвращает список даных, описывающих
+    параметры поездки.
+    Если ничего не найдено или возникла ошибка при взаимодействии с сревсисом выкидывает TransportationServiceException
+    с описанием проблемы
+     */
     public List<Transportation> getTransportationsFromDescriptionTransportation(DescriptionTransportation dt) throws TransportationServiceException {
+
+        // TEST BEGIN
+        SabreProperties sabreProperties = null;
+        try {
+            sabreProperties = new SabreProperties();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        // TEST END
 
         /*
         Создаем экземпляр, соответствующий URI для сервиса
@@ -57,10 +86,8 @@ public class TransportationServiceBean implements TransportationService {
         System.out.println();
 
         /*
-        Устанавливем параметры запроса
-        Тип запроса и заголовки
+        Устанавливем параметры запроса. Тип запроса и заголовки
          */
-
         Invocation.Builder builder = flightResource.
                 queryParam("origin", dt.getOriginCode()).
                 queryParam("destination", dt.getDestinationCode()).
@@ -70,10 +97,22 @@ public class TransportationServiceBean implements TransportationService {
                 request(MediaType.TEXT_PLAIN).
                 headers(headers);
 
-        // Получаем ответ от сервиса в виде строки
-        String responseStr = builder.get(String.class);
+        // Выполняем запрос и получаем статус запроса и ответ в виде строки
+        Response response = builder.get();
+        int status = response.getStatus();
+        String responseStr = response.readEntity(String.class);
 
-        //Парсим ответ в список Transportation
+        // Если статус не ОК (200) бросаем исключение с описанием ошибки
+        if (status != STATUS_OK){
+            throw new TransportationServiceException("Ошибка при выполнении запроса \n" +
+                                                     "status: " + status +
+                                                     "\nresponse: " + responseStr);
+        }
+
+        /*
+        Парсим ответ в список Transportation.
+         При возникновении ошибок парсеров генерируем исключение с описанием ошибки
+        */
         List<Transportation> resList = null;
         try {
             resList = getTransportationFromString(responseStr);
@@ -86,29 +125,18 @@ public class TransportationServiceBean implements TransportationService {
         return resList;
     }
 
-//    public List<Transportation> getFlightsByTwoDates(DescriptionTransportation dt) {
-//        System.out.println("Hello< I'm TransportationService for Sabre. get2");
-//        return null;
-//    }
-//
-//    public <T> boolean bookFlight(T id) {
-//        System.out.println("Hello< I'm TransportationService for Sabre. book");
-//        return false;
-//    }
-
+    /*
+    Метод парсит полученную строку от сервиса Sabre к списку Transportation
+    зная структуру получеенного json
+     */
     private static List<Transportation> getTransportationFromString(String inStr) throws ParseException, org.json.simple.parser.ParseException {
 
-        /*
-
-        Парсим входную строку в JSON
-         */
-
+        //Парсим входную строку в JSON
         JSONObject transpJson = (JSONObject) JSONValue.parseWithException(inStr);
 
         /*
         Зная структуру возвращаемого JSON от сервиса Sabre
-        парсим его и достаем необходимую информацию для создания
-        списка Transportation
+        парсим его и достаем необходимую информацию для создания списка Transportation
          */
         String originCode = (String) transpJson.get("OriginLocation");
         String destinationCode = (String) transpJson.get("DestinationLocation");
@@ -124,7 +152,6 @@ public class TransportationServiceBean implements TransportationService {
         Double fare = (Double) lowestFare.get("Fare");
 
         // Создаем список для возврата результата и Transportation
-
         List<Transportation> resList = new LinkedList<Transportation>();
         Transportation newTransportation = new Transportation();
 
@@ -133,7 +160,7 @@ public class TransportationServiceBean implements TransportationService {
         newTransportation.setChoosen(false);
         newTransportation.setCurrencyCode(currencyCode);
         newTransportation.setDestinationLocation(destinationCode);
-        newTransportation.setPrice(new BigDecimal(fare));
+        newTransportation.setPrice(BigDecimal.valueOf(fare));
         newTransportation.setOriginLocation(originCode);
         newTransportation.setAirlineCode(airLineCode);
 
@@ -144,8 +171,6 @@ public class TransportationServiceBean implements TransportationService {
         resList.add(newTransportation);
 
         return resList;
-
-
     }
 
     public boolean bookTransportation(Transportation transportation) throws TransportationServiceException {

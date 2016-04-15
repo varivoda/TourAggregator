@@ -49,6 +49,9 @@
           <element id="library" level="project" name="Maven: org.glassfish.jersey.containers:jersey-container-servlet-core:sources:2.0" />
           <element id="library" level="project" name="Maven: org.glassfish.jersey.containers:jersey-container-servlet:sources:2.0" />
           <element id="library" level="project" name="Maven: org.apache.openejb:javaee-api:6.0-6" />
+          <element id="library" level="project" name="Maven: javax:javaee-api:7.0" />
+          <element id="library" level="project" name="Maven: com.sun.mail:javax.mail:1.5.0" />
+          <element id="library" level="project" name="Maven: javax.activation:activation:1.1" />
         </element>
       </element>
       <element id="directory" name="META-INF">

@@ -4,6 +4,7 @@ import controller.gds.FactoryService;
 import controller.gds.NameGDS;
 import controller.gds.TransportationService;
 
+import javax.ejb.EJB;
 import javax.naming.NamingException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,10 +19,13 @@ import java.io.IOException;
 @WebServlet("/test")
 public class TestServlet extends HttpServlet {
 
+    @EJB
+    FactoryService factoryService;
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
-            TransportationService ts = FactoryService.getTransportationService(NameGDS.Sabre);
+            TransportationService ts = factoryService.getTransportationService(NameGDS.Sabre);
             System.out.println();
         } catch (NamingException e) {
             e.printStackTrace();
