@@ -1,16 +1,23 @@
 package controller.servlets;
 
 import controller.exceptions.InvalidDataException;
+import controller.exceptions.TransportationServiceException;
+import controller.gds.FactoryService;
+import controller.gds.NameGDS;
+import controller.gds.TransportationService;
 import controller.gds.sabre.TransportationServiceBean;
 import model.client.DescriptionTransportation;
 import model.tour.Transportation;
+import org.hibernate.Session;
 
 import javax.ejb.EJB;
+import javax.naming.NamingException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.text.ParseException;
@@ -19,38 +26,52 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Created by ivan on 08.04.16.
+ * Сервлет предназначен для взаимодействия с сервисом приложения для поиска транспортного контента
+ * Поиска перелетов по полученным данным из запроса и перенаправления в jsp страничку для вывода
+ * полученного результата.
+ * При возникновении ошибки с сервисом отправлят на страницу ошибки с соответствующим сообщением
  */
 @WebServlet("/FindTransportation")
 public class FindTransportationServlet extends HttpServlet {
 
-    @EJB
-    TransportationServiceBean transportationService;
+    // Бин, отвечающий за взаимодействие с сервисом перелетов
+//    @EJB
+//    TransportationServiceBean transportationService;
 
+    @EJB
+    FactoryService factoryService;
+
+    //Сообщения об ошибках
     public static final String INCORRECT_LENGTH_OF_STAY_ERROR_MESSAGE = "Incorrect length of stay value";
     public static final String INCORRECT_DATE_FORMATE = "Incorrect date format";
 
+    /*
+    Обрабатывает запрос, если запрос корректный обращается к сервису для получения ответа.
+    Если запрос составлен неверно, отпарвляет на страницу ошибки с соответствующим сообщением
+      */
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
         try {
+            //Запрашиваем у фабрики сервис для GDS заданной по имени
+            TransportationService transportationService = factoryService.getTransportationService(NameGDS.Sabre);
+
+            //Получение описания перелета из запроса. Если структура запроса нарушена будет сгенерировано исключени
             DescriptionTransportation dt = getDescriptionTransportationFromRequest(req);
-            System.out.println("ops");
 
+            //Вызов сервиса transportationService  и получение списка результов
             List<Transportation> list = transportationService.getTransportationsFromDescriptionTransportation(dt);
-            System.out.println();
 
-        } catch (InvalidDataException e) {
+            //Добавляем результат в сессию и передаем jsp для показа пользователю
+            HttpSession session = req.getSession();
+
+            session.setAttribute("transportationList", list);
+            getServletContext().getRequestDispatcher("/tour/ViewTransportations.jspx").forward(req,resp);
+        }
+        catch (Exception e){
             req.setAttribute("exception", e);
-            try {
-                getServletContext().getRequestDispatcher("/error.jspx").forward(req, resp);
-            } catch (ServletException e1) {
-                e1.printStackTrace();
-            } catch (IOException e1) {
-                e1.printStackTrace();
-            }
+            getServletContext().getRequestDispatcher("/error.jspx").forward(req, resp);
             return;
-        } catch (Exception e) {
-            e.printStackTrace();
         }
 
     }

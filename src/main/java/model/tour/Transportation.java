@@ -20,7 +20,7 @@ public class Transportation {
     private Date departureDateTo;
     private Date departureDateFrom;
     private BigDecimal price;
-    private boolean isChoosen;
+    private boolean chosen;
     private String destinationLocation;
     private String originLocation;
     private String currencyCode;
@@ -105,12 +105,12 @@ public class Transportation {
         this.originLocation = originLocation;
     }
 
-    @Column(name = "is_choosen")
-    public boolean isChoosen() {
-        return isChoosen;
+    @Column(name = "chosen")
+    public boolean isChosen() {
+        return chosen;
     }
-    public void setChoosen(boolean choosen) {
-        isChoosen = choosen;
+    public void setChosen(boolean chosen) {
+        this.chosen = chosen;
     }
 
 

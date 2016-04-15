@@ -11,7 +11,7 @@
 <body class="body" background="../images/bg/bg3.jpg">
 
 <c:if test="${not authorized}">
-    <c:redirect url="../notAuthorize.html"/>
+    <c:redirect url="../index.html"/>
 </c:if>
 
 <div class="center">

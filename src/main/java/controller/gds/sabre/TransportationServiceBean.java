@@ -9,6 +9,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
 
 
+import javax.ejb.EJB;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Invocation;
@@ -22,7 +23,6 @@ import javax.ws.rs.core.MediaType;
 
 import javax.ws.rs.core.MultivaluedMap;
 import javax.ws.rs.core.Response;
-import java.io.IOException;
 import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -41,8 +41,8 @@ public class TransportationServiceBean implements TransportationService {
     //предоставляет информацию необходимую для взаимодействия с Sabre
 
     //TEST BEGIN
-//    @EJB
-//    SabreProperties sabreProperties; //TODO TEST
+    @EJB
+    SabreProperties sabreProperties; //TODO TEST
     // TEST END
 
 
@@ -68,12 +68,12 @@ public class TransportationServiceBean implements TransportationService {
     public List<Transportation> getTransportationsFromDescriptionTransportation(DescriptionTransportation dt) throws TransportationServiceException {
 
         // TEST BEGIN
-        SabreProperties sabreProperties = null;
-        try {
-            sabreProperties = new SabreProperties();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//        SabreProperties sabreProperties = null;
+//        try {
+//            sabreProperties = new SabreProperties();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
         // TEST END
 
         /*
@@ -157,7 +157,7 @@ public class TransportationServiceBean implements TransportationService {
 
         // Заполняем поля возвращаемого объекта
         newTransportation.setTransportKind("Plane");
-        newTransportation.setChoosen(false);
+        newTransportation.setChosen(false);
         newTransportation.setCurrencyCode(currencyCode);
         newTransportation.setDestinationLocation(destinationCode);
         newTransportation.setPrice(BigDecimal.valueOf(fare));
@@ -174,6 +174,6 @@ public class TransportationServiceBean implements TransportationService {
     }
 
     public boolean bookTransportation(Transportation transportation) throws TransportationServiceException {
-        return false;
+        return true;
     }
 }
