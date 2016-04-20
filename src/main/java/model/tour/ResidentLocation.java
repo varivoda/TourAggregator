@@ -2,9 +2,11 @@ package model.tour;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.Date;
 
 /**
  * Created by ivan on 29.10.15.
+ * Класс предназначен для хранения иформации о месте проживания
  */
 @Entity
 @Table(name = "resident_locations")
@@ -16,7 +18,9 @@ public class ResidentLocation {
     private String hotelName;
     private String hotelAddress;
     private BigDecimal pricePerDay;
-
+    private Date orderDate;
+    private Date departureDate;
+    private String locationCode;
 
     public ResidentLocation() {}
 
@@ -28,6 +32,39 @@ public class ResidentLocation {
     }
     public void setId(int id) {
         this.id = id;
+    }
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "tour_id")
+    public Tour getTour() {
+        return tour;
+    }
+    public void setTour(Tour tour) {
+        this.tour = tour;
+    }
+
+    @Column(name = "order_date")
+    public Date getOrderDate() {
+        return orderDate;
+    }
+    public void setOrderDate(Date orderDate) {
+        this.orderDate = orderDate;
+    }
+
+    @Column(name = "departure_date")
+    public Date getDepartureDate() {
+        return departureDate;
+    }
+    public void setDepartureDate(Date departureDate) {
+        this.departureDate = departureDate;
+    }
+
+    @Column(name = "location_code")
+    public String getLocationCode() {
+        return locationCode;
+    }
+    public void setLocationCode(String locationCode) {
+        this.locationCode = locationCode;
     }
 
     @Column(name = "hotel_kind")
@@ -44,15 +81,6 @@ public class ResidentLocation {
     }
     public void setPricePerDay(BigDecimal pricePerDay) {
         this.pricePerDay = pricePerDay;
-    }
-
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "tour_id")
-    public Tour getTour() {
-        return tour;
-    }
-    public void setTour(Tour tour) {
-        this.tour = tour;
     }
 
     @Column(name = "hotel_name")

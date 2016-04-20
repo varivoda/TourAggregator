@@ -7,6 +7,7 @@ import java.util.Date;
 
 /**
  * Created by ivan on 29.10.15.
+ * Класс предназначен для хранения информации о предпочтениях клиента
  */
 @Entity
 @Table(name = "general_informations")
@@ -14,12 +15,13 @@ public class GeneralInformation implements Serializable {
 
     private int id;
     private Tour tour;
-    private String country;
+    private String countryCodeFrom;
     private String city;
     private Date departureDate;
     private Date arrivalDate;
     private int travelersQuantity;
     private BigDecimal budget;
+    private String currency;
 
     public GeneralInformation(){}
 
@@ -42,12 +44,20 @@ public class GeneralInformation implements Serializable {
         this.tour = idTour;
     }
 
-    @Column(name = "country")
-    public String getCountry() {
-        return country;
+    @Column(name = "currency")
+    public String getCurrency() {
+        return currency;
     }
-    public void setCountry(String country) {
-        this.country = country;
+    public void setCurrency(String currency) {
+        this.currency = currency;
+    }
+
+    @Column(name = "country")
+    public String getCountryCodeFrom() {
+        return countryCodeFrom;
+    }
+    public void setCountryCodeFrom(String country) {
+        this.countryCodeFrom = country;
     }
 
     @Column(name = "city")

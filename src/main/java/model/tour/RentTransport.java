@@ -1,11 +1,12 @@
 package model.tour;
 
-
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.Date;
 
 /**
  * Created by ivan on 29.10.15.
+ * Экземпляры данного класса содержат информацию о арендуемом транспорте
  */
 @Entity
 @Table(name = "rent_transports")
@@ -19,6 +20,9 @@ public class RentTransport {
     private String carNumber;
     private BigDecimal pricePerDay;
     private String carCategory;
+    private Date orderDate;
+    private Date returnDate;
+    private String locationCode;
 
     public RentTransport() {}
 
@@ -39,6 +43,30 @@ public class RentTransport {
     }
     public void setTour(Tour tour) {
         this.tour = tour;
+    }
+
+    @Column(name = "order_date")
+    public Date getOrderDate() {
+        return orderDate;
+    }
+    public void setOrderDate(Date orderDate) {
+        this.orderDate = orderDate;
+    }
+
+    @Column(name = "return_date")
+    public Date getReturnDate() {
+        return returnDate;
+    }
+    public void setReturnDate(Date returnDate) {
+        this.returnDate = returnDate;
+    }
+
+    @Column(name = "location_code")
+    public String getLocationCode() {
+        return locationCode;
+    }
+    public void setLocationCode(String locationCode) {
+        this.locationCode = locationCode;
     }
 
     @Column(name = "car_number")
