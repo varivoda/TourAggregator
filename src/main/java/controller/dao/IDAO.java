@@ -1,7 +1,5 @@
 package controller.dao;
 
-import model.client.Client;
-
 import java.io.Serializable;
 import java.util.List;
 
@@ -17,7 +15,7 @@ public interface IDAO<T,Id extends Serializable> {
 
     void delete(T entity);
 
-    void deleteById(Integer id);
+    void deleteById(Id id);
 
     T findById(Id id);
 

@@ -15,11 +15,7 @@ import java.util.List;
 @LocalBean
 public class ClientDAOImpl implements ClientDAO {
 
-    private DaoUtil<Client,Integer> daoUtil;
-
-    {
-        daoUtil = new DaoUtil<Client, Integer>();
-    }
+    private DaoUtil<Client,Integer> daoUtil = new DaoUtil<Client, Integer>();
 
     public ClientDAOImpl(){
     }
@@ -70,7 +66,7 @@ public class ClientDAOImpl implements ClientDAO {
 
     public List<Client> findAll() {
         daoUtil.openCurrentSession();
-        List<Client> clientsList = (List<Client>) daoUtil.getCurrentSession().createQuery("from Client").list(); // TODO поменял Client clients
+        List<Client> clientsList = (List<Client>) daoUtil.getCurrentSession().createQuery("from Client").list();
         daoUtil.closeCurrentSession();
         if (clientsList.isEmpty())
             return null;
@@ -79,7 +75,7 @@ public class ClientDAOImpl implements ClientDAO {
 
     public void deleteAll() {
         daoUtil.openCurrentSessionWithTransaction();
-        List<Client> entityList = findAll();
+        List<Client> entityList = (List<Client>) daoUtil.getCurrentSession().createQuery("from Client").list();
         for (Client entity : entityList) {
             delete(entity);
         }

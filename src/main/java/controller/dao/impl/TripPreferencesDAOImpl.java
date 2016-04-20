@@ -81,7 +81,7 @@ public class TripPreferencesDAOImpl implements TripPreferencesDAO {
 
     public void deleteAll() {
         daoUtil.openCurrentSessionWithTransaction();
-        List<TripPreferences> entityList = findAll();
+        List<TripPreferences> entityList = (List<TripPreferences>) daoUtil.getCurrentSession().createQuery("from TripPreferences ").list();
         for (TripPreferences entity : entityList) {
             delete(entity);
         }

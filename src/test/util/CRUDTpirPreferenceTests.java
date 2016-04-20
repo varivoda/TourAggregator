@@ -1,3 +1,5 @@
+package util;
+
 import controller.dao.impl.ClientDAOImpl;
 import controller.dao.impl.TripPreferencesDAOImpl;
 import model.client.Client;

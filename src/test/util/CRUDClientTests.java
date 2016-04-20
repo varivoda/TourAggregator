@@ -1,4 +1,4 @@
-/**
+package util; /**
  * Created by ivan on 16.12.15.
  */
 import controller.dao.impl.ClientDAOImpl;
