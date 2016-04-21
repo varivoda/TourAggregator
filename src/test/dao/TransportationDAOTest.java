@@ -116,4 +116,32 @@ public class TransportationDAOTest {
         transportationList = transportationDAO.findAll();
         assertEquals(null, transportationList);
     }
+
+    //Записываем в БД 10 записей, выбираем их и удаляем
+    @Test
+    public void CDTestForManyEntity() throws ParseException {
+
+        int count = 10;
+        //Удаляем все существующие записи в таблице
+        transportationDAO.deleteAll();
+
+        for (int i = 0; i < count; i++) {
+            //создаем эезкмпляр для тестирования
+            Transportation transportation = createTransportation();
+
+            //сохраняем в БД
+            transportationDAO.persist(transportation);
+        }
+
+        //Достаем из БД все записи
+        List<Transportation> transportationList = transportationDAO.findAll();
+
+        // проверка, что лист содержит ровно одну записать
+        assertEquals(count, transportationList.size());
+
+        //удаляем все записи и делаем проверку, что лист записей будет пустой
+        transportationDAO.deleteAll();
+        transportationList = transportationDAO.findAll();
+        assertEquals(null, transportationList);
+    }
 }

@@ -3,12 +3,16 @@ package controller.dao.impl;
 import controller.dao.TransportationDAO;
 import model.tour.Transportation;
 
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
 import java.util.List;
 
 /**
  * Created by ivan on 15.04.16.
  * DAO предназначен для взаимодействием с БД с транспортировками
  */
+@Stateless
+@LocalBean
 public class TransportationDAOImpl extends AbstractDAO<Transportation, Integer> implements TransportationDAO {
 
     public TransportationDAOImpl() {
