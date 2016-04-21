@@ -37,7 +37,7 @@ public class ResidentLocationDAOImpl extends AbstractDAO<ResidentLocation,Intege
         daoUtil.openCurrentSessionWithTransaction();
         List<ResidentLocation> entityList = (List<ResidentLocation>) daoUtil.getCurrentSession().createQuery("from ResidentLocation ").list();
             for (ResidentLocation entity : entityList) {
-                delete(entity);
+                daoUtil.delete(entity);
             }
         daoUtil.closeCurrentSessionWithTransaction();
     }

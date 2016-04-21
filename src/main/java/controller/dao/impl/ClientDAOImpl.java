@@ -77,7 +77,7 @@ public class ClientDAOImpl implements ClientDAO {
         daoUtil.openCurrentSessionWithTransaction();
         List<Client> entityList = (List<Client>) daoUtil.getCurrentSession().createQuery("from Client").list();
         for (Client entity : entityList) {
-            delete(entity);
+            daoUtil.delete(entity);
         }
         daoUtil.closeCurrentSessionWithTransaction();
     }

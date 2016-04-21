@@ -27,8 +27,6 @@ public class Transportation {
 
     public Transportation() {}
 
-
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "transportation_id")

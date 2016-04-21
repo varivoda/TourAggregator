@@ -63,6 +63,7 @@ public class ResidentLocationDAOTest  {
         assertEquals(rl.getPricePerDay(), rlReturned.getPricePerDay());
         assertEquals(rl.getHotelKind(), rlReturned.getHotelKind());
 
+//        residentLocationDAO.deleteAll();
         residentLocationDAO.delete(rlReturned);
 
         residentLocations = residentLocationDAO.findAll();
