@@ -68,8 +68,6 @@ public class ClientDAOImpl implements ClientDAO {
         daoUtil.openCurrentSession();
         List<Client> clientsList = (List<Client>) daoUtil.getCurrentSession().createQuery("from Client").list();
         daoUtil.closeCurrentSession();
-        if (clientsList.isEmpty())
-            return null;
         return clientsList;
     }
 

@@ -74,8 +74,6 @@ public class TripPreferencesDAOImpl implements TripPreferencesDAO {
         daoUtil.openCurrentSession();
         List<TripPreferences> entityList = (List<TripPreferences>) daoUtil.getCurrentSession().createQuery("from TripPreferences ").list();
         daoUtil.closeCurrentSession();
-        if (entityList.isEmpty())
-            return null;
         return entityList;
     }
 

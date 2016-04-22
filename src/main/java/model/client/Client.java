@@ -53,8 +53,7 @@ public class Client implements Serializable{
 	public String getEmail() {return email;	}
 	public void setEmail(String email) {this.email = email;	}
 
-	@OneToMany(cascade = CascadeType.ALL,
-			   mappedBy = "client", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "client", fetch = FetchType.EAGER)
 	public Set<TripPreferences> getTripPreferences() {
 		return tripPreferences;
 	}
@@ -62,12 +61,12 @@ public class Client implements Serializable{
 		this.tripPreferences = tripPreferences;
 	}
 
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "client",  fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "client",  fetch = FetchType.EAGER)
 	public Set<Tour> getTours(){
 		return tours;
 	}
-
 	public void setTours(Set<Tour> tours) {
 		this.tours = tours;
 	}
+
 }

@@ -20,7 +20,7 @@ public class RentTransportDAOTest {
 
     private static RentTransportDAO rentTransportDAO = new RentTransportDAOImpl();
 
-    private RentTransport createSimplyRentTransport() throws ParseException {
+    static RentTransport createSimplyRentTransport() throws ParseException {
 
         RentTransport rentTransport = new RentTransport();
 
@@ -64,7 +64,7 @@ public class RentTransportDAOTest {
         //удаляем все записи и делаем проверку, что лист записей будет пустой
         rentTransportDAO.deleteAll();
         rentTransportList = rentTransportDAO.findAll();
-        assertEquals(null, rentTransportList);
+        assertEquals(0, rentTransportList.size());
 
         //Проверяем обязательные поля вернувшегося экземпляра с начальным
         assertEquals(true,  rentTransportRet.getPricePerDay().compareTo(rentTransport.getPricePerDay()) == 0);
@@ -95,7 +95,7 @@ public class RentTransportDAOTest {
         //удаляем все записи и делаем проверку, что лист записей будет пустой
         rentTransportDAO.delete(rentTransport);
         rentTransportList = rentTransportDAO.findAll();
-        assertEquals(null, rentTransportList);
+        assertEquals(0, rentTransportList.size());
     }
 
     @Test
@@ -123,7 +123,7 @@ public class RentTransportDAOTest {
         //удаляем все записи и делаем проверку, что лист записей будет пустой
         rentTransportDAO.deleteAll();
         rentTransportList = rentTransportDAO.findAll();
-        assertEquals(null, rentTransportList);
+        assertEquals(0, rentTransportList.size());
 
 
     }

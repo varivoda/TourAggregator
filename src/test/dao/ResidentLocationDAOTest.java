@@ -18,7 +18,7 @@ public class ResidentLocationDAOTest  {
 
     private static ResidentLocationDAO residentLocationDAO = new ResidentLocationDAOImpl();
 
-    private ResidentLocation getResidentLocation() throws ParseException {
+    static ResidentLocation getResidentLocation() throws ParseException {
 
         ResidentLocation rl = new ResidentLocation();
 
@@ -68,7 +68,7 @@ public class ResidentLocationDAOTest  {
 
         residentLocations = residentLocationDAO.findAll();
 
-        assertEquals(null, residentLocations);
+        assertEquals(0, residentLocations.size());
     }
 
 

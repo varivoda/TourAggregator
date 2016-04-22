@@ -28,8 +28,6 @@ public class ResidentLocationDAOImpl extends AbstractDAO<ResidentLocation,Intege
         daoUtil.openCurrentSession();
         List<ResidentLocation> residentLocationsList = (List<ResidentLocation>) daoUtil.getCurrentSession().createQuery("from ResidentLocation ").list();
         daoUtil.closeCurrentSession();
-        if (residentLocationsList.isEmpty())
-            return null;
         return residentLocationsList;
     }
 

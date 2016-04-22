@@ -29,8 +29,6 @@ public class TransportationDAOImpl extends AbstractDAO<Transportation, Integer> 
         daoUtil.openCurrentSession();
         List<Transportation> transportationList = (List<Transportation>) daoUtil.getCurrentSession().createQuery("from Transportation").list();
         daoUtil.closeCurrentSession();
-        if (transportationList.isEmpty())
-            return null;
         return transportationList;
     }
 

@@ -31,8 +31,6 @@ public class DateTimeHelper {
         return dateTimeFormat.format(dateTime);
     }
 
-    //TODO Проверить в БД DECIMAL(10,2)          Yep!
-    //TODO Унаследовать от abstract все ДАО
-    //TODO Good work
+
 
 }

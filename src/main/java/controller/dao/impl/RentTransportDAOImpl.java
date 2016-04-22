@@ -28,8 +28,6 @@ public class RentTransportDAOImpl extends AbstractDAO<RentTransport,Integer> imp
         daoUtil.openCurrentSession();
         List<RentTransport> rentTransporList = (List<RentTransport>) daoUtil.getCurrentSession().createQuery("from RentTransport").list();
         daoUtil.closeCurrentSession();
-        if (rentTransporList.isEmpty())
-            return null;
         return rentTransporList;
     }
 

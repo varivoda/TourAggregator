@@ -19,7 +19,7 @@ public class TransportationDAOTest {
 
     private static TransportationDAO transportationDAO = new TransportationDAOImpl();
 
-    private Transportation createTransportation() throws ParseException {
+    static Transportation createTransportation() throws ParseException {
 
         Transportation transportation = new Transportation();
 
@@ -75,7 +75,7 @@ public class TransportationDAOTest {
         //удаляем все записи и делаем проверку, что лист записей будет пустой
         transportationDAO.deleteAll();
         transportationList = transportationDAO.findAll();
-        assertEquals(null, transportationList);
+        assertEquals(0, transportationList.size());
 
         //Проверяем обязательные поля вернувшегося экземпляра с начальным
         assertEquals(transportation.getCurrencyCode(), transportationRet.getCurrencyCode());
@@ -114,7 +114,7 @@ public class TransportationDAOTest {
         //удаляем все записи и делаем проверку, что лист записей будет пустой
         transportationDAO.delete(transportation);
         transportationList = transportationDAO.findAll();
-        assertEquals(null, transportationList);
+        assertEquals(0, transportationList.size());
     }
 
     //Записываем в БД 10 записей, выбираем их и удаляем
@@ -142,6 +142,14 @@ public class TransportationDAOTest {
         //удаляем все записи и делаем проверку, что лист записей будет пустой
         transportationDAO.deleteAll();
         transportationList = transportationDAO.findAll();
-        assertEquals(null, transportationList);
+        assertEquals(0, transportationList.size());
+    }
+
+    @Test
+    public void findWithIncorrectID(){
+
+        Transportation transportation = transportationDAO.findById(100000);
+
+        assertEquals(null,transportation);
     }
 }
