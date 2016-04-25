@@ -21,7 +21,12 @@
     <li><a href="../tour/DescriptionTransportation.jspx">Transportation</a></li>
     <li><a href="../tour/DescriptionHotel.jspx">Hotel</a></li>
     <li><a href="../tour/DescriptionRentCar.jspx">Rent car</a></li>
-    <li><a href="../tour/ViewMyTour.jspx">View my tour</a></li>
+    <!--<li><a href="../tour/ViewMyTour.jspx">View my tour</a></li>-->
+    <li>
+        <form action="/ViewTour" method="doGet">
+            <input type="submit" value="view tour"/>
+        </form>
+    </li>
     <li style="float:right" >
         <div>
             <c:out value="${fullName}"/> <br/>
@@ -67,8 +72,8 @@
             <!--</table>  <br/>-->
 
         <!--</c:forEach> <br/>-->
-
-    <c:forEach var="tr" items="${tour.transportations}">
+    <label value="Transportations"></label>
+    <c:forEach var="tr"  items="${tour.transportations}">
         <table>
             <tr>
                 <td>Transport kind: </td>

@@ -80,7 +80,7 @@ public class TransportationServiceBean implements TransportationService {
         Создаем экземпляр, соответствующий URI для сервиса
         Получаем карту заголовков из бина sabreProperties
          */
-        String webTargetURI = sabreProperties.getFlightsURI();
+        String webTargetURI = sabreProperties.getTransportationServiceURI();
         WebTarget flightResource = client.target(webTargetURI);
         MultivaluedMap<String, Object> headers = new MultivaluedHashMap<String, Object>(sabreProperties.getHeaders());
         System.out.println();

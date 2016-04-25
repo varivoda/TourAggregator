@@ -1,8 +1,6 @@
 package controller.gds;
 
 import controller.gds.sabre.TransportationServiceBean;
-import controller.gds.sabre.CarServiceImpl;
-import controller.gds.sabre.HotelServiceImpl;
 
 import javax.ejb.LocalBean;
 import javax.ejb.Singleton;
@@ -25,17 +23,21 @@ public class FactoryService {
      */
     public TransportationService getTransportationService(NameGDS name) throws NamingException {
 
-        Context ctx = null;
-        ctx = new InitialContext();
+        Context ctx = new InitialContext();
         TransportationService transportationService = (TransportationServiceBean) ctx.
                 lookup("java:global/TransportationServiceBean");
 
         return transportationService;
     }
 
-//    public CarService getCarService(NameGDS name){
-//        return carService;
-//    }
+    public RentTransportService getRentTransportService(NameGDS name) throws NamingException {
+
+        Context ctx = new InitialContext();
+        RentTransportService rentTransportService = (RentTransportService) ctx.
+                lookup("java:global/RentTransportServiceBean");
+
+        return rentTransportService;
+    }
 
 //    public HotelService getHotelService(NameGDS name){
 //        return hotelService;

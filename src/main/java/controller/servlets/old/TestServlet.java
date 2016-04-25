@@ -2,6 +2,7 @@ package controller.servlets.old;
 
 import controller.gds.FactoryService;
 import controller.gds.NameGDS;
+import controller.gds.RentTransportService;
 import controller.gds.TransportationService;
 
 import javax.ejb.EJB;
@@ -25,7 +26,8 @@ public class TestServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
-            TransportationService ts = factoryService.getTransportationService(NameGDS.Sabre);
+//            TransportationService ts = factoryService.getTransportationService(NameGDS.Sabre);
+            RentTransportService rs = factoryService.getRentTransportService(NameGDS.Sabre);
             System.out.println();
         } catch (NamingException e) {
             e.printStackTrace();

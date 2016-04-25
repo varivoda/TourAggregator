@@ -22,9 +22,9 @@ public class SabreProperties {
     private Map<String, String> headers;
 
     //Основные URI для работы с различными сервисами Sabre
-    private String flightsURI;
-    private String hotelsURI;
-    private String carsURI;
+    private String transportationServiceURI;
+    private String residentLocationServiceURI;
+    private String rentTransportServiceURI;
 
     public SabreProperties() throws IOException {
         upDate();
@@ -41,9 +41,9 @@ public class SabreProperties {
         properties.load(inputStream);
 
         //Утсановка полей URI
-        flightsURI = properties.getProperty("flightsURL");
-        hotelsURI = properties.getProperty("hotelsURL");
-        carsURI = properties.getProperty("carsURL");
+        transportationServiceURI = properties.getProperty("transportationServiceURI");
+        residentLocationServiceURI = properties.getProperty("residentLocationServiceURI");
+        rentTransportServiceURI = properties.getProperty("rentTransportServiceURI");
 
         //Если карты с заголовками нет
         if (headers == null){
@@ -63,15 +63,15 @@ public class SabreProperties {
         return headers;
     }
 
-    public String getFlightsURI() {
-        return flightsURI;
+    public String getTransportationServiceURI() {
+        return transportationServiceURI;
     }
 
-    public String getHotelsURI() {
-        return hotelsURI;
+    public String getResidentLocationServiceURI() {
+        return residentLocationServiceURI;
     }
 
-    public String getCarsURI() {
-        return carsURI;
+    public String getRentTransportServiceURI() {
+        return rentTransportServiceURI;
     }
 }

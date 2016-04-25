@@ -28,7 +28,7 @@
 //
 //    public void initServices(NameGDS nameGDS) throws NamingException {
 //        transportationService = FactoryService.getTransportationService(nameGDS);
-////        carService = FactoryService.getCarService(nameGDS);
+////        carService = FactoryService.getRentTransportService(nameGDS);
 ////        hotelService = FactoryService.getHotelService(nameGDS);
 //    }
 //
@@ -41,7 +41,7 @@
 //        return null;
 //    }
 //
-//    public List<RentTransport> getCars(TripPreferences tripPreferences){
+//    public List<RentTransport> getRentTransport(TripPreferences tripPreferences){
 //        return null;
 //    }
 //
