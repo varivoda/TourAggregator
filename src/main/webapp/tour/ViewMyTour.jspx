@@ -33,41 +33,79 @@
 
 </ul>
 
+    <!--Preferences of the trip: <br/>-->
+    <!--<c:forEach var="tripPref" items="${tour.tripPreferences}">-->
+            <!--<table>-->
+                <!--<tr>-->
+                    <!--<td>Quantity of travelers: </td>-->
+                    <!--<td><c:out value="${tripPref.travelersQuantity}"/></td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td>Budget: </td>-->
+                    <!--<td><c:out value="${tripPref.budget}"/></td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td>Date of the departure</td>-->
+                    <!--<td><c:out value="${tripPref.departureDate}"/></td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td>Date of the arrival</td>-->
+                    <!--<td><c:out value="${tripPref.arrivalDate}"/></td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td>Kind of the transport</td>-->
+                    <!--<td><c:out value="${tripPref.transportKind}"/></td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td>Kind of the resident hotel</td>-->
+                    <!--<td><c:out value="${tripPref.residentHotelKind}"/></td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td>Trip's documents</td>-->
+                    <!--<td><c:out value="${tripPref.tripDocumentType}"/></td>-->
+                <!--</tr>-->
+            <!--</table>  <br/>-->
 
-    Preferences of the trip: <br/>
-    <c:forEach var="tripPref" items="${tripPreferences}">
-            <table>
-                <tr>
-                    <td>Quantity of travelers: </td>
-                    <td><c:out value="${tripPref.travelersQuantity}"/></td>
-                </tr>
-                <tr>
-                    <td>Budget: </td>
-                    <td><c:out value="${tripPref.budget}"/></td>
-                </tr>
-                <tr>
-                    <td>Date of the departure</td>
-                    <td><c:out value="${tripPref.departureDate}"/></td>
-                </tr>
-                <tr>
-                    <td>Date of the arrival</td>
-                    <td><c:out value="${tripPref.arrivalDate}"/></td>
-                </tr>
-                <tr>
-                    <td>Kind of the transport</td>
-                    <td><c:out value="${tripPref.transportKind}"/></td>
-                </tr>
-                <tr>
-                    <td>Kind of the resident hotel</td>
-                    <td><c:out value="${tripPref.residentHotelKind}"/></td>
-                </tr>
-                <tr>
-                    <td>Trip's documents</td>
-                    <td><c:out value="${tripPref.tripDocumentType}"/></td>
-                </tr>
-            </table>  <br/>
+        <!--</c:forEach> <br/>-->
 
-        </c:forEach> <br/>
+    <c:forEach var="tr" items="${tour.transportations}">
+        <table>
+            <tr>
+                <td>Transport kind: </td>
+                <td><c:out value="${tr.transportKind}"/></td>
+            </tr>
+            <tr>
+                <td>Air line code: </td>
+                <td><c:out value="${tr.airlineCode}"/></td>
+            </tr>
+            <tr>
+                <td>Date of the departure: </td>
+                <td><c:out value="${tr.departureDateTo}"/></td>
+            </tr>
+            <tr>
+                <td>Origin location: </td>
+                <td><c:out value="${tr.originLocation}"/></td>
+            </tr>
+            <tr>
+                <td>Date of the arrival: </td>
+                <td><c:out value="${tr.departureDateFrom}"/></td>
+            </tr>
+            <tr>
+                <td>Destination location: </td>
+                <td><c:out value="${tr.destinationLocation}"/></td>
+            </tr>
+            <tr>
+                <td>Price: </td>
+                <td><c:out value="${tr.price}"/></td>
+            </tr>
+            <tr>
+                <td>Currency code: </td>
+                <td><c:out value="${tr.currencyCode}"/></td>
+            </tr>
+        </table>  <br/>
+
+    </c:forEach> <br/>
+
 </div>
 </body>
 </html>

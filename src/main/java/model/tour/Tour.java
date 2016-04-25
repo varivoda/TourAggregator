@@ -3,6 +3,7 @@ package model.tour;
 import model.client.Client;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -16,8 +17,10 @@ public class Tour {
     private Client client;
     private Set<GeneralInformation> generalInformations;
     private Set<EatingPlace> eatingPlaces;
+//    private List<RentTransport> rentTransports;
     private Set<RentTransport> rentTransports;
     private Set<ResidentLocation> residentLocations;
+//    private List<Transportation> transportations;
     private Set<Transportation> transportations;
 
     public Tour() {}
@@ -48,6 +51,7 @@ public class Tour {
         this.eatingPlaces = eatingPlaces;
     }
 
+
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "tour")
     public Set<RentTransport> getRentTransports() {
         return rentTransports;
@@ -55,6 +59,14 @@ public class Tour {
     public void setRentTransports(Set<RentTransport> rentTransports) {
         this.rentTransports = rentTransports;
     }
+
+//    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "tour")
+//    public List<RentTransport> getRentTransports() {
+//        return rentTransports;
+//    }
+//    public void setRentTransports(List<RentTransport> rentTransports) {
+//        this.rentTransports = rentTransports;
+//    }
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "tour")
     public Set<ResidentLocation> getResidentLocations() {
@@ -71,6 +83,14 @@ public class Tour {
     public void setTransportations(Set<Transportation> transportations) {
         this.transportations = transportations;
     }
+
+//    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "tour")
+//    public List<Transportation> getTransportations() {
+//        return transportations;
+//    }
+//    public void setTransportations(List<Transportation> transportations) {
+//        this.transportations = transportations;
+//    }
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "client_id")

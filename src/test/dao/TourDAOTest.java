@@ -1,11 +1,11 @@
 package dao;
 
-import controller.dao.ClientDAO;
-import controller.dao.RentTransportDAO;
-import controller.dao.TourDAO;
-import controller.dao.impl.ClientDAOImpl;
-import controller.dao.impl.RentTransportDAOImpl;
-import controller.dao.impl.TourDAOImpl;
+//import controller.dao.ClientDAO;
+//import controller.dao.RentTransportDAO;
+//import controller.dao.TourDAO;
+//import controller.dao.impl.ClientDAOImpl;
+//import controller.dao.impl.RentTransportDAOImpl;
+//import controller.dao.impl.TourDAOImpl;
 import model.client.Client;
 import model.tour.RentTransport;
 import model.tour.ResidentLocation;
@@ -13,25 +13,24 @@ import model.tour.Tour;
 import model.tour.Transportation;
 import static org.junit.Assert.*;
 import org.junit.Test;
+import static dao.DAOServices.*;
 
 import java.text.ParseException;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by ivan on 21.04.16.
  */
 public class TourDAOTest {
 
-    private static TourDAO tourDAO = new TourDAOImpl();
-    private static ClientDAO clientDAO = new ClientDAOImpl();
-    private static RentTransportDAO rentTransportDAO = new RentTransportDAOImpl();
+//    private static TourDAO tourDAO = new TourDAOImpl();
+//    private static ClientDAO clientDAO = new ClientDAOImpl();
+//    private static RentTransportDAO rentTransportDAO = new RentTransportDAOImpl();
 
     private static final String CLIENT_EMAIL = "varivoda_ivan@mail.ru";
     private static final int NUM_TOURS = 10;
 
-    static Tour createSimplyTour() throws ParseException {
+    static Tour createSimplyTourByClientEmail(String clientEmail) throws ParseException {
 
         Tour tour = new Tour();
 
@@ -48,12 +47,14 @@ public class TourDAOTest {
         residentLocationSet.add(residentLocation);
 
         Set<Transportation> transportationSet = new HashSet<Transportation>();
+//        List<Transportation> transportationSet = new ArrayList<Transportation>();
         transportationSet.add(transportation);
 
         Set<RentTransport> rentTransportSet = new HashSet<RentTransport>();
+//        List<RentTransport> rentTransportSet = new ArrayList<RentTransport>();
         rentTransportSet.add(rentTransport);
 
-        Client client = clientDAO.findByEmail(CLIENT_EMAIL);
+        Client client = clientDAO.findByEmail(clientEmail);
 //        Client client = clientDAO.findByEmail("admin");
 
         tour.setRentTransports(rentTransportSet);
@@ -72,7 +73,7 @@ public class TourDAOTest {
 
         //создаем NUM_TOURS простых туров и сохраняем в БД
         for (int i = 0; i < NUM_TOURS; i++){
-            Tour tour = createSimplyTour();
+            Tour tour = createSimplyTourByClientEmail(CLIENT_EMAIL);
             tourDAO.persist(tour);
         }
 
@@ -106,7 +107,7 @@ public class TourDAOTest {
 
         //создаем NUM_TOURS простых туров и сохраняем в БД
         for (int i = 0; i < NUM_TOURS; i++){
-            Tour tour = createSimplyTour();
+            Tour tour = createSimplyTourByClientEmail(CLIENT_EMAIL);
             tourDAO.persist(tour);
         }
 
@@ -120,7 +121,7 @@ public class TourDAOTest {
         newClient.setFullName("Ne Varivoda Ivan");
         newClient.setEmail(newEmail);
         newClient.setPassword("nepass");
-        newClient.setTours((Set<Tour>) tourList);
+//        newClient.setTours(tourList);
 
         clientDAO.persist(newClient);
 
@@ -134,9 +135,50 @@ public class TourDAOTest {
         //Достаем set туров и проверяем, что он null
         tourList = tourDAO.findAll();
         assertEquals(0, tourList.size());
-
-
-
     }
+
+    //Добавляем новый Transportation в Tour и вызываем клиента, привязанного к этому туру
+    @Test
+    public void insertOneMoreTransportationAndCheck() throws ParseException {
+
+        //удаляем все записи из БД
+        tourDAO.deleteAll();
+
+        //создаем простой тур и сохраняем в БД
+        Tour tour = createSimplyTourByClientEmail(CLIENT_EMAIL);
+        tourDAO.persist(tour);
+
+        //Достаем все туры из БД
+        List<Tour> tourList = tourDAO.findAll();
+
+        //Достаем единственный тур и получаем его Id
+        Tour tourFromList = tourList.get(0);
+        Integer tourId = tourFromList.getId();
+
+        //Создаем новый Transportation и устанавливаем ему текущий тур
+        Transportation newTransportation = TransportationDAOTest.createTransportation();
+//        newTransportation.setTour(tour);
+        newTransportation.setId(tourId);
+
+        //Сохраняет Transportation
+        transportationDAO.persist(newTransportation);
+
+        //Достаем set туров и проверяем, что в списке Transportation 2 экземпляра
+//        tourList = tourDAO.findAll();
+//        tourFromList = tourList.get(0);
+        tourFromList = tourDAO.findById(tourId);
+
+        assertEquals(2, tourFromList.getTransportations().size());
+
+
+        //По экземпляру клиента поиск туров и проверка, что в листе Transportation 2 экземпляра
+        Client client = clientDAO.findByEmail(CLIENT_EMAIL);
+        tourList = new ArrayList<Tour>(client.getTours());
+        tourFromList = tourList.get(0);
+        assertEquals(2, tourFromList.getTransportations().size());
+
+        tourDAO.deleteAll();
+    }
+
 
 }

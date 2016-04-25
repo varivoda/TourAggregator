@@ -20,7 +20,7 @@ public class TestLoadPropertyByClassLoader {
 //            ClassLoader classLoader = cls.getClassLoader();
 //            Class cl = Class.forName("java.util.Properties");
 //            ClassLoader classLoader = cls.getClassLoader();
-            InputStream inputStream = cls.getClassLoader().getResourceAsStream("src/initData.properties");
+            InputStream inputStream = cls.getClassLoader().getResourceAsStream("initData.properties");
             Properties properties = new Properties();
             properties.load(inputStream);
 

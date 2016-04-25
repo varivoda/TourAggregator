@@ -24,6 +24,15 @@ public class Transportation {
     private String destinationLocation;
     private String originLocation;
     private String currencyCode;
+//    private int tourId;
+//
+//    @Column(name = "tour_id", insertable = false, updatable = false,unique = true)
+//    public int getTourId() {
+//        return tourId;
+//    }
+//    public void setTourId(int tourId) {
+//        this.tourId = tourId;
+//    }
 
     public Transportation() {}
 
@@ -45,7 +54,7 @@ public class Transportation {
         this.transportKind = transportKind;
     }
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "tour_id")
     public Tour getTour() {
         return tour;
@@ -78,6 +87,8 @@ public class Transportation {
     public void setDepartureAddressFrom(String departureAddressFrom) {
         this.departureAddressFrom = departureAddressFrom;
     }
+
+
 
     @Column(name = "currency_code")
     public String getCurrencyCode() {

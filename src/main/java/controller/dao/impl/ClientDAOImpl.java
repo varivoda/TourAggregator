@@ -11,8 +11,9 @@ import java.util.List;
 /**
  * Created by ivan on 15.12.15.
  */
-@Stateless
+
 @LocalBean
+@Stateless
 public class ClientDAOImpl implements ClientDAO {
 
     private DaoUtil<Client,Integer> daoUtil = new DaoUtil<Client, Integer>();

@@ -10,8 +10,9 @@ import java.util.List;
 /**
  * Created by ivan on 21.04.16.
  */
-@Stateless
+
 @LocalBean
+@Stateless
 public class TourDAOImpl extends AbstractDAO<Tour,Integer> implements TourDAO {
 
     public TourDAOImpl() {

@@ -4,6 +4,7 @@ import model.tour.Tour;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -16,7 +17,9 @@ public class Client implements Serializable{
 	private String fullName;
 	private String email;
 	private Set<TripPreferences> tripPreferences;
+//	private List<Tour> tours; // TODO change to set
 	private Set<Tour> tours;
+
 
 
 	public Client() {
@@ -68,5 +71,13 @@ public class Client implements Serializable{
 	public void setTours(Set<Tour> tours) {
 		this.tours = tours;
 	}
+
+//	@OneToMany(mappedBy = "client",  fetch = FetchType.EAGER)
+//	public List<Tour> getTours(){
+//		return tours;
+//	}
+//	public void setTours(List<Tour> tours) {
+//		this.tours = tours;
+//	}
 
 }
