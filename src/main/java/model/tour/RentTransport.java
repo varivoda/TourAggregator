@@ -18,11 +18,12 @@ public class RentTransport {
     private String companyAddress;
     private String carBrand;
     private String carNumber;
-    private BigDecimal pricePerDay;
+    private BigDecimal price;
     private String carCategory;
     private Date orderDate;
     private Date returnDate;
     private String locationCode;
+    private String currency;
 
     public RentTransport() {}
 
@@ -43,6 +44,15 @@ public class RentTransport {
     }
     public void setTour(Tour tour) {
         this.tour = tour;
+    }
+
+    @Column(name = "currency")
+    public String getCurrency() {
+        return currency;
+    }
+
+    public void setCurrency(String currency) {
+        this.currency = currency;
     }
 
     @Column(name = "order_date")
@@ -101,12 +111,12 @@ public class RentTransport {
         this.carBrand = carBrand;
     }
 
-    @Column(name = "price_per_day")
-    public BigDecimal getPricePerDay() {
-        return pricePerDay;
+    @Column(name = "price")
+    public BigDecimal getPrice() {
+        return price;
     }
-    public void setPricePerDay(BigDecimal pricePerDay) {
-        this.pricePerDay = pricePerDay;
+    public void setPrice(BigDecimal price) {
+        this.price = price;
     }
 
     @Column(name = "car_category")

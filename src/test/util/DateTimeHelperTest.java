@@ -1,6 +1,6 @@
 package util;
 
-import controller.DateTimeHelper;
+import controller.util.DateTimeHelper;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

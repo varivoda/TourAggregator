@@ -1,6 +1,6 @@
 package dao;
 
-import controller.DateTimeHelper;
+import controller.util.DateTimeHelper;
 import controller.dao.TransportationDAO;
 import controller.dao.impl.TransportationDAOImpl;
 import model.tour.Transportation;

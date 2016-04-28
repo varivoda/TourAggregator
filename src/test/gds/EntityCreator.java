@@ -5,7 +5,7 @@ import model.client.DescriptionRentTransport;
 import java.text.ParseException;
 import java.util.Date;
 
-import static controller.DateTimeHelper.*;
+import static controller.util.DateTimeHelper.*;
 /**
  * Created by ivan on 25.04.16.
  *

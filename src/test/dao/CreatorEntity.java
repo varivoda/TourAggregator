@@ -1,6 +1,6 @@
 package dao;
 
-import controller.DateTimeHelper;
+import controller.util.DateTimeHelper;
 import model.tour.RentTransport;
 import model.tour.ResidentLocation;
 import model.tour.Transportation;
@@ -74,7 +74,7 @@ public class CreatorEntity {
         RentTransport rentTransport = new RentTransport();
 
         BigDecimal pricePerDay = BigDecimal.valueOf(50.50);
-        rentTransport.setPricePerDay(pricePerDay);
+        rentTransport.setPrice(pricePerDay);
 
         String orderDateStr = "2016-06-10 15:00:00";
         Date orderDate = DateTimeHelper.getDateTimeFromString(orderDateStr);

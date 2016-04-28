@@ -1,7 +1,7 @@
 package gds;
 
 import controller.exceptions.TransportationServiceException;
-import controller.gds.sabre.TransportationServiceBean;
+import controller.gds.sabre.TransportationServiceImpl;
 import model.client.DescriptionTransportation;
 import model.tour.Transportation;
 import org.junit.After;
@@ -14,19 +14,17 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
-import static org.junit.Assert.*;
-
 /**
  * Created by ivan on 14.04.16.
  */
-public class TransportationServiceBeanTest {
+public class TransportationServiceImplTest {
 
-    private static TransportationServiceBean ts;
+    private static TransportationServiceImpl ts;
     private static SimpleDateFormat sdf;
 
     @Before
     public void setUp() throws Exception {
-        ts = new TransportationServiceBean();
+        ts = new TransportationServiceImpl();
         sdf = new SimpleDateFormat("yyyy-MM-dd");
     }
 

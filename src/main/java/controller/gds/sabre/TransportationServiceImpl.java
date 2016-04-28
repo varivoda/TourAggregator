@@ -34,9 +34,9 @@ import java.util.List;
  * Данный класс реализует интерфейс TransportationService и предназначен для работы
  * с транспортным контентом посредством взаимодействия с GDS Sabre
  */
-@Stateless(mappedName = "TransportationServiceBean")
+@Stateless(mappedName = "TransportationServiceImpl")
 @LocalBean
-public class TransportationServiceBean implements TransportationService {
+public class TransportationServiceImpl implements TransportationService {
 
     //предоставляет информацию необходимую для взаимодействия с Sabre
 
@@ -55,7 +55,7 @@ public class TransportationServiceBean implements TransportationService {
     public static final int STATUS_OK = 200;
 
 
-    public TransportationServiceBean() {
+    public TransportationServiceImpl() {
     }
 
     /*

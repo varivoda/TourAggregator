@@ -1,4 +1,4 @@
-package model;
+package controller.util;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -32,7 +32,7 @@ public class TourContentData {
     // Updating initial data
     public static void upDate() throws ClassNotFoundException, IOException {
 
-        Class<TourContentData> dataTypesClass = (Class<TourContentData>) Class.forName("model.TourContentData");
+        Class<TourContentData> dataTypesClass = (Class<TourContentData>) Class.forName("controller.util.TourContentData");
         InputStream inputStream = dataTypesClass.getClassLoader().getResourceAsStream("initData.properties");
 
         Properties properties = new Properties();

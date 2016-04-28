@@ -4,11 +4,13 @@ import controller.exceptions.RentCarServiceException;
 import controller.gds.RentTransportService;
 import model.client.DescriptionRentTransport;
 import model.tour.RentTransport;
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
 import org.json.simple.parser.ParseException;
 
 
+import javax.ejb.EJB;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.ws.rs.client.*;
@@ -17,20 +19,23 @@ import javax.ws.rs.core.MultivaluedHashMap;
 import javax.ws.rs.core.MultivaluedMap;
 import javax.ws.rs.core.Response;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
  * Created by ivan on 30.03.16.
  * Класс предназначен для взаимодействия с сервисом по аренде автомобилей
  */
-@Stateless(mappedName = "RentTransportServiceBean")
+@Stateless(mappedName = "RentTransportServiceImpl")
 @LocalBean
-public class RentTransportServiceBean implements RentTransportService {
+public class RentTransportServiceImpl implements RentTransportService {
 
-    //For test
-//    @EJB
-//    SabreProperties sabreProperties;
+//    For test
+    @EJB
+    SabreProperties sabreProperties;
 
 
     //Клиент для взаимодействия с RESTfull сервисами
@@ -45,13 +50,13 @@ public class RentTransportServiceBean implements RentTransportService {
 
     public List<RentTransport> getRentTransport(DescriptionRentTransport descriptionRentTransport) throws RentCarServiceException {
 
-        //Test
-        SabreProperties sabreProperties = null;
-        try {
-            sabreProperties = new SabreProperties();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//        //Test
+//        SabreProperties sabreProperties = null;
+//        try {
+//            sabreProperties = new SabreProperties();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
         //?Test
 
          /*
@@ -65,7 +70,7 @@ public class RentTransportServiceBean implements RentTransportService {
         //Конвертируем в Json экземпляр descriptionRentTransport
         JSONObject rentJson = getRentTransportJson(descriptionRentTransport);
 
-        //Выполняем запрос к сервису
+        //Выполняем post запрос к сервису
         Invocation.Builder builder =  rentTransportResource.request(MediaType.TEXT_PLAIN_TYPE).headers(headers);
         Response response = builder.post(Entity.json(rentJson.toJSONString()));
 
@@ -80,16 +85,17 @@ public class RentTransportServiceBean implements RentTransportService {
                     "\nresponse: " + responseStr);
         }
 
-        //Получаем список транспорта из стоки ответа
+        //Получаем список транспорта из строки ответа
+        List<RentTransport> rentTransportList = null;
         try {
-            List<RentTransport> rentTransportList = getRentTransportListFromString(responseStr);
-        } catch (ParseException e) {
+            rentTransportList = getRentTransportListFromString(responseStr, descriptionRentTransport);
+        } catch (Exception e) {
             throw new RentCarServiceException(SABRE_ERROR);
         }
 
         System.out.println();
 
-        return null;
+        return rentTransportList.subList(0,3);
     }
 
     public <T> boolean bookCar(T id) throws RentCarServiceException {
@@ -97,21 +103,60 @@ public class RentTransportServiceBean implements RentTransportService {
         return false;
     }
 
-    private List<RentTransport> getRentTransportListFromString(String inputStr) throws ParseException {
+    //Метод формирует список транспорта, доступного для бронирования
+    private List<RentTransport> getRentTransportListFromString(String inputStr, DescriptionRentTransport drt) throws ParseException, java.text.ParseException {
 
         //Парсим входную строку в JSON
         JSONObject inputJson = (JSONObject) JSONValue.parseWithException(inputStr);
-        System.out.println();
 
-        /*
-        Зная структуру возвращаемого JSON от сервиса Sabre
-        парсим его и достаем необходимую информацию для создания списка Transportation
-         */
+        JSONObject jsonOTA_VehAvailRateRS = (JSONObject) inputJson.get("OTA_VehAvailRateRS");
 
-        //TODO здесь закончил
+        JSONObject jsonVehAvailRSCore = (JSONObject) jsonOTA_VehAvailRateRS.get("VehAvailRSCore");
+        JSONObject jsonVehRentalCore = (JSONObject) jsonVehAvailRSCore.get("VehRentalCore");
+
+        JSONObject jsonLocationDetails = (JSONObject) jsonVehRentalCore.get("LocationDetails");
+        String locationCode = (String) jsonLocationDetails.get("LocationCode");
+        String locationName = (String) jsonLocationDetails.get("LocationName");
+
+        JSONObject jsonVehVendorAvails = (JSONObject) jsonVehAvailRSCore.get("VehVendorAvails");
+        JSONArray jsonVehVendorAvail = (JSONArray) jsonVehVendorAvails.get("VehVendorAvail");
 
 
-        return null;
+        List<RentTransport> rentTransportList = new ArrayList<RentTransport>();
+
+        for(Object objectFromArray : jsonVehVendorAvail){
+
+            RentTransport rentTransport = new RentTransport();
+            JSONObject jsonFromArray = (JSONObject) objectFromArray;
+
+            JSONObject jsonVendor = (JSONObject) jsonFromArray.get("Vendor");
+            String companyName = (String) jsonVendor.get("CompanyShortName");
+
+            JSONObject jsonVehAvailCore = (JSONObject) jsonFromArray.get("VehAvailCore");
+
+            JSONObject jsonRentalRate = (JSONObject) jsonVehAvailCore.get("RentalRate");
+            JSONObject jsonVehicle = (JSONObject) jsonRentalRate.get("Vehicle");
+            JSONArray jsonVehType = (JSONArray) jsonVehicle.get("VehType");
+            String vehType = (String) jsonVehType.get(0);
+
+            JSONObject jsonVehicleCharges = (JSONObject) jsonVehAvailCore.get("VehicleCharges");
+            JSONObject jsonVehicleCharge = (JSONObject) jsonVehicleCharges.get("VehicleCharge");
+
+            String currencyCode = (String) jsonVehicleCharge.get("CurrencyCode");
+            BigDecimal price = BigDecimal.valueOf(Double.parseDouble((String) jsonVehicleCharge.get("Amount")));
+
+            rentTransport.setPrice(price);
+            rentTransport.setCurrency(currencyCode);
+            rentTransport.setLocationCode(locationCode);
+            rentTransport.setCompanyAddress(locationName);
+            rentTransport.setCompanyName(companyName);
+            rentTransport.setCarCategory(vehType);
+            rentTransport.setOrderDate(drt.getPickUpDateTime());
+            rentTransport.setReturnDate(drt.getReturnDateTime());
+            rentTransportList.add(rentTransport);
+        }
+
+        return rentTransportList;
     }
 
     // Метод формирует Json для запроса к серверу по поределенным правилам

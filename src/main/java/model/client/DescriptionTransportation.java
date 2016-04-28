@@ -1,7 +1,5 @@
 package model.client;
 
-import model.Money;
-
 import java.math.BigDecimal;
 import java.util.Date;
 

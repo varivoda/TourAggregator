@@ -1,17 +1,13 @@
 package controller.servlets;
 
 import controller.exceptions.InvalidDataException;
-import controller.exceptions.TransportationServiceException;
 import controller.gds.FactoryService;
 import controller.gds.NameGDS;
 import controller.gds.TransportationService;
-import controller.gds.sabre.TransportationServiceBean;
 import model.client.DescriptionTransportation;
 import model.tour.Transportation;
-import org.hibernate.Session;
 
 import javax.ejb.EJB;
-import javax.naming.NamingException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -36,7 +32,7 @@ public class FindTransportationServlet extends HttpServlet {
 
     // Бин, отвечающий за взаимодействие с сервисом перелетов
 //    @EJB
-//    TransportationServiceBean transportationService;
+//    TransportationServiceImpl transportationService;
 
     @EJB
     FactoryService factoryService;

@@ -15,13 +15,15 @@ public class GeneralInformation implements Serializable {
 
     private int id;
     private Tour tour;
-    private String countryCodeFrom;
+    private String country;
     private String city;
     private Date departureDate;
     private Date arrivalDate;
     private int travelersQuantity;
     private BigDecimal budget;
     private String currency;
+    private String localCode;
+    private String destinationCode;
 
     public GeneralInformation(){}
 
@@ -44,6 +46,24 @@ public class GeneralInformation implements Serializable {
         this.tour = idTour;
     }
 
+    @Column(name = "local_code")
+    public String getLocalCode() {
+        return localCode;
+    }
+
+    public void setLocalCode(String localCode) {
+        this.localCode = localCode;
+    }
+
+    @Column(name = "destination_code")
+    public String getDestinationCode() {
+        return destinationCode;
+    }
+
+    public void setDestinationCode(String destinationCode) {
+        this.destinationCode = destinationCode;
+    }
+
     @Column(name = "currency")
     public String getCurrency() {
         return currency;
@@ -53,11 +73,11 @@ public class GeneralInformation implements Serializable {
     }
 
     @Column(name = "country")
-    public String getCountryCodeFrom() {
-        return countryCodeFrom;
+    public String getCountry() {
+        return country;
     }
-    public void setCountryCodeFrom(String country) {
-        this.countryCodeFrom = country;
+    public void setCountry(String country) {
+        this.country = country;
     }
 
     @Column(name = "city")

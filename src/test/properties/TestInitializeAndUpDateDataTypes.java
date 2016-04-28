@@ -1,6 +1,6 @@
 package properties;
 
-import model.TourContentData;
+import controller.util.TourContentData;
 import org.junit.Test;
 
 import javax.naming.Context;

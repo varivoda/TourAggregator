@@ -1,6 +1,6 @@
 package gds;
 
-import controller.gds.sabre.TransportationServiceBean;
+import controller.gds.sabre.TransportationServiceImpl;
 import model.client.DescriptionTransportation;
 import model.tour.Transportation;
 import org.junit.BeforeClass;
@@ -15,12 +15,12 @@ import java.util.List;
  */
 public class TestResponseStringTransportationService {
 
-    private static TransportationServiceBean ts;
+    private static TransportationServiceImpl ts;
     private static SimpleDateFormat sdf;
 
     @BeforeClass
     public static void init(){
-        ts = new TransportationServiceBean();
+        ts = new TransportationServiceImpl();
         sdf = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
     }
 

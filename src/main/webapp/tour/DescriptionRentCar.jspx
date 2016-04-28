@@ -44,6 +44,31 @@
             </li>
 
         </ul>
+
+        <form class="transportation" action="/FindRentTransport" method="post">
+
+            <table>
+                <tr>
+                    <td><label for="locationCode">Location code*</label></td>
+                    <td>
+                        <select id="locationCode" name="locationCode">
+                            <option value="LAX">LAX</option>
+                            <option value="DFW">DFW</option>
+                            <option value="JFK">JFK</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="pickUpDateTime">Pick up date*</label></td>
+                    <td><input type="datetime" id="pickUpDateTime" name="pickUpDateTime"/></td>
+                </tr>
+                <tr>
+                    <td><label for="returnDateTime">Return date*</label></td>
+                    <td><input type="datetime" id="returnDateTime" name="returnDateTime"/></td>
+                </tr>
+            </table>
+            <input type="submit" value="Submit"/>
+        </form>
     </div>
 
     </body>

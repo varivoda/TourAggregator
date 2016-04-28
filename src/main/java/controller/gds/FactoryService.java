@@ -1,6 +1,6 @@
 package controller.gds;
 
-import controller.gds.sabre.TransportationServiceBean;
+import controller.gds.sabre.TransportationServiceImpl;
 
 import javax.ejb.LocalBean;
 import javax.ejb.Singleton;
@@ -24,8 +24,8 @@ public class FactoryService {
     public TransportationService getTransportationService(NameGDS name) throws NamingException {
 
         Context ctx = new InitialContext();
-        TransportationService transportationService = (TransportationServiceBean) ctx.
-                lookup("java:global/TransportationServiceBean");
+        TransportationService transportationService = (TransportationServiceImpl) ctx.
+                lookup("java:global/TransportationServiceImpl");
 
         return transportationService;
     }
@@ -34,12 +34,12 @@ public class FactoryService {
 
         Context ctx = new InitialContext();
         RentTransportService rentTransportService = (RentTransportService) ctx.
-                lookup("java:global/RentTransportServiceBean");
+                lookup("java:global/RentTransportServiceImpl");
 
         return rentTransportService;
     }
 
-//    public HotelService getHotelService(NameGDS name){
+//    public ResidentLocationService getHotelService(NameGDS name){
 //        return hotelService;
 //    }
 }

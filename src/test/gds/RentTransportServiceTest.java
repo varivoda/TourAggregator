@@ -2,7 +2,7 @@ package gds;
 
 import controller.exceptions.RentCarServiceException;
 import controller.gds.RentTransportService;
-import controller.gds.sabre.RentTransportServiceBean;
+import controller.gds.sabre.RentTransportServiceImpl;
 import model.client.DescriptionRentTransport;
 import static gds.EntityCreator.*;
 
@@ -17,7 +17,7 @@ import java.util.List;
  */
 public class RentTransportServiceTest {
 
-    private static RentTransportService rentTransportService = new RentTransportServiceBean();
+    private static RentTransportService rentTransportService = new RentTransportServiceImpl();
 
     @Test
     public void test() throws ParseException, RentCarServiceException {

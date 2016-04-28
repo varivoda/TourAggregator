@@ -1,6 +1,6 @@
 package dao;
 
-import controller.DateTimeHelper;
+import controller.util.DateTimeHelper;
 import controller.dao.ResidentLocationDAO;
 import controller.dao.impl.ResidentLocationDAOImpl;
 import model.tour.ResidentLocation;

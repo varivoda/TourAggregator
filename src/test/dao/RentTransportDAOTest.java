@@ -1,6 +1,6 @@
 package dao;
 
-import controller.DateTimeHelper;
+import controller.util.DateTimeHelper;
 import controller.dao.RentTransportDAO;
 import controller.dao.impl.RentTransportDAOImpl;
 import model.tour.RentTransport;
@@ -25,7 +25,7 @@ public class RentTransportDAOTest {
         RentTransport rentTransport = new RentTransport();
 
         BigDecimal pricePerDay = BigDecimal.valueOf(50.50);
-        rentTransport.setPricePerDay(pricePerDay);
+        rentTransport.setPrice(pricePerDay);
 
         String orderDateStr = "2016-06-10 15:00:00";
         Date orderDate = DateTimeHelper.getDateTimeFromString(orderDateStr);
@@ -67,7 +67,7 @@ public class RentTransportDAOTest {
         assertEquals(0, rentTransportList.size());
 
         //Проверяем обязательные поля вернувшегося экземпляра с начальным
-        assertEquals(true,  rentTransportRet.getPricePerDay().compareTo(rentTransport.getPricePerDay()) == 0);
+        assertEquals(true,  rentTransportRet.getPrice().compareTo(rentTransport.getPrice()) == 0);
         assertEquals(rentTransport.getOrderDate() , rentTransportRet.getOrderDate());
         assertEquals(rentTransport.getReturnDate() , rentTransportRet.getReturnDate());
         assertEquals(rentTransport.getLocationCode() , rentTransportRet.getLocationCode());

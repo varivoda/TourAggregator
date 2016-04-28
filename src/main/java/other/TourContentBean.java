@@ -24,7 +24,7 @@
 //    private TransportationService transportationService;
 //
 ////    private CarService carService;
-////    private HotelService hotelService;
+////    private ResidentLocationService hotelService;
 //
 //    public void initServices(NameGDS nameGDS) throws NamingException {
 //        transportationService = FactoryService.getTransportationService(nameGDS);
@@ -37,7 +37,7 @@
 //        return null;
 //    }
 //
-//    public List<ResidentLocation> getHotels(TripPreferences tripPreferences){
+//    public List<ResidentLocation> getResidentLocations(TripPreferences tripPreferences){
 //        return null;
 //    }
 //
@@ -49,7 +49,7 @@
 //        return true;
 //    }
 //
-//    public <T> boolean bookHotel(T id){
+//    public <T> boolean bookResidentLocation(T id){
 //        return true;
 //    }
 //
