@@ -98,9 +98,9 @@ public class RentTransportServiceImpl implements RentTransportService {
         return rentTransportList.subList(0,3);
     }
 
-    public <T> boolean bookCar(T id) throws RentCarServiceException {
-        System.out.println("Hello< I'm RentTransportService for Sabre. bookCar");
-        return false;
+    public <T> boolean bookRentTransport(T id) throws RentCarServiceException {
+        System.out.println("Hello< I'm RentTransportService for Sabre. bookRentTransport");
+        return true;
     }
 
     //Метод формирует список транспорта, доступного для бронирования

@@ -26,7 +26,7 @@
             <li><a href="../client/personalArea.jspx">Main</a></li>
             <li><a href="../tour/DescriptionTransportation.jspx">Transportation</a></li>
             <li><a href="../tour/DescriptionHotel.jspx">Hotel</a></li>
-            <li><a href="../tour/DescriptionRentCar.jspx">Rent car</a></li>
+            <li><a href="../tour/DescriptionRentTransport.jspx">Rent car</a></li>
             <!--<li><a href="../tour/ViewMyTour.jspx">View my tour</a></li>-->
             <li>
                 <form action="/ViewTour" method="doGet">

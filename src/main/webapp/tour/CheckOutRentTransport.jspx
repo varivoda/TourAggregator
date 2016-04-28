@@ -3,7 +3,7 @@
 
     <html>
     <head>
-        <title>View rent transport</title>
+        <title>Checkout  rent transport</title>
         <link rel="stylesheet" type="text/css" href="../css/style.css"/>
     </head>
 
@@ -13,7 +13,6 @@
     <c:if test="${not authorized}">
         <c:redirect url="../index.html"/>
     </c:if>
-
 
     <div class="center">
 
@@ -31,8 +30,8 @@
 
 
         <!--Transportation: <br/>-->
-        <c:forEach var="t" items="${rentTransportList}">
-                <table>
+        <c:set var="t" value="${rentTransportList.get(0)}" scope="page"/>
+            <table>
                 <tr>
                     <td>Location code</td>
                     <td><c:out value="${t.locationCode}"/></td>
@@ -64,13 +63,16 @@
                     <td><c:out value="${t.price}"/> <c:out value="${t.currency}"/> </td>
                 </tr>
             </table>  <br/>
-        </c:forEach> <br/>
 
-        <form action="/tour/CheckOutRentTransport.jspx" method="get">
-            <input type="submit" value="checkout"/>
+        <form action="/BookRentTransport" method="post">
+            <label for="personalData">Personal data for booking</label>
+            <input type="text" id="personalData" name="personalData"/>
+            <input type="submit" value="book"/>
         </form>
 
     </div>
+
+
 
     </body>
     </html>

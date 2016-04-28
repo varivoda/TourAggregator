@@ -20,7 +20,7 @@
     <li><a href="../client/personalArea.jspx">Main</a></li>
     <li><a href="../tour/DescriptionTransportation.jspx">Transportation</a></li>
     <li><a href="../tour/DescriptionHotel.jspx">Hotel</a></li>
-    <li><a href="../tour/DescriptionRentCar.jspx">Rent car</a></li>
+    <li><a href="../tour/DescriptionRentTransport.jspx">Rent car</a></li>
     <!--<li><a href="../tour/ViewMyTour.jspx">View my tour</a></li>-->
     <li>
         <form action="/ViewTour" method="doGet">
@@ -109,6 +109,41 @@
             </tr>
         </table>  <br/>
 
+    </c:forEach> <br/>
+
+    <c:forEach var="t" items="${tour.rentTransports}">
+        <table>
+            <tr>
+                <td>Location code</td>
+                <td><c:out value="${t.locationCode}"/></td>
+            </tr>
+            <tr>
+                <td>Location name</td>
+                <td><c:out value="${t.companyAddress}"/></td>
+            </tr>
+            <tr>
+                <td>Company name</td>
+                <td><c:out value="${t.companyName}"/></td>
+            </tr>
+            <tr>
+                <td>Car category</td>
+                <td><c:out value="${t.carCategory}"/></td>
+            </tr>
+            <tr>
+                <td>Pick up date</td>
+                <td><c:out value="${t.orderDate}"/></td>
+            </tr>
+
+            <tr>
+                <td>Return date</td>
+                <td><c:out value="${t.returnDate}"/></td>
+            </tr>
+
+            <tr>
+                <td>Price</td>
+                <td><c:out value="${t.price}"/> <c:out value="${t.currency}"/> </td>
+            </tr>
+        </table>  <br/>
     </c:forEach> <br/>
 
 </div>

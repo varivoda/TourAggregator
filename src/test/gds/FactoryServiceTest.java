@@ -22,6 +22,6 @@ public class FactoryServiceTest {
 
         RentTransportService rentTransportService = factoryService.getRentTransportService(NameGDS.Sabre);
 
-        System.out.println(rentTransportService.bookCar(1));
+        System.out.println(rentTransportService.bookRentTransport(1));
     }
 }

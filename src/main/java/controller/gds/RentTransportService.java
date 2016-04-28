@@ -15,5 +15,5 @@ public interface RentTransportService {
 
     List<RentTransport> getRentTransport(DescriptionRentTransport descriptionRentTransport) throws RentCarServiceException;
 
-    <T> boolean bookCar(T id) throws RentCarServiceException;
+    <T> boolean bookRentTransport(T id) throws RentCarServiceException;
 }

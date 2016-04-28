@@ -53,7 +53,7 @@
 //        return true;
 //    }
 //
-//    public <T> boolean bookCar(T id){
+//    public <T> boolean bookRentTransport(T id){
 //        return true;
 //    }
 //}

@@ -2,16 +2,15 @@ package controller.servlets;
 
 import controller.dao.ClientDAO;
 import controller.dao.TourDAO;
-import controller.exceptions.TransportationServiceException;
+import controller.exceptions.RentCarServiceException;
 import controller.gds.FactoryService;
 import controller.gds.NameGDS;
-import controller.gds.TransportationService;
+import controller.gds.RentTransportService;
 import model.client.Client;
+import model.tour.RentTransport;
 import model.tour.Tour;
-import model.tour.Transportation;
 
 import javax.ejb.EJB;
-import javax.naming.NamingException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -24,11 +23,10 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * Сервле выполянет бронирование перелета в сервисе Sabre
- * также осуществяет сохранение экземпляра перелета класса в базе данных
+ * Created by ivan on 28.04.16.
  */
-@WebServlet("/BookTransportation")
-public class BookTransportationServlet extends HttpServlet {
+@WebServlet("/BookRentTransport")
+public class BookRentTransportServlet extends HttpServlet {
 
     @EJB
     FactoryService factoryService;
@@ -40,22 +38,22 @@ public class BookTransportationServlet extends HttpServlet {
     TourDAO tourDAO;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doGet(request,response);
+        doGet(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        //Получаем выбранный Transportation
+        //Получаем выбранный RentTransport
         HttpSession session = request.getSession();
-        List<Transportation> transportationList = (List<Transportation>) session.getAttribute("transportationList");
-        Transportation chosenTransportation = getChosenTransportation(transportationList);
-        session.removeAttribute("transportationList");
+        List<RentTransport> rentTransportList = (List<RentTransport>) session.getAttribute("rentTransportList");
+        RentTransport chosenRentTransport = getChosenRentTransport(rentTransportList);
+        session.removeAttribute("rentTransportList");
 
         try {
-            TransportationService transportationService = factoryService.getTransportationService(NameGDS.Sabre);
+            RentTransportService rentTransportService = factoryService.getRentTransportService(NameGDS.Sabre);
 
             //Выполянем заказ
-            boolean result = transportationService.bookTransportation(chosenTransportation);
+            boolean result = rentTransportService.bookRentTransport(chosenRentTransport);
 
             if (result){
                 //Выбираем пользователя с Id
@@ -72,18 +70,18 @@ public class BookTransportationServlet extends HttpServlet {
                     tour = client.getTours().iterator().next();
                 }
 
-                // Проверям есть ли в туре эмеленты Transportation
-                Set<Transportation> transportationSet = tour.getTransportations();
+                // Проверям есть ли в туре эмеленты rentTransport
+                Set<RentTransport> rentTransportSet = tour.getRentTransports();
 
                 //Если набор элементов не инициализирован создаем новый и присваваем его с туром
-                if (transportationSet == null){
-                    transportationSet = new HashSet<Transportation>();
-                    tour.setTransportations(transportationSet);
+                if (rentTransportSet == null){
+                    rentTransportSet = new HashSet<RentTransport>();
+                    tour.setRentTransports(rentTransportSet);
                 }
 
-                //Устанавливаем связь между Transportation and Tour
-                chosenTransportation.setTour(tour);
-                transportationSet.add(chosenTransportation);
+                //Устанавливаем связь между RentTransport and Tour
+                chosenRentTransport.setTour(tour);
+                rentTransportSet.add(chosenRentTransport);
 //                tour.setTransportations(transportationSet);
 
                 //Сохраняем tour
@@ -94,7 +92,7 @@ public class BookTransportationServlet extends HttpServlet {
                 return;
             }
             else{
-                request.setAttribute("exception", new TransportationServiceException("Booking fail"));
+                request.setAttribute("exception", new RentCarServiceException("Booking fail"));
                 getServletContext().getRequestDispatcher("/error.jspx").forward(request, response);
                 return;
             }
@@ -105,7 +103,7 @@ public class BookTransportationServlet extends HttpServlet {
         }
     }
 
-    private Transportation getChosenTransportation(List<Transportation> transportationList){
-        return transportationList.get(0);
+    private RentTransport getChosenRentTransport(List<RentTransport> rentTransportList){
+        return rentTransportList.get(0);
     }
 }
