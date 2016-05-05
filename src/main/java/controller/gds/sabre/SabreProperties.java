@@ -10,7 +10,7 @@ import java.util.Properties;
 
 /**
  * Created by ivan on 01.04.16.
- * Singleton, отвечающий за настройку сервиса для работы с GDS Sabre
+ * Singleton, отвечающий за настройку сервиса для работы с GDS SABRE
  * Извлекает из файла sabreSettings.properties параметры настройки системы
  * и хранит их. Существует возможность обновления параметров метод upDate()
  */
@@ -21,7 +21,7 @@ public class SabreProperties {
     // Заголовки для формирования запроса к сервису
     private Map<String, String> headers;
 
-    //Основные URI для работы с различными сервисами Sabre
+    //Основные URI для работы с различными сервисами SABRE
     private String transportationServiceURI;
     private String residentLocationServiceURI;
     private String rentTransportServiceURI;

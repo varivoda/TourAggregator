@@ -17,12 +17,12 @@ import java.util.List;
 @LocalBean
 public class ResidentLocationServiceImpl implements ResidentLocationService {
     public List<ResidentLocation> getResidentLocations(DescriptionResidentLocation drl) throws ResidentLocationServiceException{
-        System.out.println("Hello< I'm ResidentLocationService for Sabre. getResidentLocations");
+        System.out.println("Hello< I'm ResidentLocationService for SABRE. getResidentLocations");
         return null;
     }
 
     public boolean bookResidentLocation(ResidentLocation rl) throws ResidentLocationServiceException {
-        System.out.println("Hello< I'm TransportationService for Sabre. bookResidentLocation");
+        System.out.println("Hello< I'm TransportationService for SABRE. bookResidentLocation");
         return false;
     }
 }

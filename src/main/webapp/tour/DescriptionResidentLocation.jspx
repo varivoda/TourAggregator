@@ -26,7 +26,7 @@
         <ul>
             <li><a href="../client/personalArea.jspx">Main</a></li>
             <li><a href="../tour/DescriptionTransportation.jspx">Transportation</a></li>
-            <li><a href="../tour/DescriptionHotel.jspx">Hotel</a></li>
+            <li><a href="../tour/DescriptionResidentLocation.jspx">Hotel</a></li>
             <li><a href="../tour/DescriptionRentTransport.jspx">Rent car</a></li>
             <!--<li><a href="../tour/ViewMyTour.jspx">View my tour</a></li>-->
             <li>
@@ -45,30 +45,35 @@
 
         </ul>
 
-        <form name="createResidentLocation" action="" method="post">
-            Enter the information about the resident location <br/>
+        <form class="transportation" action="/FindResidentLocation" method="post">
+
             <table>
                 <tr>
-                    <td>The name of the hotel</td>
-                    <td><input name="hotelName" type="text"/></td>
-                </tr>
-                <tr>
-                    <td>The address of the hotel</td>
-                    <td><input name="hotelAddress" type="text"/></td>
-                </tr>
-                <tr>
-                    <td>The kind of the hotel</td>
-                    <!--<td></td>-->
-                </tr>
-                <tr>
-                    <td>The price for day</td>
-                    <td><input name="pricePerDay" type="number"/></td>
-                </tr>
-                <tr>
-                    <td><input type="submit" value="submite"/></td>
-                </tr>
-            </table>
+                    <td> <label for="locationCode">Location code*</label></td>
 
+                    <td>
+                        <select id="locationCode" name="locationCode">
+                            <option value="JFK">JFK</option>
+                            <option value="LAX">LAX</option>
+                            <option value="DFW">DFW</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="orderDateTime">Order date time*</label></td>
+                    <td><input type="datetime" id="orderDateTime" name="orderDateTime"/></td>
+                </tr>
+                <tr>
+                    <td><label for="returnDateTime">Order date time*</label></td>
+                    <td><input type="datetime" id="returnDateTime" name="returnDateTime"/></td>
+                </tr>
+                <tr>
+                    <td><label for="maxFare">Max fare</label></td>
+                    <td><input type="text" id="maxFare" name="maxFare"/></td>
+                </tr>
+
+            </table>
+            <input type="submit" value="Submit"/>
         </form>
 
     </div>

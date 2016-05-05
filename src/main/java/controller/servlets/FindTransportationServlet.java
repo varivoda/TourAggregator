@@ -50,7 +50,7 @@ public class FindTransportationServlet extends HttpServlet {
 
         try {
             //Запрашиваем у фабрики сервис для GDS заданной по имени
-            TransportationService transportationService = factoryService.getTransportationService(NameGDS.Sabre);
+            TransportationService transportationService = factoryService.getTransportationService(NameGDS.SABRE);
 
             //Получение описания перелета из запроса. Если структура запроса нарушена будет сгенерировано исключени
             DescriptionTransportation dt = getDescriptionTransportationFromRequest(req);

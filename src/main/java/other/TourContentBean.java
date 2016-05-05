@@ -29,7 +29,7 @@
 //    public void initServices(NameGDS nameGDS) throws NamingException {
 //        transportationService = FactoryService.getTransportationService(nameGDS);
 ////        carService = FactoryService.getRentTransportService(nameGDS);
-////        hotelService = FactoryService.getHotelService(nameGDS);
+////        hotelService = FactoryService.getResidentLocationService(nameGDS);
 //    }
 //
 //    public List<Transportation> getTransportation(DescriptionTransportation dt) throws Exception

@@ -3,7 +3,6 @@ package controller.servlets.old;
 import controller.gds.FactoryService;
 import controller.gds.NameGDS;
 import controller.gds.RentTransportService;
-import controller.gds.TransportationService;
 
 import javax.ejb.EJB;
 import javax.naming.NamingException;
@@ -26,8 +25,8 @@ public class TestServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
-//            TransportationService ts = factoryService.getTransportationService(NameGDS.Sabre);
-            RentTransportService rs = factoryService.getRentTransportService(NameGDS.Sabre);
+//            TransportationService ts = factoryService.getTransportationService(NameGDS.SABRE);
+            RentTransportService rs = factoryService.getRentTransportService(NameGDS.SABRE);
             System.out.println();
         } catch (NamingException e) {
             e.printStackTrace();

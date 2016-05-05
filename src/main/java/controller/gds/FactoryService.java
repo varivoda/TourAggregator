@@ -39,7 +39,7 @@ public class FactoryService {
         return rentTransportService;
     }
 
-//    public ResidentLocationService getHotelService(NameGDS name){
-//        return hotelService;
-//    }
+    public ResidentLocationService getResidentLocationService(NameGDS name){
+        return null;
+    }
 }

@@ -8,7 +8,6 @@ import controller.gds.NameGDS;
 import controller.gds.RentTransportService;
 import model.client.DescriptionRentTransport;
 import model.tour.RentTransport;
-import model.tour.Transportation;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -43,7 +42,7 @@ public class FindRentTransportServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
             //Запрашиваем у фабрики сервис для GDS заданной по имени
-            RentTransportService rentTransportService = factoryService.getRentTransportService(NameGDS.Sabre);
+            RentTransportService rentTransportService = factoryService.getRentTransportService(NameGDS.SABRE);
 
             //Получение описания перелета из запроса. Если структура запроса нарушена будет сгенерировано исключени
             DescriptionRentTransport drt = getDescriptionRentTransportFromRequest(req);
@@ -51,7 +50,7 @@ public class FindRentTransportServlet extends HttpServlet {
             //Вызов сервиса transportationService  и получение списка результов
             List<RentTransport> list = rentTransportService.getRentTransport(drt);
 
-            //Добавляем результат в сессию и передаем jsp для показа пользователю
+            //Добавляем результат FindResidentLocationServletв сессию и передаем jsp для показа пользователю
             HttpSession session = req.getSession();
 
             session.setAttribute("rentTransportList", list);

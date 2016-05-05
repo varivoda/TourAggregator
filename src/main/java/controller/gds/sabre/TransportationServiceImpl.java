@@ -32,13 +32,13 @@ import java.util.List;
 /**
  * Created by ivan on 30.03.16.
  * Данный класс реализует интерфейс TransportationService и предназначен для работы
- * с транспортным контентом посредством взаимодействия с GDS Sabre
+ * с транспортным контентом посредством взаимодействия с GDS SABRE
  */
 @Stateless(mappedName = "TransportationServiceImpl")
 @LocalBean
 public class TransportationServiceImpl implements TransportationService {
 
-    //предоставляет информацию необходимую для взаимодействия с Sabre
+    //предоставляет информацию необходимую для взаимодействия с SABRE
 
     //TEST BEGIN
     @EJB
@@ -50,8 +50,8 @@ public class TransportationServiceImpl implements TransportationService {
     private Client client = ClientBuilder.newClient();
     //Предназначен для конвертирования строк и даты
     private static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-    //Сообщение об ошибке при взаимодейтсвии с Sabre
-    public static final String SABRE_ERROR = "Error was appeared with Sabre";
+    //Сообщение об ошибке при взаимодейтсвии с SABRE
+    public static final String SABRE_ERROR = "Error was appeared with SABRE";
     public static final int STATUS_OK = 200;
 
 
@@ -126,7 +126,7 @@ public class TransportationServiceImpl implements TransportationService {
     }
 
     /*
-    Метод парсит полученную строку от сервиса Sabre к списку Transportation
+    Метод парсит полученную строку от сервиса SABRE к списку Transportation
     зная структуру получеенного json
      */
     private static List<Transportation> getTransportationFromString(String inStr) throws ParseException, org.json.simple.parser.ParseException {
@@ -135,7 +135,7 @@ public class TransportationServiceImpl implements TransportationService {
         JSONObject transpJson = (JSONObject) JSONValue.parseWithException(inStr);
 
         /*
-        Зная структуру возвращаемого JSON от сервиса Sabre
+        Зная структуру возвращаемого JSON от сервиса SABRE
         парсим его и достаем необходимую информацию для создания списка Transportation
          */
         String originCode = (String) transpJson.get("OriginLocation");
@@ -156,6 +156,7 @@ public class TransportationServiceImpl implements TransportationService {
         Transportation newTransportation = new Transportation();
 
         // Заполняем поля возвращаемого объекта
+        newTransportation.setId(0);
         newTransportation.setTransportKind("Plane");
         newTransportation.setChosen(false);
         newTransportation.setCurrencyCode(currencyCode);

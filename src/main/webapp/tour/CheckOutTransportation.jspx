@@ -30,7 +30,7 @@
 
 
     <!--Transportation: <br/>-->
-    <c:forEach var="t" items="${transportationList}">
+    <c:set var="t" value="${chosenTransportation}"/>
         <table>
             <tr>
                 <td>Tour kind</td>
@@ -62,7 +62,7 @@
                 <td><c:out value="${t.price}"/> <c:out value="${t.currencyCode}"/> </td>
             </tr>
         </table>  <br/>
-    </c:forEach> <br/>
+    <br/>
 
     <form action="/BookTransportation" method="post">
         <label for="personalData">Personal data for booking</label>

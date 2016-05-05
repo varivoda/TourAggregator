@@ -11,7 +11,6 @@ import model.tour.Tour;
 import model.tour.Transportation;
 
 import javax.ejb.EJB;
-import javax.naming.NamingException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -24,7 +23,7 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * Сервле выполянет бронирование перелета в сервисе Sabre
+ * Сервле выполянет бронирование перелета в сервисе SABRE
  * также осуществяет сохранение экземпляра перелета класса в базе данных
  */
 @WebServlet("/BookTransportation")
@@ -47,12 +46,10 @@ public class BookTransportationServlet extends HttpServlet {
 
         //Получаем выбранный Transportation
         HttpSession session = request.getSession();
-        List<Transportation> transportationList = (List<Transportation>) session.getAttribute("transportationList");
-        Transportation chosenTransportation = getChosenTransportation(transportationList);
-        session.removeAttribute("transportationList");
+        Transportation chosenTransportation = (Transportation) session.getAttribute("chosenTransportation");
 
         try {
-            TransportationService transportationService = factoryService.getTransportationService(NameGDS.Sabre);
+            TransportationService transportationService = factoryService.getTransportationService(NameGDS.SABRE);
 
             //Выполянем заказ
             boolean result = transportationService.bookTransportation(chosenTransportation);
@@ -63,12 +60,15 @@ public class BookTransportationServlet extends HttpServlet {
                 Client client = clientDAO.findById(idClient);
 
                 Tour tour;
+                boolean tourIsNew;
                 //Если у клиента нет тура, создаем новый
-                if (client.getTours() == null || client.getTours().isEmpty()){
+                if (client.getTours().isEmpty()){
+                    tourIsNew = true;
                     tour = new Tour();
                     tour.setClient(client);
                 }
                 else{
+                    tourIsNew = false;
                     tour = client.getTours().iterator().next();
                 }
 
@@ -87,7 +87,12 @@ public class BookTransportationServlet extends HttpServlet {
 //                tour.setTransportations(transportationSet);
 
                 //Сохраняем tour
-                tourDAO.persist(tour);
+                if(tourIsNew) {
+                    tourDAO.persist(tour);
+                }
+                else {
+                    tourDAO.update(tour);
+                }
 
 //                response.getWriter().append("Success booking transportation");
                 response.sendRedirect("/SuccessOperation.html");

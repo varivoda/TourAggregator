@@ -20,7 +20,7 @@ public class FactoryServiceTest {
 
         FactoryService factoryService = new FactoryService();
 
-        RentTransportService rentTransportService = factoryService.getRentTransportService(NameGDS.Sabre);
+        RentTransportService rentTransportService = factoryService.getRentTransportService(NameGDS.SABRE);
 
         System.out.println(rentTransportService.bookRentTransport(1));
     }

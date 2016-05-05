@@ -19,10 +19,6 @@
 
     <ul>
         <li><a href="../client/personalArea.jspx">Main</a></li>
-        <!--<li><a href="../tour/DescriptionTransportation.jspx">Transportation</a></li>-->
-        <!--<li><a href="../tour/DescriptionHotel.jspx">Hotel</a></li>-->
-        <!--<li><a href="../tour/DescriptionRentCar.jspx">Rent car</a></li>-->
-        <!--<li><a href="../tour/ViewMyTour.jspx">View my tour</a></li>-->
         <li style="float:right" >
             <div>
                 <c:out value="${fullName}"/> <br/>
@@ -65,13 +61,17 @@
                 <tr>
                     <td>Price</td>
                     <td><c:out value="${t.price}"/> <c:out value="${t.currencyCode}"/> </td>
+                    <td>
+                    <form action="/CheckOutTransportation" method="get">
+                        <input type="hidden" name="chosenId" value="${t.id}"/>
+                        <input type="submit" value="checkout"/>
+                    </form>
+                    </td>
                 </tr>
             </table>  <br/>
         </c:forEach> <br/>
 
-        <form action="/tour/CheckOutTransportation.jspx" method="get">
-            <input type="submit" value="checkout"/>
-        </form>
+
 
     </div>
 

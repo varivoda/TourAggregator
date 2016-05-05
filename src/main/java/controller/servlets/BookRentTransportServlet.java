@@ -45,12 +45,11 @@ public class BookRentTransportServlet extends HttpServlet {
 
         //Получаем выбранный RentTransport
         HttpSession session = request.getSession();
-        List<RentTransport> rentTransportList = (List<RentTransport>) session.getAttribute("rentTransportList");
-        RentTransport chosenRentTransport = getChosenRentTransport(rentTransportList);
-        session.removeAttribute("rentTransportList");
+        String personalData = request.getParameter("personalData");
+        RentTransport chosenRentTransport = (RentTransport) session.getAttribute("chosenRentTransport");
 
         try {
-            RentTransportService rentTransportService = factoryService.getRentTransportService(NameGDS.Sabre);
+            RentTransportService rentTransportService = factoryService.getRentTransportService(NameGDS.SABRE);
 
             //Выполянем заказ
             boolean result = rentTransportService.bookRentTransport(chosenRentTransport);
@@ -61,12 +60,15 @@ public class BookRentTransportServlet extends HttpServlet {
                 Client client = clientDAO.findById(idClient);
 
                 Tour tour;
+                boolean tourIsNew;
                 //Если у клиента нет тура, создаем новый
                 if (client.getTours() == null || client.getTours().isEmpty()){
+                    tourIsNew = true;
                     tour = new Tour();
                     tour.setClient(client);
                 }
                 else{
+                    tourIsNew = false;
                     tour = client.getTours().iterator().next();
                 }
 
@@ -82,12 +84,15 @@ public class BookRentTransportServlet extends HttpServlet {
                 //Устанавливаем связь между RentTransport and Tour
                 chosenRentTransport.setTour(tour);
                 rentTransportSet.add(chosenRentTransport);
-//                tour.setTransportations(transportationSet);
 
-                //Сохраняем tour
-                tourDAO.persist(tour);
+                //Сохраняем tour если тур новый, обновляем, если уже существовал
+                if(tourIsNew) {
+                    tourDAO.persist(tour);
+                }
+                else {
+                    tourDAO.update(tour);
+                }
 
-//                response.getWriter().append("Success booking transportation");
                 response.sendRedirect("/SuccessOperation.html");
                 return;
             }

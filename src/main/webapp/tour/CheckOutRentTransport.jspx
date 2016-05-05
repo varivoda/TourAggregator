@@ -30,7 +30,7 @@
 
 
         <!--Transportation: <br/>-->
-        <c:set var="t" value="${rentTransportList.get(0)}" scope="page"/>
+        <c:set var="t" value="${chosenRentTransport}" scope="page"/>
             <table>
                 <tr>
                     <td>Location code</td>

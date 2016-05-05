@@ -41,11 +41,11 @@ public class RentTransportServiceImpl implements RentTransportService {
     //Клиент для взаимодействия с RESTfull сервисами
     private Client client = ClientBuilder.newClient();
 
-    //Формат времени для сервиса по бронированию транспорта Sabre
+    //Формат времени для сервиса по бронированию транспорта SABRE
     private static SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM-dd'T'hh:mm");
 
-    //Сообщение об ошибке при взаимодейтсвии с Sabre
-    public static final String SABRE_ERROR = "Error was appeared with Sabre";
+    //Сообщение об ошибке при взаимодейтсвии с SABRE
+    public static final String SABRE_ERROR = "Error was appeared with SABRE";
     public static final int STATUS_OK = 200;
 
     public List<RentTransport> getRentTransport(DescriptionRentTransport descriptionRentTransport) throws RentCarServiceException {
@@ -99,7 +99,7 @@ public class RentTransportServiceImpl implements RentTransportService {
     }
 
     public <T> boolean bookRentTransport(T id) throws RentCarServiceException {
-        System.out.println("Hello< I'm RentTransportService for Sabre. bookRentTransport");
+        System.out.println("Hello< I'm RentTransportService for SABRE. bookRentTransport");
         return true;
     }
 
@@ -124,6 +124,7 @@ public class RentTransportServiceImpl implements RentTransportService {
 
         List<RentTransport> rentTransportList = new ArrayList<RentTransport>();
 
+        int index = 0;
         for(Object objectFromArray : jsonVehVendorAvail){
 
             RentTransport rentTransport = new RentTransport();
@@ -145,6 +146,7 @@ public class RentTransportServiceImpl implements RentTransportService {
             String currencyCode = (String) jsonVehicleCharge.get("CurrencyCode");
             BigDecimal price = BigDecimal.valueOf(Double.parseDouble((String) jsonVehicleCharge.get("Amount")));
 
+            rentTransport.setId(index++);
             rentTransport.setPrice(price);
             rentTransport.setCurrency(currencyCode);
             rentTransport.setLocationCode(locationCode);
