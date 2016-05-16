@@ -52,6 +52,11 @@ public class TransportationDAOTest {
         return transportation;
     }
 
+    /**
+     * Данный тест выполняет проверку корректности сохранения и удаления Transportation
+     * А также валидность сохраненных полей экземпляра Transportation
+     * @throws ParseException
+     */
     @Test
     public void CRUDTest() throws ParseException {
 
@@ -67,7 +72,7 @@ public class TransportationDAOTest {
         //Достаем из БД все записи
         List<Transportation> transportationList = transportationDAO.findAll();
 
-        // проверка, что лист содержит ровно одну записать
+        // проверка, что лист содержит ровно одну запись
         assertEquals(1, transportationList.size());
 
         Transportation transportationRet = transportationList.get(0);

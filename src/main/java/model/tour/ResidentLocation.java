@@ -17,10 +17,11 @@ public class ResidentLocation {
     private String hotelKind;
     private String hotelName;
     private String hotelAddress;
-    private BigDecimal pricePerDay;
+    private BigDecimal price;
     private Date orderDate;
     private Date departureDate;
     private String locationCode;
+    private String currency;
 
     public ResidentLocation() {}
 
@@ -41,6 +42,15 @@ public class ResidentLocation {
     }
     public void setTour(Tour tour) {
         this.tour = tour;
+    }
+
+    @Column(name = "currency")
+    public String getCurrency() {
+        return currency;
+    }
+
+    public void setCurrency(String currency) {
+        this.currency = currency;
     }
 
     @Column(name = "order_date")
@@ -75,12 +85,12 @@ public class ResidentLocation {
         this.hotelKind = hotelKind;
     }
 
-    @Column(name = "price_per_day")
-    public BigDecimal getPricePerDay() {
-        return pricePerDay;
+    @Column(name = "price")
+    public BigDecimal getPrice() {
+        return price;
     }
-    public void setPricePerDay(BigDecimal pricePerDay) {
-        this.pricePerDay = pricePerDay;
+    public void setPrice(BigDecimal price) {
+        this.price = price;
     }
 
     @Column(name = "hotel_name")

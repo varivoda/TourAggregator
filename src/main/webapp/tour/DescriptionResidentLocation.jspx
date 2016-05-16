@@ -64,8 +64,8 @@
                     <td><input type="datetime" id="orderDateTime" name="orderDateTime"/></td>
                 </tr>
                 <tr>
-                    <td><label for="returnDateTime">Order date time*</label></td>
-                    <td><input type="datetime" id="returnDateTime" name="returnDateTime"/></td>
+                    <td><label for="returnDateTime">Return date time*</label></td>
+                    <td><input type="datetime" id="returnDateTime" name="departureDateTime"/></td>
                 </tr>
                 <tr>
                     <td><label for="maxFare">Max fare</label></td>

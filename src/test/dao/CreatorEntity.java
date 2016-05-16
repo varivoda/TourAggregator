@@ -52,7 +52,7 @@ public class CreatorEntity {
         ResidentLocation rl = new ResidentLocation();
 
         BigDecimal pricePerDay = BigDecimal.valueOf(100.21);
-        rl.setPricePerDay(pricePerDay);
+        rl.setPrice(pricePerDay);
 
         String hotelKind = "hotel";
         rl.setHotelKind(hotelKind);

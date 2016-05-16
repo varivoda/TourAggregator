@@ -1,6 +1,7 @@
 package controller.gds;
 
 import controller.gds.sabre.TransportationServiceImpl;
+import model.tour.ResidentLocation;
 
 import javax.ejb.LocalBean;
 import javax.ejb.Singleton;
@@ -39,7 +40,18 @@ public class FactoryService {
         return rentTransportService;
     }
 
-    public ResidentLocationService getResidentLocationService(NameGDS name){
-        return null;
+    public ResidentLocationService getResidentLocationService(NameGDS name) throws NamingException {
+
+        Context ctx = new InitialContext();
+
+        switch (name){
+            case SABRE:
+                 return (ResidentLocationService) ctx.lookup("java:global/ResidentLocationSabreServiceImpl");
+            case MY_WEB_SERVICE:
+                 return  (ResidentLocationService) ctx.lookup("java:global/ResidentLocationDummyServiceImpl");
+
+            default:
+                return null;
+        }
     }
 }

@@ -6,6 +6,7 @@ import model.client.DescriptionResidentLocation;
 import model.client.TripPreferences;
 import model.tour.ResidentLocation;
 
+import javax.ejb.EJB;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import java.util.List;
@@ -13,9 +14,10 @@ import java.util.List;
 /**
  * Created by ivan on 30.03.16.
  */
-@Stateless
+@Stateless(mappedName = "ResidentLocationSabreServiceImpl")
 @LocalBean
 public class ResidentLocationServiceImpl implements ResidentLocationService {
+
     public List<ResidentLocation> getResidentLocations(DescriptionResidentLocation drl) throws ResidentLocationServiceException{
         System.out.println("Hello< I'm ResidentLocationService for SABRE. getResidentLocations");
         return null;
@@ -25,4 +27,6 @@ public class ResidentLocationServiceImpl implements ResidentLocationService {
         System.out.println("Hello< I'm TransportationService for SABRE. bookResidentLocation");
         return false;
     }
+
+
 }

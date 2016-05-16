@@ -23,7 +23,7 @@ public class ResidentLocationDAOTest  {
         ResidentLocation rl = new ResidentLocation();
 
         BigDecimal pricePerDay = BigDecimal.valueOf(100.21);
-        rl.setPricePerDay(pricePerDay);
+        rl.setPrice(pricePerDay);
 
         String hotelKind = "hotel";
         rl.setHotelKind(hotelKind);
@@ -60,7 +60,7 @@ public class ResidentLocationDAOTest  {
         assertEquals(rl.getDepartureDate(), rlReturned.getDepartureDate());
         assertEquals(rl.getLocationCode(), rlReturned.getLocationCode());
         assertEquals(rl.getOrderDate(), rlReturned.getOrderDate());
-        assertEquals(rl.getPricePerDay(), rlReturned.getPricePerDay());
+        assertEquals(rl.getPrice(), rlReturned.getPrice());
         assertEquals(rl.getHotelKind(), rlReturned.getHotelKind());
 
 //        residentLocationDAO.deleteAll();
