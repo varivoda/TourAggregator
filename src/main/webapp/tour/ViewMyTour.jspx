@@ -27,6 +27,9 @@
             <input type="submit" value="view tour"/>
         </form>
     </li>
+    <li>
+
+    </li>
     <li style="float:right" >
         <div>
             <c:out value="${fullName}"/> <br/>
@@ -36,43 +39,10 @@
         </div>
     </li>
 
+
 </ul>
 
-    <!--Preferences of the trip: <br/>-->
-    <!--<c:forEach var="tripPref" items="${tour.tripPreferences}">-->
-            <!--<table>-->
-                <!--<tr>-->
-                    <!--<td>Quantity of travelers: </td>-->
-                    <!--<td><c:out value="${tripPref.travelersQuantity}"/></td>-->
-                <!--</tr>-->
-                <!--<tr>-->
-                    <!--<td>Budget: </td>-->
-                    <!--<td><c:out value="${tripPref.budget}"/></td>-->
-                <!--</tr>-->
-                <!--<tr>-->
-                    <!--<td>Date of the departure</td>-->
-                    <!--<td><c:out value="${tripPref.departureDate}"/></td>-->
-                <!--</tr>-->
-                <!--<tr>-->
-                    <!--<td>Date of the arrival</td>-->
-                    <!--<td><c:out value="${tripPref.arrivalDate}"/></td>-->
-                <!--</tr>-->
-                <!--<tr>-->
-                    <!--<td>Kind of the transport</td>-->
-                    <!--<td><c:out value="${tripPref.transportKind}"/></td>-->
-                <!--</tr>-->
-                <!--<tr>-->
-                    <!--<td>Kind of the resident hotel</td>-->
-                    <!--<td><c:out value="${tripPref.residentHotelKind}"/></td>-->
-                <!--</tr>-->
-                <!--<tr>-->
-                    <!--<td>Trip's documents</td>-->
-                    <!--<td><c:out value="${tripPref.tripDocumentType}"/></td>-->
-                <!--</tr>-->
-            <!--</table>  <br/>-->
-
-        <!--</c:forEach> <br/>-->
-    <label value="Transportations"></label>
+    <label value="Transportation">Transportation</label>
     <c:forEach var="tr"  items="${tour.transportations}">
         <table>
             <tr>
@@ -109,8 +79,9 @@
             </tr>
         </table>  <br/>
 
-    </c:forEach> <br/>
+    </c:forEach>
 
+    <label value="Rent transport">Rent transport</label>
     <c:forEach var="t" items="${tour.rentTransports}">
         <table>
             <tr>
@@ -144,7 +115,47 @@
                 <td><c:out value="${t.price}"/> <c:out value="${t.currency}"/> </td>
             </tr>
         </table>  <br/>
-    </c:forEach> <br/>
+    </c:forEach>
+
+    <label value="Resident location">Resident location</label>
+    <c:forEach var="rl" items="${tour.residentLocations}">
+        <table>
+            <tr>
+                <td>Location code</td>
+                <td><c:out value="${rl.locationCode}"/></td>
+            </tr>
+            <tr>
+                <td>Kind</td>
+                <td><c:out value="${rl.hotelKind}"/></td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td><c:out value="${rl.hotelName}"/></td>
+            </tr>
+            <tr>
+                <td>Adress</td>
+                <td><c:out value="${rl.hotelAddress}"/></td>
+            </tr>
+            <tr>
+                <td>order date</td>
+                <td><c:out value="${rl.orderDate}"/></td>
+            </tr>
+
+            <tr>
+                <td>departure date</td>
+                <td><c:out value="${rl.departureDate}"/></td>
+            </tr>
+
+            <tr>
+                <td>Price</td>
+                <td><c:out value="${rl.price}"/> <c:out value="${rl.currency}"/> </td>
+            </tr>
+        </table>  <br/>
+    </c:forEach>
+
+    <form action="/DeleteTour" method="doGet">
+        <input type="submit" value="delete tour"/>
+    </form>
 
 </div>
 </body>

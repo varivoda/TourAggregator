@@ -35,9 +35,15 @@
             </form>
             </div>
         </li>
-
     </ul>
+
+
+    <c:if test="${message != null}">
+        <h3><c:out value="${message}"/> </h3>
+    </c:if>
+
 </div>
+
 
 </body>
 

@@ -38,6 +38,8 @@ public class BookTransportationServlet extends HttpServlet {
     @EJB
     TourDAO tourDAO;
 
+    private static final String SUCCESS_MESSAGE = "Booking transportation was successful";
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request,response);
     }
@@ -95,7 +97,9 @@ public class BookTransportationServlet extends HttpServlet {
                 }
 
 //                response.getWriter().append("Success booking transportation");
-                response.sendRedirect("/SuccessOperation.html");
+//                response.sendRedirect("/SuccessOperation.html");
+                request.setAttribute("message", SUCCESS_MESSAGE);
+                getServletContext().getRequestDispatcher("/client/personalArea.jspx").forward(request,response);
                 return;
             }
             else{

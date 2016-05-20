@@ -63,9 +63,10 @@
                 <td><c:out value="${rl.price}"/> <c:out value="${rl.currency}"/> </td>
                 <td>
                     <!--<c:out value="${t.id}"/>-->
-                    <form action="/CheckOutRentTransport" method="post">
-                        <input type="hidden" name="chosenId" value="${rl.id}" />
-                        <input type="submit" value="checkout"/>
+                    <form action="/BookResidentLocaion" method="post">
+                        <label for="personalData">Personal data for booking</label>
+                        <input type="text" id="personalData" name="personalData"/>
+                        <input type="submit" value="book"/>
                     </form>
                 </td>
             </tr>
