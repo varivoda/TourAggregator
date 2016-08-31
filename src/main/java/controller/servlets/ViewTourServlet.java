@@ -47,7 +47,7 @@ public class ViewTourServlet extends HttpServlet {
         }
 
         request.setAttribute("tour", tour);
-
+//        response.sendRedirect("/TourAggregator/tour/ViewMyTour.jspx");
         getServletContext().getRequestDispatcher("/tour/ViewMyTour.jspx").forward(request,response);
     }
 }

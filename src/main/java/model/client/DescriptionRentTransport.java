@@ -1,5 +1,6 @@
 package model.client;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 /**
@@ -37,4 +38,5 @@ public class DescriptionRentTransport {
     public void setLocationCode(String locationCode) {
         this.locationCode = locationCode;
     }
+
 }

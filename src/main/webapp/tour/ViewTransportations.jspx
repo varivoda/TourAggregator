@@ -4,25 +4,25 @@
 <html>
     <head>
         <title>View Transportations</title>
-        <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="/TourAggregator/css/style.css"/>
     </head>
 
 
-    <body class="main" background="../images/bg/bg3.jpg">
+    <body class="main" background="/TourAggregator/images/bg/bg3.jpg">
 
     <c:if test="${not authorized}">
-        <c:redirect url="../index.html"/>
+        <c:redirect url="index.html"/>
     </c:if>
 
 
     <div class="center">
 
     <ul>
-        <li><a href="../client/personalArea.jspx">Main</a></li>
+        <li><a href="/TourAggregator/client/personalArea.jspx">Main</a></li>
         <li style="float:right" >
             <div>
                 <c:out value="${fullName}"/> <br/>
-                <form action="/Logout" method="post">
+                <form action="/TourAggregator/Logout" method="post">
                     <input type="submit" value="exit"/>
                 </form>
             </div>
@@ -62,7 +62,7 @@
                     <td>Price</td>
                     <td><c:out value="${t.price}"/> <c:out value="${t.currencyCode}"/> </td>
                     <td>
-                    <form action="/CheckOutTransportation" method="get">
+                    <form action="/TourAggregator/CheckOutTransportation" method="get">
                         <input type="hidden" name="chosenId" value="${t.id}"/>
                         <input type="submit" value="checkout"/>
                     </form>

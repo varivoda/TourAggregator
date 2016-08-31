@@ -25,6 +25,9 @@ public class SabreProperties {
     private String transportationServiceURI;
     private String residentLocationServiceURI;
     private String rentTransportServiceURI;
+    private String residentLocationBookServiceURI;
+    private String rentTransportBookServiceURI;
+    private String transportationBookServiceURI;
 
     public SabreProperties() throws IOException {
         upDate();
@@ -44,6 +47,9 @@ public class SabreProperties {
         transportationServiceURI = properties.getProperty("transportationServiceURI");
         residentLocationServiceURI = properties.getProperty("residentLocationServiceURI");
         rentTransportServiceURI = properties.getProperty("rentTransportServiceURI");
+        residentLocationBookServiceURI = properties.getProperty("residentLocationBookServiceURI");
+        rentTransportBookServiceURI = properties.getProperty("rentTransportBookServiceURI");
+        transportationBookServiceURI = properties.getProperty("transportationBookServiceURI");
 
         //Если карты с заголовками нет
         if (headers == null){
@@ -73,5 +79,17 @@ public class SabreProperties {
 
     public String getRentTransportServiceURI() {
         return rentTransportServiceURI;
+    }
+
+    public String getResidentLocationBookServiceURI() {
+        return residentLocationBookServiceURI;
+    }
+
+    public String getRentTransportBookServiceURI() {
+        return rentTransportBookServiceURI;
+    }
+
+    public String getTransportationBookServiceURI() {
+        return transportationBookServiceURI;
     }
 }

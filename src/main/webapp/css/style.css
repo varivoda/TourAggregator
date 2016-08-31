@@ -62,7 +62,7 @@ li a:hover {
 }
 
 div.center{
-    width: 600px; /* Ширина элемента в пикселах */
+    width: 700px; /* Ширина элемента в пикселах */
     height: 700px;
     padding: 10px; /* Поля вокруг текста */
     margin: auto;

@@ -88,12 +88,18 @@ public class TransportationServiceImpl implements TransportationService {
         /*
         Устанавливем параметры запроса. Тип запроса и заголовки
          */
-        Invocation.Builder builder = flightResource.
+
+        flightResource =  flightResource.
                 queryParam("origin", dt.getOriginCode()).
                 queryParam("destination", dt.getDestinationCode()).
                 queryParam("lengthofstay", dt.getLengthOfStay()).
                 queryParam("departuredate", sdf.format(dt.getDepartDate())).
-                queryParam("pointofsalecountry", dt.getPointOfSaleCode()).
+                queryParam("pointofsalecountry", dt.getPointOfSaleCode());
+
+        if (dt.getMaxFare() != null){
+            flightResource = flightResource.queryParam("maxfare", dt.getMaxFare().toString());
+        }
+        Invocation.Builder builder = flightResource.
                 request(MediaType.TEXT_PLAIN).
                 headers(headers);
 
@@ -175,6 +181,18 @@ public class TransportationServiceImpl implements TransportationService {
     }
 
     public boolean bookTransportation(Transportation transportation) throws TransportationServiceException {
-        return true;
+
+        String webTargetURI = sabreProperties.getTransportationBookServiceURI();
+        WebTarget transportResource = client.target(webTargetURI);
+
+        Invocation.Builder builder = transportResource.queryParam("id", transportation.getId()).request(MediaType.TEXT_PLAIN_TYPE);
+
+        Response response = builder.get();
+
+        if (response.getStatus() == 200){
+            return true;
+        }
+
+        throw new TransportationServiceException();
     }
 }

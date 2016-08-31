@@ -53,7 +53,7 @@ public class RegistrationServlet extends HttpServlet {
 
          */
         clientService.persist(newClient);
-        response.sendRedirect("/successfulRegistration.html");
+        response.sendRedirect("/TourAggregator/successfulRegistration.html");
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

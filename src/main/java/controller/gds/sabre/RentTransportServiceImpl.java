@@ -48,6 +48,7 @@ public class RentTransportServiceImpl implements RentTransportService {
     public static final String SABRE_ERROR = "Error was appeared with SABRE";
     public static final int STATUS_OK = 200;
 
+
     public List<RentTransport> getRentTransport(DescriptionRentTransport descriptionRentTransport) throws RentCarServiceException {
 
 //        //Test
@@ -99,8 +100,19 @@ public class RentTransportServiceImpl implements RentTransportService {
     }
 
     public <T> boolean bookRentTransport(T id) throws RentCarServiceException {
-        System.out.println("Hello< I'm RentTransportService for SABRE. bookRentTransport");
-        return true;
+
+        String webTargetURI = sabreProperties.getRentTransportBookServiceURI();
+        WebTarget rentTransportResource = client.target(webTargetURI);
+
+        Invocation.Builder builder = rentTransportResource.queryParam("id", id).request(MediaType.TEXT_PLAIN_TYPE);
+
+        Response response = builder.get();
+
+        if (response.getStatus() == 200){
+            return true;
+        }
+
+        throw new RentCarServiceException();
     }
 
     //Метод формирует список транспорта, доступного для бронирования

@@ -3,27 +3,27 @@
 <html>
     <head>
         <title>view preferences of the trip</title>
-        <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="/TourAggregator/css/style.css"/>
 
     </head>
 
-<body class="body" background="../images/bg/bg3.jpg">
+<body class="body" background="/TourAggregator/images/bg/bg3.jpg">
 
 <c:if test="${not authorized}">
-    <c:redirect url="../index.html"/>
+    <c:redirect url="index.html"/>
 </c:if>
 
 
-<div class="center">
+<div class="center" style="background-color:rgba(245,245,245,0.8);">
 
 <ul>
-    <li><a href="../client/personalArea.jspx">Main</a></li>
-    <li><a href="../tour/DescriptionTransportation.jspx">Transportation</a></li>
-    <li><a href="../tour/DescriptionResidentLocation.jspx">Hotel</a></li>
-    <li><a href="../tour/DescriptionRentTransport.jspx">Rent car</a></li>
+    <li><a href="/TourAggregator/client/personalArea.jspx">Main</a></li>
+    <li><a href="/TourAggregator/tour/DescriptionTransportation.jspx">Transportation</a></li>
+    <li><a href="/TourAggregator/tour/DescriptionResidentLocation.jspx">Hotel</a></li>
+    <li><a href="/TourAggregator/tour/DescriptionRentTransport.jspx">Rent car</a></li>
     <!--<li><a href="../tour/ViewMyTour.jspx">View my tour</a></li>-->
     <li>
-        <form action="/ViewTour" method="doGet">
+        <form action="/TourAggregator/ViewTour" method="doGet">
             <input type="submit" value="view tour"/>
         </form>
     </li>
@@ -33,7 +33,7 @@
     <li style="float:right" >
         <div>
             <c:out value="${fullName}"/> <br/>
-            <form action="/Logout" method="post">
+            <form action="/TourAggregator/Logout" method="post">
                 <input type="submit" value="exit"/>
             </form>
         </div>
@@ -70,13 +70,10 @@
                 <td><c:out value="${tr.destinationLocation}"/></td>
             </tr>
             <tr>
-                <td>Price: </td>
-                <td><c:out value="${tr.price}"/></td>
+                <td>Price</td>
+                <td><c:out value="${tr.price}"/> USD </td>
             </tr>
-            <tr>
-                <td>Currency code: </td>
-                <td><c:out value="${tr.currencyCode}"/></td>
-            </tr>
+
         </table>  <br/>
 
     </c:forEach>
@@ -153,9 +150,10 @@
         </table>  <br/>
     </c:forEach>
 
-    <form action="/DeleteTour" method="doGet">
+    <form action="/TourAggregator/DeleteTour" method="doGet">
         <input type="submit" value="delete tour"/>
     </form>
+
 
 </div>
 </body>

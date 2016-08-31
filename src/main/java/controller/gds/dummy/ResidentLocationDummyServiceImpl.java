@@ -39,7 +39,8 @@ import sun.nio.cs.StandardCharsets;
 @LocalBean
 public class ResidentLocationDummyServiceImpl implements ResidentLocationService {
 
-    public static final String RESIDENT_LOCATION_URI = "http://52.34.224.192:8080/webservice/TourService/ResidentLocation";
+    public static final String RESIDENT_LOCATION_URI = "http://52.34.224.192:8090/webservice/TourService/ResidentLocation";
+    public static final String BOOK_URI = "http://52.34.224.192:8090/webservice/TourService/ResidentLocation/book";
 
     private static SimpleDateFormat simpleDateFormatTo = new SimpleDateFormat("yyyy-MM-dd");
     private static SimpleDateFormat simpleDateFormatFrom = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss");
@@ -78,7 +79,18 @@ public class ResidentLocationDummyServiceImpl implements ResidentLocationService
     }
 
     public boolean bookResidentLocation(ResidentLocation rl) throws ResidentLocationServiceException {
-        return true;
+
+        WebTarget rentTransportResource = client.target(BOOK_URI);
+
+        Invocation.Builder builder = rentTransportResource.queryParam("id", rl.getId()).request(MediaType.TEXT_PLAIN_TYPE);
+
+        Response response = builder.get();
+
+        if (response.getStatus() == 200){
+            return true;
+        }
+
+        throw new ResidentLocationServiceException();
     }
 
     /**

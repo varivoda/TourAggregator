@@ -45,6 +45,7 @@ public class BookResidentLocationServlet extends HttpServlet {
         String personalData = request.getParameter("personalData");
         ResidentLocation chosenResidentLocation = (ResidentLocation) session.getAttribute("chosenResidentLocation");
 
+        Tour tour = null;
         try {
             ResidentLocationService residentLocationService = factoryService.getResidentLocationService(NameGDS.MY_WEB_SERVICE);
 
@@ -56,7 +57,7 @@ public class BookResidentLocationServlet extends HttpServlet {
                 Integer idClient = (Integer) session.getAttribute("id");
                 Client client = clientDAO.findById(idClient);
 
-                Tour tour;
+
                 boolean tourIsNew;
                 //Если у клиента нет тура, создаем новый
                 if (client.getTours() == null || client.getTours().isEmpty()){
@@ -101,7 +102,10 @@ public class BookResidentLocationServlet extends HttpServlet {
                 return;
             }
         } catch (Exception e) {
-            request.setAttribute("exception", e);
+            request.setAttribute("exception" , new Exception("Данные о туре \n" +
+                    "\nid: " + tour.getId() +
+                    "\nclient: " + tour.getClient() +
+                    "\nresident locations: " + tour.getResidentLocations(),e));
             getServletContext().getRequestDispatcher("/error.jspx").forward(request, response);
             return;
         }

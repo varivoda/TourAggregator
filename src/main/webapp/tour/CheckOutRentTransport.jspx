@@ -4,24 +4,24 @@
     <html>
     <head>
         <title>Checkout  rent transport</title>
-        <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="/TourAggregator/css/style.css"/>
     </head>
 
 
-    <body class="main" background="../images/bg/bg3.jpg">
+    <body class="main" background="/TourAggregator/images/bg/bg3.jpg">
 
     <c:if test="${not authorized}">
-        <c:redirect url="../index.html"/>
+        <c:redirect url="index.html"/>
     </c:if>
 
     <div class="center">
 
         <ul>
-            <li><a href="../client/personalArea.jspx">Main</a></li>
+            <li><a href="/TourAggregator/client/personalArea.jspx">Main</a></li>
             <li style="float:right" >
                 <div>
                     <c:out value="${fullName}"/> <br/>
-                    <form action="/Logout" method="post">
+                    <form action="/TourAggregator/Logout" method="post">
                         <input type="submit" value="exit"/>
                     </form>
                 </div>
@@ -64,7 +64,7 @@
                 </tr>
             </table>  <br/>
 
-        <form action="/BookRentTransport" method="post">
+        <form action="/TourAggregator/BookRentTransport" method="post">
             <label for="personalData">Personal data for booking</label>
             <input type="text" id="personalData" name="personalData"/>
             <input type="submit" value="book"/>

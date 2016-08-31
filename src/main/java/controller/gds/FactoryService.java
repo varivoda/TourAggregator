@@ -26,7 +26,7 @@ public class FactoryService {
 
         Context ctx = new InitialContext();
         TransportationService transportationService = (TransportationServiceImpl) ctx.
-                lookup("java:global/TransportationServiceImpl");
+                lookup("java:global/TourAggregator/TransportationServiceImpl");
 
         return transportationService;
     }
@@ -35,7 +35,7 @@ public class FactoryService {
 
         Context ctx = new InitialContext();
         RentTransportService rentTransportService = (RentTransportService) ctx.
-                lookup("java:global/RentTransportServiceImpl");
+                lookup("java:global/TourAggregator/RentTransportServiceImpl");
 
         return rentTransportService;
     }
@@ -46,9 +46,9 @@ public class FactoryService {
 
         switch (name){
             case SABRE:
-                 return (ResidentLocationService) ctx.lookup("java:global/ResidentLocationSabreServiceImpl");
+                 return (ResidentLocationService) ctx.lookup("java:global/TourAggregator/ResidentLocationSabreServiceImpl");
             case MY_WEB_SERVICE:
-                 return  (ResidentLocationService) ctx.lookup("java:global/ResidentLocationDummyServiceImpl");
+                 return  (ResidentLocationService) ctx.lookup("java:global/TourAggregator/ResidentLocationDummyServiceImpl");
 
             default:
                 return null;

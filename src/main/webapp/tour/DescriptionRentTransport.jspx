@@ -11,33 +11,33 @@
     <html>
     <head>
         <title>Rent car</title>
-        <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="/TourAggregator/css/style.css"/>
     </head>
 
-    <body class="body" background="../images/bg/bg3.jpg">
+    <body class="body" background="/TourAggregator/images/bg/bg3.jpg">
 
     <c:if test="${not authorized}">
-        <c:redirect url="../index.html"/>
+        <c:redirect url="index.html"/>
     </c:if>
 
 
     <div class="center">
 
         <ul>
-            <li><a href="../client/personalArea.jspx">Main</a></li>
-            <li><a href="../tour/DescriptionTransportation.jspx">Transportation</a></li>
-            <li><a href="../tour/DescriptionResidentLocation.jspx">Hotel</a></li>
-            <li><a href="../tour/DescriptionRentTransport.jspx">Rent car</a></li>
+            <li><a href="/TourAggregator/client/personalArea.jspx">Main</a></li>
+            <li><a href="/TourAggregator/tour/DescriptionTransportation.jspx">Transportation</a></li>
+            <li><a href="/TourAggregator/tour/DescriptionResidentLocation.jspx">Hotel</a></li>
+            <li><a href="/TourAggregator/tour/DescriptionRentTransport.jspx">Rent car</a></li>
             <!--<li><a href="../tour/ViewMyTour.jspx">View my tour</a></li>-->
             <li>
-                <form action="/ViewTour" method="doGet">
+                <form action="/TourAggregator/ViewTour" method="doGet">
                     <input type="submit" value="view tour"/>
                 </form>
             </li>
             <li style="float:right" >
                 <div>
                     <c:out value="${fullName}"/> <br/>
-                    <form action="/Logout" method="post">
+                    <form action="/TourAggregator/Logout" method="post">
                         <input type="submit" value="exit"/>
                     </form>
                 </div>
@@ -45,26 +45,27 @@
 
         </ul>
 
-        <form class="transportation" action="/FindRentTransport" method="post">
+        <form class="transportation" action="/TourAggregator/FindRentTransport" method="post">
 
             <table>
                 <tr>
                     <td><label for="locationCode">Location code*</label></td>
                     <td>
-                        <select id="locationCode" name="locationCode">
-                            <option value="LAX">LAX</option>
-                            <option value="DFW">DFW</option>
-                            <option value="JFK">JFK</option>
-                        </select>
+                        <input id="locationCode" type="text" value="LAX" name="locationCode"/>
+                        <!--<select id="locationCode" name="locationCode">-->
+                            <!--<option value="LAX">LAX</option>-->
+                            <!--<option value="DFW">DFW</option>-->
+                            <!--<option value="JFK">JFK</option>-->
+                        <!--</select>-->
                     </td>
                 </tr>
                 <tr>
                     <td><label for="pickUpDateTime">Pick up date*</label></td>
-                    <td><input type="datetime" id="pickUpDateTime" name="pickUpDateTime"/></td>
+                    <td><input type="datetime" id="pickUpDateTime" value="2016-06-01 12:00:00" name="pickUpDateTime"/></td>
                 </tr>
                 <tr>
                     <td><label for="returnDateTime">Return date*</label></td>
-                    <td><input type="datetime" id="returnDateTime" name="returnDateTime"/></td>
+                    <td><input type="datetime" id="returnDateTime" value="2016-06-04 12:00:00" name="returnDateTime"/></td>
                 </tr>
             </table>
             <input type="submit" value="Submit"/>

@@ -82,7 +82,8 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 	session.setAttribute("fullName", client.getFullName());
 	session.setAttribute("email", email);
 	session.setAttribute("id", client.getId());
-	response.sendRedirect("/client/personalArea.jspx");
+//	response.sendRedirect("/TourAggregator/client/personalArea.jspx");
+	response.sendRedirect("/TourAggregator/client/personalArea.jspx");
 
 	return;
 }

@@ -22,7 +22,7 @@ public class LogOutServlet extends HttpServlet {
          */
         HttpSession session = req.getSession();
         session.invalidate();
-        resp.sendRedirect("/index.html");
+        resp.sendRedirect("/TourAggregator/index.html");
     }
 
     @Override
