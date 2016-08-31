@@ -1,4 +1,4 @@
-*.iml
+touragregator.iml
 .idea/
 src/main/webapp/client/tmp.html
 target/
