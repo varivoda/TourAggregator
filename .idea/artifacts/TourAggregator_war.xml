@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="TourAggregator:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="TourAggregator.war">
-      <element id="artifact" artifact-name="TourAggregator:war exploded" />
-    </root>
-  </artifact>
-</component>
