@@ -1,7 +1,6 @@
 package controller.dao;
 
 import model.client.Client;
-
 import javax.ejb.Local;
 
 /**
