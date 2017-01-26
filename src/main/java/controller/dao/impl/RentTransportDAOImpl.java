@@ -8,27 +8,27 @@ import javax.ejb.Stateless;
 import java.util.List;
 
 /**
- * Created by ivan on 21.04.16.
+ * DAO for the rent transport entities.
  */
 @Stateless
 @LocalBean
-public class RentTransportDAOImpl extends AbstractDAO<RentTransport,Integer> implements RentTransportDAO {
+public class RentTransportDAOImpl extends AbstractDAO<RentTransport, Integer> implements RentTransportDAO {
 
     public RentTransportDAOImpl() {
     }
 
     public RentTransport findById(Integer id) {
         daoUtil.openCurrentSession();
-        RentTransport rentTransport= (RentTransport) daoUtil.getCurrentSession().get(RentTransport.class, id);
+        RentTransport rentTransport = (RentTransport) daoUtil.getCurrentSession().get(RentTransport.class, id);
         daoUtil.closeCurrentSession();
         return rentTransport;
     }
 
     public List<RentTransport> findAll() {
         daoUtil.openCurrentSession();
-        List<RentTransport> rentTransporList = (List<RentTransport>) daoUtil.getCurrentSession().createQuery("from RentTransport").list();
+        List<RentTransport> rentTransportList = (List<RentTransport>) daoUtil.getCurrentSession().createQuery("from RentTransport").list();
         daoUtil.closeCurrentSession();
-        return rentTransporList;
+        return rentTransportList;
     }
 
     public void deleteAll() {

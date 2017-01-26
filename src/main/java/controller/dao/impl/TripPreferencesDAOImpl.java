@@ -1,7 +1,6 @@
 package controller.dao.impl;
 
 import controller.dao.TripPreferencesDAO;
-import controller.dao.util.DaoUtil;
 import model.client.TripPreferences;
 import org.hibernate.Query;
 
@@ -10,20 +9,11 @@ import javax.ejb.Stateless;
 import java.util.List;
 
 /**
- * Created by ivan on 18.12.15.
+ * DAO for the preferences.
  */
 @Stateless
 @LocalBean
-public class TripPreferencesDAOImpl implements TripPreferencesDAO {
-
-    private DaoUtil<TripPreferences,Integer> daoUtil;
-
-    {
-        daoUtil = new DaoUtil<TripPreferences, Integer>();
-    }
-
-    public TripPreferencesDAOImpl(){
-    }
+public class TripPreferencesDAOImpl extends AbstractDAO<TripPreferences, Integer> implements TripPreferencesDAO {
 
     public void persist(TripPreferences entity) {
         daoUtil.openCurrentSessionWithTransaction();
@@ -44,19 +34,18 @@ public class TripPreferencesDAOImpl implements TripPreferencesDAO {
         return entity;
     }
 
-    public List<TripPreferences> findByClientId(Integer clientId){
+    public List<TripPreferences> findByClientId(Integer clientId) {
         daoUtil.openCurrentSession();
-        Query query = daoUtil.getCurrentSession().createQuery("from TripPreferences where client.id =:clientIdParam" );
+        Query query = daoUtil.getCurrentSession().createQuery("from TripPreferences where client.id =:clientIdParam");
         query.setParameter("clientIdParam", clientId);
         List<TripPreferences> tp = query.list();
         daoUtil.closeCurrentSession();
-        if (tp == null || tp.isEmpty()){
+        if (tp == null || tp.isEmpty()) {
             return null;
         }
         return tp;
     }
 
-//    .
     public void deleteById(Integer id) {
         daoUtil.openCurrentSessionWithTransaction();
         TripPreferences entity = findById(id);
@@ -64,7 +53,7 @@ public class TripPreferencesDAOImpl implements TripPreferencesDAO {
         daoUtil.closeCurrentSessionWithTransaction();
     }
 
-    public void delete(TripPreferences entity){
+    public void delete(TripPreferences entity) {
         daoUtil.openCurrentSessionWithTransaction();
         daoUtil.delete(entity);
         daoUtil.closeCurrentSessionWithTransaction();

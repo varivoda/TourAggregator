@@ -8,15 +8,11 @@ import javax.ejb.Stateless;
 import java.util.List;
 
 /**
- * Created by ivan on 15.04.16.
- * DAO предназначен для взаимодействием с БД с транспортировками
+ * DAO for the transportation.
  */
 @Stateless
 @LocalBean
 public class TransportationDAOImpl extends AbstractDAO<Transportation, Integer> implements TransportationDAO {
-
-    public TransportationDAOImpl() {
-    }
 
     public Transportation findById(Integer id) {
         daoUtil.openCurrentSession();

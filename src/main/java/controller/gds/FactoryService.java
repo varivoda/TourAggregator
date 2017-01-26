@@ -1,7 +1,6 @@
 package controller.gds;
 
 import controller.gds.sabre.TransportationServiceImpl;
-import model.tour.ResidentLocation;
 
 import javax.ejb.LocalBean;
 import javax.ejb.Singleton;
@@ -18,37 +17,40 @@ import javax.naming.NamingException;
 @Singleton
 public class FactoryService {
 
-    /*
-    Предоставляет реализацию сервиса для работы с транспортным контентом
-    Генерирует исключение NamingException, если в jndi нет бина с запрашиваемым именем
+    /**
+     * @param name GDS service type
+     * @return transport service implementation
+     * @throws NamingException if required service is not founded
      */
     public TransportationService getTransportationService(NameGDS name) throws NamingException {
-
         Context ctx = new InitialContext();
-        TransportationService transportationService = (TransportationServiceImpl) ctx.
+        return (TransportationServiceImpl) ctx.
                 lookup("java:global/TourAggregator/TransportationServiceImpl");
-
-        return transportationService;
     }
 
+    /**
+     * @param name GDS service type
+     * @return rent transport service implementation
+     * @throws NamingException if required service is not founded
+     */
     public RentTransportService getRentTransportService(NameGDS name) throws NamingException {
-
         Context ctx = new InitialContext();
-        RentTransportService rentTransportService = (RentTransportService) ctx.
+        return (RentTransportService) ctx.
                 lookup("java:global/TourAggregator/RentTransportServiceImpl");
-
-        return rentTransportService;
     }
 
+    /**
+     * @param name GDS service type
+     * @return resident location service implementation
+     * @throws NamingException if required service is not founded
+     */
     public ResidentLocationService getResidentLocationService(NameGDS name) throws NamingException {
-
         Context ctx = new InitialContext();
-
-        switch (name){
+        switch (name) {
             case SABRE:
-                 return (ResidentLocationService) ctx.lookup("java:global/TourAggregator/ResidentLocationSabreServiceImpl");
+                return (ResidentLocationService) ctx.lookup("java:global/TourAggregator/ResidentLocationSabreServiceImpl");
             case MY_WEB_SERVICE:
-                 return  (ResidentLocationService) ctx.lookup("java:global/TourAggregator/ResidentLocationDummyServiceImpl");
+                return (ResidentLocationService) ctx.lookup("java:global/TourAggregator/ResidentLocationDummyServiceImpl");
 
             default:
                 return null;

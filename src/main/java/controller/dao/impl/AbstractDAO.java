@@ -6,13 +6,15 @@ import controller.dao.util.DaoUtil;
 import java.io.Serializable;
 
 /**
- * Created on 20.04.16.
- *
- * @author Varivoda Ivan
+ * Abstract class with the basic operations.
  */
 public abstract class AbstractDAO<T, Id extends Serializable> implements IDAO<T, Id> {
 
-    protected DaoUtil<T, Id> daoUtil = new DaoUtil<T, Id>();
+    protected DaoUtil<T, Id> daoUtil;
+
+    protected AbstractDAO() {
+        daoUtil = new DaoUtil<T, Id>();
+    }
 
     public void persist(T entity) {
         daoUtil.openCurrentSessionWithTransaction();

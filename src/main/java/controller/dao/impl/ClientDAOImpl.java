@@ -4,22 +4,19 @@ import controller.dao.ClientDAO;
 import controller.dao.util.DaoUtil;
 import model.client.Client;
 import org.hibernate.Query;
+
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import java.util.List;
 
 /**
- * Created by ivan on 15.12.15.
+ * DAO for the client entities
  */
-
 @LocalBean
 @Stateless
 public class ClientDAOImpl implements ClientDAO {
 
-    private DaoUtil<Client,Integer> daoUtil = new DaoUtil<Client, Integer>();
-
-    public ClientDAOImpl(){
-    }
+    private DaoUtil<Client, Integer> daoUtil = new DaoUtil<Client, Integer>();
 
     public void persist(Client entity) {
         daoUtil.openCurrentSessionWithTransaction();
@@ -40,13 +37,13 @@ public class ClientDAOImpl implements ClientDAO {
         return client;
     }
 
-    public Client findByEmail(String email){
+    public Client findByEmail(String email) {
         daoUtil.openCurrentSession();
         Query query = daoUtil.getCurrentSession().createQuery("from Client where email=:emailParam");
-        query.setParameter("emailParam",email);
+        query.setParameter("emailParam", email);
         List<Client> clients = (List<Client>) query.list();
         daoUtil.closeCurrentSession();
-        if (clients == null || clients.isEmpty()){
+        if (clients == null || clients.isEmpty()) {
             return null;
         }
         return clients.get(0);
@@ -59,7 +56,7 @@ public class ClientDAOImpl implements ClientDAO {
         daoUtil.closeCurrentSessionWithTransaction();
     }
 
-    public void delete(Client client){
+    public void delete(Client client) {
         daoUtil.openCurrentSessionWithTransaction();
         daoUtil.delete(client);
         daoUtil.closeCurrentSessionWithTransaction();

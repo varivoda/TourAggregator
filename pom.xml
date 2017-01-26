@@ -5,10 +5,9 @@
   <artifactId>touragregator</artifactId>
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
-  <name>TourAggregator Maven Webapp</name>
+  <name>TourAggregator</name>
   <url>http://maven.apache.org</url>
   <dependencies>
-
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>javax.servlet-api</artifactId>
@@ -34,11 +33,6 @@
       <artifactId>hibernate-core</artifactId>
       <version>4.2.21.Final</version>
     </dependency>
-    <!--<dependency>-->
-      <!--<groupId>org.hibernate</groupId>-->
-      <!--<artifactId>hibernate-annotations</artifactId>-->
-      <!--<version>3.5.6-Final</version>-->
-    <!--</dependency>-->
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-entitymanager</artifactId>
@@ -55,38 +49,27 @@
       <artifactId>json-simple</artifactId>
       <version>1.1</version>
     </dependency>
-
     <dependency>
       <groupId>commons-io</groupId>
       <artifactId>commons-io</artifactId>
       <version>2.2</version>
     </dependency>
-
     <dependency>
       <groupId>org.glassfish.jersey.bundles</groupId>
       <artifactId>jaxrs-ri</artifactId>
       <version>2.0</version>
     </dependency>
-
-
-
-
-
     <dependency>
       <groupId>org.apache.openejb</groupId>
       <artifactId>javaee-api</artifactId>
       <version>6.0-6</version>
     </dependency>
-
     <dependency>
       <groupId>javax</groupId>
       <artifactId>javaee-api</artifactId>
       <version>7.0</version>
     </dependency>
-
   </dependencies>
-
-
   <build>
     <finalName>TourAggregator</finalName>
     <plugins>

@@ -8,14 +8,11 @@ import javax.ejb.Stateless;
 import java.util.List;
 
 /**
- * Created by ivan on 21.04.16.
+ * DAO for the general information entities.
  */
 @Stateless
 @LocalBean
-public class GeneralInformationDAOImpl extends AbstractDAO<GeneralInformation,Integer> implements GeneralInformationDAO {
-
-    public GeneralInformationDAOImpl() {
-    }
+public class GeneralInformationDAOImpl extends AbstractDAO<GeneralInformation, Integer> implements GeneralInformationDAO {
 
     public GeneralInformation findById(Integer id) {
         daoUtil.openCurrentSession();

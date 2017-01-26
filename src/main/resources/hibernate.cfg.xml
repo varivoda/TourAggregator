@@ -5,13 +5,13 @@
 
     <session-factory>
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/agregator</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/aggregator</property>
         <property name="hibernate.connection.username">root</property>
-        <property name="hibernate.connection.password">,ekmrekm</property>
+        <property name="hibernate.connection.password">123456</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLInnoDBDialect</property>
         <property name="connection.pool_size">5</property>
         <property name="show_sql">true</property>
-        <!--<property name="hibernate.hbm2ddl.auto">validate</property>-->
+        <property name="hibernate.hbm2ddl.auto">create</property>
 
 
         <mapping class="model.client.Client"/>

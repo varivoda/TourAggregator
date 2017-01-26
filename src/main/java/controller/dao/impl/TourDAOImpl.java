@@ -8,15 +8,11 @@ import javax.ejb.Stateless;
 import java.util.List;
 
 /**
- * Created by ivan on 21.04.16.
+ * DAO for the tour entity.
  */
-
 @LocalBean
 @Stateless
-public class TourDAOImpl extends AbstractDAO<Tour,Integer> implements TourDAO {
-
-    public TourDAOImpl() {
-    }
+public class TourDAOImpl extends AbstractDAO<Tour, Integer> implements TourDAO {
 
     public Tour findById(Integer id) {
         daoUtil.openCurrentSession();
