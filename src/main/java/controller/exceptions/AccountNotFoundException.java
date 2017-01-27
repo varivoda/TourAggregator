@@ -1,11 +1,5 @@
 package controller.exceptions;
 
-/**
- * Created by ivan on 13.04.16.
- * Ошибка, возникающая при отсутсвии запрашиваемого клиента
- * в базе данных
- */
-
 public class AccountNotFoundException extends Exception {
 
     public AccountNotFoundException() {
