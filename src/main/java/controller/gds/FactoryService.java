@@ -9,10 +9,9 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
 /**
- * Created by ivan on 30.03.16.
- * Класс предназначен для продоставления нужной реализации одного
- * из сервисов по названию GDS
+ * Manager GDS systems. Finding the required service with specified type
  */
+// TODO: 27.01.17 create interface with implementations for each GDS
 @LocalBean
 @Singleton
 public class FactoryService {
@@ -23,8 +22,7 @@ public class FactoryService {
      * @throws NamingException if required service is not founded
      */
     public TransportationService getTransportationService(NameGDS name) throws NamingException {
-        Context ctx = new InitialContext();
-        return (TransportationServiceImpl) ctx.
+        return (TransportationServiceImpl) new InitialContext().
                 lookup("java:global/TourAggregator/TransportationServiceImpl");
     }
 
@@ -34,8 +32,7 @@ public class FactoryService {
      * @throws NamingException if required service is not founded
      */
     public RentTransportService getRentTransportService(NameGDS name) throws NamingException {
-        Context ctx = new InitialContext();
-        return (RentTransportService) ctx.
+        return (RentTransportService) new InitialContext().
                 lookup("java:global/TourAggregator/RentTransportServiceImpl");
     }
 

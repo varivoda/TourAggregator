@@ -1,10 +1,15 @@
 package controller.gds.dummy;
 
 import controller.exceptions.ResidentLocationServiceException;
-import controller.exceptions.TransportationServiceException;
 import controller.gds.ResidentLocationService;
 import model.client.DescriptionResidentLocation;
 import model.tour.ResidentLocation;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
 
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
@@ -14,34 +19,29 @@ import javax.ws.rs.client.Invocation;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.io.ByteArrayInputStream;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.StringReader;
 import java.math.BigDecimal;
-import java.nio.charset.Charset;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
-import javax.xml.parsers.*;
-import org.w3c.dom.*;
-import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
-import sun.nio.cs.StandardCharsets;
 
 
-/**
- * Created by ivan on 13.05.16.
- */
 @Stateless(mappedName = "ResidentLocationDummyServiceImpl")
 @LocalBean
 public class ResidentLocationDummyServiceImpl implements ResidentLocationService {
 
+    // TODO: 27.01.17 move webserice properties to property
     public static final String RESIDENT_LOCATION_URI = "http://52.34.224.192:8090/webservice/TourService/ResidentLocation";
     public static final String BOOK_URI = "http://52.34.224.192:8090/webservice/TourService/ResidentLocation/book";
 
+    // TODO: 27.01.17 use localDate
     private static SimpleDateFormat simpleDateFormatTo = new SimpleDateFormat("yyyy-MM-dd");
     private static SimpleDateFormat simpleDateFormatFrom = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss");
 
@@ -68,12 +68,11 @@ public class ResidentLocationDummyServiceImpl implements ResidentLocationService
 
 
         // Если статус не ОК (200) бросаем исключение с описанием ошибки
-        if (status != 200){
+        if (status != 200) {
             throw new ResidentLocationServiceException("Ошибка при выполнении запроса \n" +
                     "status: " + status +
                     "\nresponse: " + responseStr);
         }
-
 
         return parseResidentLocationListFromXMLString(responseStr);
     }
@@ -86,7 +85,7 @@ public class ResidentLocationDummyServiceImpl implements ResidentLocationService
 
         Response response = builder.get();
 
-        if (response.getStatus() == 200){
+        if (response.getStatus() == 200) {
             return true;
         }
 
@@ -96,10 +95,8 @@ public class ResidentLocationDummyServiceImpl implements ResidentLocationService
     /**
      * Метод принимает на вход строку xml и возвращает
      * список мест проживания
-     * @param
-     * @return
      */
-    private static List<ResidentLocation> parseResidentLocationListFromXMLString(String inputStr){
+    private static List<ResidentLocation> parseResidentLocationListFromXMLString(String inputStr) {
 
         InputSource inputSource = new InputSource();
         inputSource.setCharacterStream(new StringReader(inputStr));
@@ -112,8 +109,7 @@ public class ResidentLocationDummyServiceImpl implements ResidentLocationService
             document = documentBuilder.parse(inputSource);
         } catch (ParserConfigurationException e) {
             e.printStackTrace();
-        }
-        catch (SAXException e) {
+        } catch (SAXException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
@@ -125,7 +121,7 @@ public class ResidentLocationDummyServiceImpl implements ResidentLocationService
         List<ResidentLocation> resultList = new LinkedList<ResidentLocation>();
         ResidentLocation rl = null;
 
-        for (int i = 0; i < nodeList.getLength(); i++){
+        for (int i = 0; i < nodeList.getLength(); i++) {
 
             Node node = nodeList.item(i);
             Element element = (Element) node;
@@ -163,7 +159,7 @@ public class ResidentLocationDummyServiceImpl implements ResidentLocationService
             resultList.add(rl);
         }
 
-        return  resultList;
+        return resultList;
 
     }
 
