@@ -4,10 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 
-/**
- * Created by ivan on 15.12.15.
- */
-public interface IDAO<T,Id extends Serializable> {
+public interface IDAO<T, Id extends Serializable> {
 
     void persist(T entity);
 
